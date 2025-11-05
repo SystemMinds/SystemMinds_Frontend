@@ -11,6 +11,26 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 48px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/* Enhanced smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: inherit;
+  }
 }
 
 * {
@@ -88,5 +108,365 @@ body {
 .parallax-bg {
   will-change: transform;
   transform: translateZ(0);
+}
+
+/* Robot Animations */
+@keyframes robotFloat {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+  }
+}
+
+@keyframes robotSway {
+  0%, 100% { 
+    transform: translateX(0px); 
+  }
+  25% { 
+    transform: translateX(-8px); 
+  }
+  75% { 
+    transform: translateX(8px); 
+  }
+}
+
+@keyframes headPulse {
+  0%, 100% { 
+    opacity: 1; 
+    filter: brightness(1);
+  }
+  50% { 
+    opacity: 0.98; 
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes antennaPulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+    r: 6;
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.3);
+    r: 8;
+  }
+}
+
+@keyframes signalWave {
+  0% {
+    opacity: 0.5;
+    r: 8;
+  }
+  100% {
+    opacity: 0;
+    r: 20;
+  }
+}
+
+@keyframes signalWave2 {
+  0% {
+    opacity: 0.3;
+    r: 12;
+  }
+  100% {
+    opacity: 0;
+    r: 24;
+  }
+}
+
+@keyframes eyeGlow {
+  0%, 100% { 
+    opacity: 0.8; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes smileGlow {
+  0%, 100% { 
+    opacity: 0.7; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes ledBlink {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.4; 
+    transform: scale(0.9);
+  }
+}
+
+@keyframes armWaveLeft {
+  0%, 100% { 
+    transform: rotate(0deg); 
+    transform-origin: 40px 150px;
+  }
+  25% { 
+    transform: rotate(-20deg); 
+  }
+  75% { 
+    transform: rotate(10deg); 
+  }
+}
+
+@keyframes armWaveRight {
+  0%, 100% { 
+    transform: rotate(0deg); 
+    transform-origin: 200px 150px;
+  }
+  25% { 
+    transform: rotate(20deg); 
+  }
+  75% { 
+    transform: rotate(-10deg); 
+  }
+}
+
+@keyframes screenPulse {
+  0%, 100% { 
+    opacity: 0.5; 
+  }
+  50% { 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes sidePanel {
+  0%, 100% { 
+    opacity: 0.5; 
+  }
+  50% { 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes logoEmit {
+  0% {
+    transform: translate(-50%, -50%) translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(-10px) translateX(0) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-400px) translateX(var(--logo-offset, 0px)) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.robot-float {
+  animation: robotFloat 3s ease-in-out infinite;
+}
+
+.robot-sway {
+  animation: robotSway 4s ease-in-out infinite;
+}
+
+.robot-head .head-pulse {
+  animation: headPulse 3s ease-in-out infinite;
+}
+
+.antenna-pulse {
+  animation: antennaPulse 1.5s ease-in-out infinite;
+}
+
+.signal-wave {
+  animation: signalWave 2s ease-out infinite;
+}
+
+.signal-wave-2 {
+  animation: signalWave2 2s ease-out infinite 0.5s;
+}
+
+.eye-glow {
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+
+.led-blink {
+  animation: ledBlink 1.5s ease-in-out infinite;
+}
+
+.led-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.led-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.led-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.led-delay-4 {
+  animation-delay: 0.8s;
+}
+
+.arm-wave-left {
+  animation: armWaveLeft 3s ease-in-out infinite;
+}
+
+.arm-hang-right {
+  animation: armHangRight 4s ease-in-out infinite;
+}
+
+@keyframes armWaveLeft {
+  0%, 100% { 
+    transform: rotate(0deg); 
+    transform-origin: 35px 135px;
+  }
+  25% { 
+    transform: rotate(-20deg); 
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% { 
+    transform: rotate(-18deg); 
+  }
+}
+
+@keyframes armHangRight {
+  0%, 100% { 
+    transform: rotate(0deg); 
+    transform-origin: 205px 195px;
+  }
+  50% { 
+    transform: rotate(5deg); 
+  }
+}
+
+.eye-glow-left, .eye-glow-right {
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+
+.smile-glow {
+  animation: smileGlow 2.5s ease-in-out infinite;
+}
+
+/* Creative SVG Animations */
+@keyframes pulseCircle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 200px 200px;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 200px 200px;
+  }
+}
+
+@keyframes rotateFast {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 200px 200px;
+  }
+  to {
+    transform: rotate(-360deg);
+    transform-origin: 200px 200px;
+  }
+}
+
+@keyframes pulseInner {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulseCenter {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.pulse-circle {
+  animation: pulseCircle 4s ease-in-out infinite;
+}
+
+.rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.rotate-fast {
+  animation: rotateFast 15s linear infinite;
+}
+
+.pulse-inner {
+  animation: pulseInner 3s ease-in-out infinite;
+}
+
+.pulse-center {
+  animation: pulseCenter 2s ease-in-out infinite;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  animation: marquee 50s linear infinite;
+  display: inline-flex;
+}
+
+/* Language Tags Hover Effect */
+.lang-tag {
+  position: relative;
+  z-index: 1;
+  border-width: 2px !important;
+  border-color: transparent !important;
+}
+
+.lang-tag:hover {
+  border-color: #0071e3 !important;
+  box-shadow: 0 -4px 20px rgba(0, 113, 227, 0.6), 0 0 15px rgba(0, 113, 227, 0.5), 0 0 30px rgba(0, 113, 227, 0.3), 0 4px 20px rgba(0, 113, 227, 0.6);
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  z-index: 10;
+}
+
+.screen-pulse {
+  animation: screenPulse 2s ease-in-out infinite;
+}
+
+.side-panel {
+  animation: sidePanel 2.5s ease-in-out infinite;
 }
 

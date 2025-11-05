@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header.jsx'
 import HeroSection from './components/HeroSection.jsx'
 import AboutUs from './components/AboutUs.jsx'
+import WorkWeDo from './components/WorkWeDo.jsx'
 import ProductGrid from './components/ProductGrid.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -12,6 +13,7 @@ function App() {
       <main className="w-full">
         <HeroSection />
         <AboutUs />
+        <WorkWeDo />
         <ProductGrid />
       </main>
       <Footer />

@@ -10,11 +10,16 @@ function AboutUs() {
       ref={aboutRef}
       className="relative bg-white text-black overflow-hidden"
       style={{ 
-        paddingTop: '80px',
-        paddingBottom: '80px'
+        height: '100vh',
+        minHeight: '100vh',
+        maxHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '48px',
+        paddingBottom: '48px'
       }}
     >
-      <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-16 lg:px-24 py-12">
+      <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-16 lg:px-24 w-full h-full">
         <h2 
           className="hero-title font-semibold tracking-tight"
           style={{ 
@@ -56,15 +61,15 @@ function AboutUs() {
         >
           At SystemMinds, we are dedicated to delivering exceptional solutions that drive innovation and growth. Our team combines expertise, creativity, and cutting-edge technology to help businesses achieve their goals.
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-3">
           <a
             href="#services"
-            className="hero-link transition-all duration-200 inline-block px-6 py-2.5 rounded-full"
+            className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
             style={{ 
-              fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-              fontSize: '17px',
-              fontWeight: 500,
-              letterSpacing: '-0.01em',
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: 400,
+              lineHeight: '1.5',
               backgroundColor: '#006EDB',
               color: '#ffffff',
               textDecoration: 'none',
@@ -72,37 +77,33 @@ function AboutUs() {
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = '#0056b3';
-              e.target.style.transform = 'scale(1.02)';
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = '#006EDB';
-              e.target.style.transform = 'scale(1)';
             }}
           >
             Learn More
           </a>
           <a
             href="#contact"
-            className="hero-link transition-all duration-200 inline-block px-6 py-2.5 rounded-full"
+            className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
             style={{ 
-              fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-              fontSize: '17px',
-              fontWeight: 500,
-              letterSpacing: '-0.01em',
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: 400,
+              lineHeight: '1.5',
               backgroundColor: 'transparent',
               color: '#006EDB',
               textDecoration: 'none',
-              border: '1px solid #006EDB'
+              border: '2px solid #006EDB'
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = '#006EDB';
               e.target.style.color = '#ffffff';
-              e.target.style.transform = 'scale(1.02)';
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = 'transparent';
               e.target.style.color = '#006EDB';
-              e.target.style.transform = 'scale(1)';
             }}
           >
             Contact Us

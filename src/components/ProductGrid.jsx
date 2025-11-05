@@ -46,10 +46,17 @@ function ProductGrid() {
   const [tvRef, isTvVisible] = useScrollAnimation({ threshold: 0.2, once: true })
 
   return (
-    <div className="w-full">
+    <section 
+      className="w-full overflow-hidden"
+      style={{
+        height: '100vh',
+        minHeight: '100vh',
+        maxHeight: '100vh',
+      }}
+    >
       <div 
         ref={gridRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full"
         style={{ gap: '2px' }}
       >
         {products.map((product, index) => {
@@ -65,7 +72,8 @@ function ProductGrid() {
               ref={productRef}
               className={`relative bg-gray-100 overflow-hidden group cursor-pointer ${isProductVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}
               style={{ 
-                minHeight: '580px',
+                height: 'calc(100vh / 3)',
+                minHeight: 'calc(100vh / 3)',
                 transitionDelay: `${index * 0.05}s`
               }}
             >
@@ -162,12 +170,13 @@ function ProductGrid() {
         })}
       </div>
 
-      {/* Apple TV+ Section */}
+      {/* Bottom Section - Full Width */}
       <div 
         ref={tvRef}
         className={`bg-gradient-to-r from-purple-600 to-blue-600 overflow-hidden ${isTvVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}
         style={{ 
-          minHeight: '420px',
+          height: 'calc(100vh / 3)',
+          minHeight: 'calc(100vh / 3)',
           marginTop: '2px'
         }}
       >
@@ -212,7 +221,7 @@ function ProductGrid() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

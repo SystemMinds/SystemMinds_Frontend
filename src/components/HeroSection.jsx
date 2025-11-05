@@ -28,9 +28,10 @@ function HeroSection() {
             className={`relative ${product.bgColor || 'bg-black'} text-white overflow-hidden`}
             style={{ 
               height: '100vh',
-              minHeight: '692px',
+              minHeight: '100vh',
               maxHeight: '100vh',
-              marginBottom: 0
+              marginBottom: 0,
+              overflow: 'hidden'
             }}
           >
             <div
@@ -45,7 +46,7 @@ function HeroSection() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
-            <div className={`relative z-10 flex flex-col items-center justify-start h-full px-4 pt-20 text-center ${product.textColor || 'text-white'}`}>
+            <div className={`relative z-10 flex flex-col items-center justify-center h-full px-4 text-center ${product.textColor || 'text-white'}`}>
               <h2 
                 className="hero-title font-semibold tracking-tight"
                 style={{ 
