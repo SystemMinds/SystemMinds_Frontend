@@ -23,14 +23,14 @@ function Header() {
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-200/50' 
           : 'bg-white/80 backdrop-blur-md border-b border-gray-200/30'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-12">
           {/* Apple Logo */}
           <div className="flex items-center">
             <svg
