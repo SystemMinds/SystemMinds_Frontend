@@ -10,7 +10,7 @@ function Footer() {
         'Store',
         'Mac',
         'iPad',
-        'iPhone',
+        'SystemMinds',
         'Watch',
         'AirPods',
         'TV & Home',
@@ -205,7 +205,7 @@ function Footer() {
             apply.
           </p>
           <p>
-            1. Testing conducted by Apple in July 2025 using AirPods Pro 3 paired with iPhone 16
+            1. Testing conducted by Apple in July 2025 using AirPods Pro 3 paired with SystemMinds 16
             with pre-release AirPods firmware and iOS 26. Noise reduction was tested in accordance
             with IEC 60268-24. Comparison made against the best-selling wireless in-ear headphones
             commercially available at the time of testing. Performance depends on device settings,

@@ -1,29 +1,17 @@
 import React from 'react'
 import { useScrollAnimation, useParallax } from '../hooks/useScrollAnimation.jsx'
+import heroImage from '../assets/images/hero.jpg'
 
 function HeroSection() {
   const heroProducts = [
     {
-      title: 'iPhone 17 Pro',
-      tagline: 'All out Pro.',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=1920&h=1080&fit=crop&q=100',
+      title: 'SystemMinds',
+      tagline: 'Transform Your Ideas Into Reality. Professional Services & Innovative Products.',
+      image: heroImage,
       link: '#',
       bgColor: 'bg-black',
-    },
-    {
-      title: 'iPhone Air',
-      tagline: 'The thinnest iPhone ever. With the power of pro inside.',
-      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1920&h=1080&fit=crop&q=100',
-      link: '#',
-      bgColor: 'bg-white',
-      textColor: 'text-black',
-    },
-    {
-      title: 'MacBook Pro 14"',
-      tagline: 'Supercharged by M5.',
-      image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=1920&h=1080&fit=crop&q=100',
-      link: '#',
-      bgColor: 'bg-black',
+      ctaPrimary: 'View Services',
+      ctaSecondary: 'Get Started',
     },
   ]
 
@@ -41,7 +29,8 @@ function HeroSection() {
             style={{ 
               height: '100vh',
               minHeight: '692px',
-              maxHeight: '100vh'
+              maxHeight: '100vh',
+              marginBottom: 0
             }}
           >
             <div
@@ -56,7 +45,7 @@ function HeroSection() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
-            <div className={`relative z-10 flex flex-col items-center justify-center h-full px-4 text-center ${product.textColor || 'text-white'}`}>
+            <div className={`relative z-10 flex flex-col items-center justify-start h-full px-4 pt-20 text-center ${product.textColor || 'text-white'}`}>
               <h2 
                 className="hero-title font-semibold tracking-tight"
                 style={{ 
@@ -86,34 +75,54 @@ function HeroSection() {
               </p>
               <div className="flex gap-6" style={{ marginTop: '8px' }}>
                 <a
-                  href={product.link}
-                  className="hero-link transition-colors underline decoration-1 underline-offset-2"
+                  href="#services"
+                  className="hero-link transition-all duration-200 inline-block px-6 py-2.5 rounded-full"
                   style={{ 
-                    fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                    fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                     fontSize: '17px',
-                    letterSpacing: '-0.022em',
-                    color: '#0071e3',
-                    textDecorationColor: '#0071e3'
+                    fontWeight: 500,
+                    letterSpacing: '-0.01em',
+                    backgroundColor: '#006EDB',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    border: 'none'
                   }}
-                  onMouseEnter={(e) => e.target.style.color = '#0077ed'}
-                  onMouseLeave={(e) => e.target.style.color = '#0071e3'}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#0056b3';
+                    e.target.style.transform = 'scale(1.02)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = '#006EDB';
+                    e.target.style.transform = 'scale(1)';
+                  }}
                 >
-                  Learn more
+                  {product.ctaPrimary || 'View Services'}
                 </a>
                 <a
-                  href={product.link}
-                  className="hero-link transition-colors underline decoration-1 underline-offset-2"
+                  href="#contact"
+                  className="hero-link transition-all duration-200 inline-block px-6 py-2.5 rounded-full"
                   style={{ 
-                    fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                    fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                     fontSize: '17px',
-                    letterSpacing: '-0.022em',
-                    color: '#0071e3',
-                    textDecorationColor: '#0071e3'
+                    fontWeight: 500,
+                    letterSpacing: '-0.01em',
+                    backgroundColor: 'transparent',
+                    color: '#006EDB',
+                    textDecoration: 'none',
+                    border: '1px solid #006EDB'
                   }}
-                  onMouseEnter={(e) => e.target.style.color = '#0077ed'}
-                  onMouseLeave={(e) => e.target.style.color = '#0071e3'}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#006EDB';
+                    e.target.style.color = '#ffffff';
+                    e.target.style.transform = 'scale(1.02)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#006EDB';
+                    e.target.style.transform = 'scale(1)';
+                  }}
                 >
-                  Buy
+                  {product.ctaSecondary || 'Get Started'}
                 </a>
               </div>
             </div>

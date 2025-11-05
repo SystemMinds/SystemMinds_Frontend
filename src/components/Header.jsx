@@ -5,16 +5,12 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const menuItems = [
-    'Store',
-    'Mac',
-    'iPad',
-    'iPhone',
-    'Watch',
-    'AirPods',
-    'TV & Home',
-    'Entertainment',
-    'Accessories',
-    'Support',
+    'Home',
+    'About us',
+    'Services',
+    'Technologies',
+    'works',
+    'Contact',
   ]
 
   useEffect(() => {
@@ -34,7 +30,7 @@ function Header() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-11">
+        <div className="flex items-center justify-between h-16">
           {/* Apple Logo */}
           <div className="flex items-center">
             <svg
@@ -55,10 +51,10 @@ function Header() {
                 href="#"
                 className="transition-colors duration-200"
                 style={{ 
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  letterSpacing: '-0.01em',
+                  fontFamily: '"Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  letterSpacing: '0.01em',
                   color: '#1d1d1f',
                   textDecoration: 'none'
                 }}
@@ -97,8 +93,8 @@ function Header() {
                 href="#"
                 className="block text-sm text-gray-800 hover:text-gray-600 transition-colors"
                 style={{ 
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontWeight: 400
+                  fontFamily: '"Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                  fontWeight: 500
                 }}
                 onClick={() => setIsMenuOpen(false)}
               >
