@@ -1,0 +1,32 @@
+/* Apple exact responsive typography */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 80px !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.05 !important;
+  }
+  
+  .hero-tagline {
+    font-size: 28px !important;
+    line-height: 1.14286 !important;
+    margin-top: 8px !important;
+    margin-bottom: 19px !important;
+  }
+  
+  .hero-link {
+    font-size: 19px !important;
+    letter-spacing: -0.021em !important;
+  }
+
+  .product-title {
+    font-size: 40px !important;
+    letter-spacing: -0.003em !important;
+    line-height: 1.1 !important;
+  }
+
+  .product-tagline {
+    font-size: 21px !important;
+    line-height: 1.381 !important;
+  }
+}
+
