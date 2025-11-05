@@ -57,7 +57,7 @@ function WorkWeDo() {
               fontWeight: 400,
               fontSize: '17px',
               lineHeight: '1.5',
-              marginBottom: '28px',
+              marginBottom: '20px',
               color: 'rgba(255, 255, 255, 0.8)'
             }}
           >
@@ -70,8 +70,8 @@ function WorkWeDo() {
             style={{
               marginTop: '4px',
               whiteSpace: 'nowrap',
-              paddingTop: '20px',
-              paddingBottom: '20px',
+              paddingTop: '12px',
+              paddingBottom: '12px',
             }}
           >
             {/* Left fade gradient */}

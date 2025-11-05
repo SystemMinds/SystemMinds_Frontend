@@ -46,7 +46,7 @@ function HeroSection() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
-            <div className={`relative z-10 flex flex-col items-center justify-center h-full px-4 text-center ${product.textColor || 'text-white'}`}>
+            <div className={`relative z-10 flex flex-col items-center justify-start h-full px-4 text-center ${product.textColor || 'text-white'}`} style={{ paddingTop: '70px' }}>
               <h2 
                 className="hero-title font-semibold tracking-tight"
                 style={{ 
