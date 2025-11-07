@@ -102,7 +102,8 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-apple-light-gray text-gray-600 mt-16">
+    <footer className="relative text-gray-400" style={{ backgroundColor: 'transparent', overflow: 'hidden' }}>
+      <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8 mb-8">
@@ -110,7 +111,7 @@ function Footer() {
             <div key={index} className="mb-4">
               {/* Desktop View */}
               <h4 
-                className="font-semibold text-gray-900 mb-3 hidden md:block"
+                className="font-semibold text-white mb-3 hidden md:block"
                 style={{ 
                   fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
                   fontWeight: 600,
@@ -122,7 +123,7 @@ function Footer() {
               
               {/* Mobile Accordion */}
               <button
-                className="md:hidden w-full flex items-center justify-between font-semibold text-gray-900 mb-3"
+                className="md:hidden w-full flex items-center justify-between font-semibold text-white mb-3"
                 onClick={() => toggleSection(section.title)}
                 style={{ 
                   fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
@@ -152,7 +153,7 @@ function Footer() {
                   <li key={linkIndex}>
                     <a
                       href="#"
-                      className="text-sm hover:text-gray-900 transition-colors"
+                      className="text-sm hover:text-white transition-colors"
                       style={{ 
                         fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
                         fontWeight: 400,
@@ -262,6 +263,7 @@ function Footer() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   )

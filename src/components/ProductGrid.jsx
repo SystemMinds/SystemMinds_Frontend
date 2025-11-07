@@ -47,13 +47,16 @@ function ProductGrid() {
 
   return (
     <section 
-      className="w-full overflow-hidden"
+      className="w-full relative"
       style={{
-        height: '100vh',
+        backgroundColor: 'transparent',
         minHeight: '100vh',
-        maxHeight: '100vh',
+        paddingTop: '80px',
+        paddingBottom: '80px',
+        overflow: 'hidden'
       }}
     >
+      <div className="relative z-10">
       <div 
         ref={gridRef}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full"
@@ -220,6 +223,7 @@ function ProductGrid() {
             Learn more
           </a>
         </div>
+      </div>
       </div>
     </section>
   )

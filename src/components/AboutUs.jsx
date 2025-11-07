@@ -8,18 +8,19 @@ function AboutUs() {
     <section
       id="about"
       ref={aboutRef}
-      className="relative bg-white text-black overflow-hidden"
+      className="relative text-white"
       style={{ 
-        height: '100vh',
+        backgroundColor: 'transparent',
         minHeight: '100vh',
-        maxHeight: '100vh',
         display: 'flex',
-        alignItems: 'center',
-        paddingTop: '48px',
-        paddingBottom: '48px'
+        alignItems: 'flex-start',
+        paddingTop: '80px',
+        paddingBottom: '120px',
+        overflow: 'hidden',
+        scrollMarginTop: '90px'
       }}
     >
-      <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-16 lg:px-24 w-full h-full">
+      <div className="relative z-10 flex flex-col items-start justify-start px-8 md:px-16 lg:px-24 w-full h-full" style={{ paddingTop: '20px' }}>
         <h2 
           className="hero-title font-semibold tracking-tight"
           style={{ 
@@ -29,7 +30,7 @@ function AboutUs() {
             letterSpacing: '-0.005em',
             lineHeight: '1.07143',
             marginBottom: '12px',
-            color: '#1d1d1f'
+            color: '#ffffff'
           }}
         >
           About Us
@@ -43,7 +44,7 @@ function AboutUs() {
             lineHeight: '1.381',
             marginTop: '6px',
             marginBottom: '24px',
-            color: '#1d1d1f'
+            color: '#ffffff'
           }}
         >
           Transform Your Ideas Into Reality. Professional Services & Innovative Products.
@@ -56,7 +57,7 @@ function AboutUs() {
             fontSize: '17px',
             lineHeight: '1.5',
             marginBottom: '32px',
-            color: '#6e6e73'
+            color: 'rgba(255, 255, 255, 0.7)'
           }}
         >
           At SystemMinds, we are dedicated to delivering exceptional solutions that drive innovation and growth. Our team combines expertise, creativity, and cutting-edge technology to help businesses achieve their goals.
