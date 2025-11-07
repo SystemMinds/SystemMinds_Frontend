@@ -5,94 +5,87 @@ const technologyCards = [
   {
     name: 'React',
     icon: '⚛️',
-    headline: 'Component-Driven Interfaces',
-    blurb: 'Reusable UI blocks for fast, maintainable frontends.'
+    headline: 'Component-Driven Interfaces'
   },
   {
     name: 'Next.js',
     icon: '🚀',
-    headline: 'Hybrid Rendering',
-    blurb: 'SSR, SSG and edge-ready apps with blazing performance.'
+    headline: 'Hybrid Rendering Engine'
   },
   {
     name: 'TypeScript',
-    icon: '🔐',
-    headline: 'Typed JavaScript',
-    blurb: 'Catch bugs early with powerful developer tooling.'
+    icon: '🌀',
+    headline: 'Strong Typing & Tooling'
   },
   {
     name: 'Tailwind CSS',
     icon: '🎨',
-    headline: 'Utility-First Styling',
-    blurb: 'Ship pixel-perfect responsive layouts rapidly.'
+    headline: 'Utility-First Styling'
   },
   {
     name: 'Node.js',
     icon: '🟢',
-    headline: 'Event-Driven APIs',
-    blurb: 'Lightweight, scalable services using modern runtimes.'
+    headline: 'Event-Driven APIs'
   },
   {
     name: 'NestJS',
     icon: '🧭',
-    headline: 'Structured Backends',
-    blurb: 'Opinionated architecture for enterprise-ready APIs.'
-  },
-  {
-    name: 'PostgreSQL',
-    icon: '🗄️',
-    headline: 'Relational Backbone',
-    blurb: 'Dependable data integrity with advanced features.'
+    headline: 'Structured Backends'
   },
   {
     name: 'GraphQL',
     icon: '🕸️',
-    headline: 'Query What You Need',
-    blurb: 'Single endpoint delivering tailored responses.'
+    headline: 'Flexible Data Layer'
+  },
+  {
+    name: 'PostgreSQL',
+    icon: '🗄️',
+    headline: 'Relational Data Core'
   },
   {
     name: 'AWS',
     icon: '☁️',
-    headline: 'Cloud Infrastructure',
-    blurb: 'Elastic compute, managed services, global reach.'
+    headline: 'Global Cloud Footprint'
   },
   {
     name: 'Docker',
     icon: '🐳',
-    headline: 'Portable Environments',
-    blurb: 'Consistent builds and deployments everywhere.'
+    headline: 'Portable Environments'
   },
   {
     name: 'Kubernetes',
     icon: '⚓',
-    headline: 'Cluster Orchestration',
-    blurb: 'Auto-healing, scalable workloads for mission-critical apps.'
+    headline: 'Self-Healing Clusters'
   },
   {
     name: 'Terraform',
     icon: '🧱',
-    headline: 'Infrastructure as Code',
-    blurb: 'Declarative provisioning across multiple clouds.'
+    headline: 'Infrastructure as Code'
   },
   {
     name: 'Python',
     icon: '🐍',
-    headline: 'Rapid Automation',
-    blurb: 'Scripting, AI and pipelines built with efficiency.'
+    headline: 'Automation & AI'
   },
   {
     name: 'TensorFlow',
     icon: '🧠',
-    headline: 'Production AI Models',
-    blurb: 'Train, deploy and scale intelligent experiences.'
+    headline: 'Production ML Models'
   },
   {
     name: 'LangChain',
     icon: '🔗',
-    headline: 'Generative AI Workflows',
-    blurb: 'Compose LLM-powered agents tailored to your data.'
+    headline: 'Generative AI Agents'
+  },
+  {
+    name: 'Power BI',
+    icon: '📊',
+    headline: 'Business Intelligence'
   }
 ]
+
+const firstRow = technologyCards.filter((_, index) => index % 2 === 0)
+const secondRow = technologyCards.filter((_, index) => index % 2 === 1)
 
 function Technologies() {
   const [sectionRef, isVisible] = useScrollAnimation({ threshold: 0.2, once: true })
@@ -116,7 +109,7 @@ function Technologies() {
         alignItems: 'center'
       }}
     >
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 text-white flex flex-col items-center">
+      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-white flex flex-col items-center">
         <div
           className="flex flex-col items-center text-center"
           style={{
@@ -129,124 +122,171 @@ function Technologies() {
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
               fontWeight: 700,
-              fontSize: '48px',
+              fontSize: '52px',
               letterSpacing: '-0.02em',
-              color: '#FFFFFF'
+              color: '#FFFFFF',
+              marginBottom: '10px'
             }}
           >
             Technologies
           </h2>
-        </div>
-
-        <div className="relative w-full overflow-hidden mt-14 flex justify-center">
-          <div
-            className="flex gap-6 marquee-track"
+          <p
             style={{
-              animationPlayState: isVisible ? 'running' : 'paused',
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              fontFamily: '"Poppins", sans-serif',
+              fontSize: '16px',
+              lineHeight: '1.7',
+              color: 'rgba(255, 255, 255, 0.62)',
+              maxWidth: '560px'
             }}
           >
-            {[...technologyCards, ...technologyCards].map((card, index) => (
-              <div
-                key={`${card.name}-${index}`}
-                className="technology-card"
-                style={{
-                  animationDelay: `${(index % technologyCards.length) * 0.08}s`
-                }}
-              >
-                <div className="diamond">
-                  <span className="diamond-icon">{card.icon}</span>
-                </div>
-                <h3>{card.name}</h3>
-                <strong>{card.headline}</strong>
-                <p>{card.blurb}</p>
+            Tools and platforms we rely on to build intuitive experiences, scalable architectures, and intelligent products.
+          </p>
+        </div>
+
+        <div className="relative w-full mt-16 space-y-10">
+          {[firstRow, secondRow].map((row, rowIndex) => (
+            <div key={rowIndex} className="relative overflow-hidden">
+              <div className={`marquee-layer ${rowIndex === 1 ? 'reverse' : ''}`} style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>
+                {[...row, ...row].map((card, index) => (
+                  <div className="tech-pill" key={`${rowIndex}-${card.name}-${index}`}>
+                    <div className="tech-icon-wrapper">
+                      <span className="tech-icon">{card.icon}</span>
+                    </div>
+                    <div className="tech-text">
+                      <span className="tech-name">{card.name}</span>
+                      <span className="tech-headline">{card.headline}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+              <div className="fade-left" />
+              <div className="fade-right" />
+            </div>
+          ))}
           <style jsx="true">{`
-            @keyframes marqueeScroll {
+            @keyframes marqueeForward {
               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
             }
 
-            .marquee-track {
-              width: calc(200%);
-              animation: marqueeScroll 35s linear infinite;
+            @keyframes marqueeReverse {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
             }
 
-            .technology-card {
-              min-width: 210px;
-              max-width: 210px;
-              background: rgba(15, 23, 42, 0.45);
-              border: 1px solid rgba(148, 163, 184, 0.18);
-              border-radius: 20px;
-              padding: 64px 24px 28px;
-              position: relative;
+            .marquee-layer {
               display: flex;
-              flex-direction: column;
+              gap: 24px;
+              width: 220%;
+              animation: marqueeForward 38s linear infinite;
+              padding: 12px 0;
+              position: relative;
+            }
+
+            .marquee-layer.reverse {
+              animation: marqueeReverse 40s linear infinite;
+            }
+
+            .tech-pill {
+              display: flex;
               align-items: center;
-              text-align: center;
-              gap: 12px;
-              box-shadow: 0 18px 40px rgba(8, 47, 73, 0.35);
-              backdrop-filter: blur(14px);
+              gap: 18px;
+              min-width: 360px;
+              max-width: 360px;
+              padding: 20px 24px;
+              border-radius: 24px;
+              border: 1px solid rgba(148, 163, 184, 0.12);
+              background: rgba(15, 23, 42, 0.76);
+              backdrop-filter: blur(10px);
             }
 
-            .technology-card h3 {
-              font-family: "Poppins", sans-serif;
-              font-size: 15px;
-              font-weight: 700;
-              letter-spacing: 0.08em;
-              text-transform: uppercase;
-              color: #F8FAFC;
-              margin: 0;
-            }
-
-            .technology-card strong {
-              font-family: "Volkhov", "Georgia", serif;
-              font-size: 17px;
-              line-height: 1.4;
-              color: #ffffff;
-            }
-
-            .technology-card p {
-              font-family: "Poppins", sans-serif;
-              font-size: 13px;
-              line-height: 1.6;
-              color: rgba(226, 232, 240, 0.78);
-              margin: 0;
-            }
-
-            .diamond {
-              width: 72px;
-              height: 72px;
-              position: absolute;
-              top: -20px;
+            .tech-icon-wrapper {
+              width: 62px;
+              height: 62px;
+              border-radius: 18px;
+              background: #1E293B;
               display: flex;
               align-items: center;
               justify-content: center;
-              background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
-              border-radius: 18px;
-              transform: rotate(45deg);
-              border: 6px solid #0B1220;
-              box-shadow: 0 10px 25px rgba(14, 165, 233, 0.45);
+              border: 1px solid rgba(148, 163, 184, 0.16);
             }
 
-            .diamond-icon {
+            .tech-icon {
               font-size: 28px;
-              transform: rotate(-45deg);
             }
 
-            @media (max-width: 768px) {
-              .technology-card {
-                min-width: 180px;
-                max-width: 180px;
-                padding: 48px 20px 24px;
+            .tech-text {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+            }
+
+            .tech-name {
+              font-family: "Poppins", sans-serif;
+              font-size: 14px;
+              font-weight: 600;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: rgba(148, 181, 231, 0.85);
+            }
+
+            .tech-headline {
+              font-family: "Volkhov", "Georgia", serif;
+              font-size: 19px;
+              color: #ffffff;
+              letter-spacing: -0.01em;
+            }
+
+            .fade-left,
+            .fade-right {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              width: 120px;
+              pointer-events: none;
+              z-index: 2;
+            }
+
+            .fade-left {
+              left: 0;
+              background: linear-gradient(90deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 100%);
+            }
+
+            .fade-right {
+              right: 0;
+              background: linear-gradient(270deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 100%);
+            }
+
+            @media (max-width: 1024px) {
+              .tech-pill {
+                min-width: 320px;
+                max-width: 320px;
+                padding: 18px 20px;
               }
 
-              .marquee-track {
-                animation-duration: 28s;
+              .tech-headline {
+                font-size: 17px;
+              }
+            }
+
+            @media (max-width: 640px) {
+              .tech-pill {
+                min-width: 260px;
+                max-width: 260px;
+              }
+
+              .tech-name {
+                font-size: 12px;
+                letter-spacing: 0.12em;
+              }
+
+              .tech-headline {
+                font-size: 15px;
+              }
+
+              .fade-left,
+              .fade-right {
+                width: 80px;
               }
             }
           `}</style>

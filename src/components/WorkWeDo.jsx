@@ -101,17 +101,17 @@ function WorkWeDo() {
             >
               {/* Decorative shape for second card */}
               {service.hasDecor && (
-            <div
+                <div
                   className="absolute -bottom-8 -left-8 z-0"
-              style={{
+                  style={{
                     width: '120px',
                     height: '120px',
                     background: '#DF6951',
                     borderRadius: '25px 0px 15px 5px',
                     opacity: 0.9,
                     transform: 'rotate(-10deg)'
-              }}
-            />
+                  }}
+                />
               )}
 
               {/* Card */}

@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection.jsx'
 import AboutUs from './components/AboutUs.jsx'
 import WorkWeDo from './components/WorkWeDo.jsx'
 import Technologies from './components/Technologies.jsx'
+import WorkShowcase from './components/WorkShowcase.jsx'
 import ProductGrid from './components/ProductGrid.jsx'
 import Footer from './components/Footer.jsx'
 import ContinuousWaves from './components/ContinuousWaves.jsx'
@@ -18,6 +19,7 @@ function App() {
         <AboutUs />
         <WorkWeDo />
         <Technologies />
+        <WorkShowcase />
         <ProductGrid />
       </main>
       <Footer />
