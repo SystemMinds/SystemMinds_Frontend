@@ -15,7 +15,7 @@ function Header() {
     'About us',
     'Services',
     'Technologies',
-    'works',
+    'Works',
     'Contact',
   ]
 
@@ -24,7 +24,7 @@ function Header() {
     'About us': 'about',
     'Services': 'work-we-do',
     'Technologies': 'technologies',
-    'works': 'works',
+    'Works': 'works',
     'Contact': 'contact',
   }
 
@@ -86,7 +86,7 @@ function Header() {
     const target = document.getElementById(sectionId)
     if (target) {
       const headerHeight = headerRef.current?.offsetHeight || 0
-      const extraOffset = 24
+      const extraOffset = sectionId === 'technologies' ? -12 : sectionId === 'works' ? 0 : 24
       const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset
       window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' })
     }

@@ -1,299 +1,363 @@
 import React from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
 
-const technologyCards = [
-  {
-    name: 'React',
-    icon: '⚛️',
-    headline: 'Component-Driven Interfaces'
-  },
-  {
-    name: 'Next.js',
-    icon: '🚀',
-    headline: 'Hybrid Rendering Engine'
-  },
-  {
-    name: 'TypeScript',
-    icon: '🌀',
-    headline: 'Strong Typing & Tooling'
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: '🎨',
-    headline: 'Utility-First Styling'
-  },
-  {
-    name: 'Node.js',
-    icon: '🟢',
-    headline: 'Event-Driven APIs'
-  },
-  {
-    name: 'NestJS',
-    icon: '🧭',
-    headline: 'Structured Backends'
-  },
-  {
-    name: 'GraphQL',
-    icon: '🕸️',
-    headline: 'Flexible Data Layer'
-  },
-  {
-    name: 'PostgreSQL',
-    icon: '🗄️',
-    headline: 'Relational Data Core'
-  },
-  {
-    name: 'AWS',
-    icon: '☁️',
-    headline: 'Global Cloud Footprint'
-  },
-  {
-    name: 'Docker',
-    icon: '🐳',
-    headline: 'Portable Environments'
-  },
-  {
-    name: 'Kubernetes',
-    icon: '⚓',
-    headline: 'Self-Healing Clusters'
-  },
-  {
-    name: 'Terraform',
-    icon: '🧱',
-    headline: 'Infrastructure as Code'
-  },
-  {
-    name: 'Python',
-    icon: '🐍',
-    headline: 'Automation & AI'
-  },
-  {
-    name: 'TensorFlow',
-    icon: '🧠',
-    headline: 'Production ML Models'
-  },
-  {
-    name: 'LangChain',
-    icon: '🔗',
-    headline: 'Generative AI Agents'
-  },
-  {
-    name: 'Power BI',
-    icon: '📊',
-    headline: 'Business Intelligence'
-  }
-]
-
-const firstRow = technologyCards.filter((_, index) => index % 2 === 0)
-const secondRow = technologyCards.filter((_, index) => index % 2 === 1)
-
 function Technologies() {
-  const [sectionRef, isVisible] = useScrollAnimation({ threshold: 0.2, once: true })
+  const [sectionRef] = useScrollAnimation({ threshold: 0.2, once: true })
+
+  const technologies = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React.js',
+    'React Native',
+    'Bootstrap',
+    'Tailwind CSS',
+    'Java',
+    'Python',
+    'Java Servlet',
+    'Spring IOC',
+    'Spring MVC',
+    'Spring Boot',
+    'Microservices',
+    'Hibernate',
+    'SQL',
+    'MySQL',
+    'MongoDB',
+    'PostgreSQL',
+    'Spring Security',
+    'Spring Batch'
+  ]
 
   return (
     <section
       id="technologies"
       ref={sectionRef}
-      className="relative"
+      className="relative bg-black text-white overflow-hidden"
       style={{
-        backgroundColor: 'transparent',
-        paddingTop: '80px',
-        paddingBottom: '80px',
-        overflow: 'hidden',
-        scrollMarginTop: '90px',
-        height: '100vh',
-        minHeight: '600px',
+        minHeight: '100vh',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: '0px',
+        paddingBottom: '48px'
       }}
     >
-      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-white flex flex-col items-center">
-        <div
-          className="flex flex-col items-center text-center"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'all 0.7s ease-out'
-          }}
-        >
+      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 h-full flex flex-col">
+        <div className="w-full flex flex-col items-center text-center mb-12">
+          <p
+            className="uppercase mb-3"
+            style={{
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 600,
+              fontSize: '14px',
+              letterSpacing: '0.1em',
+              color: 'rgba(255, 255, 255, 0.6)'
+            }}
+          >
+            Technologies
+          </p>
           <h2
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
               fontWeight: 700,
-              fontSize: '52px',
-              letterSpacing: '-0.02em',
-              color: '#FFFFFF',
-              marginBottom: '10px'
+              fontSize: '42px',
+              lineHeight: '1.3',
+              letterSpacing: '-0.01em',
+              color: '#FFFFFF'
             }}
           >
-            Technologies
+            What we implement
           </h2>
-          <p
-            style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontSize: '16px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.62)',
-              maxWidth: '560px'
-            }}
-          >
-            Tools and platforms we rely on to build intuitive experiences, scalable architectures, and intelligent products.
-          </p>
         </div>
 
-        <div className="relative w-full mt-16 space-y-10">
-          {[firstRow, secondRow].map((row, rowIndex) => (
-            <div key={rowIndex} className="relative overflow-hidden">
-              <div className={`marquee-layer ${rowIndex === 1 ? 'reverse' : ''}`} style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>
-                {[...row, ...row].map((card, index) => (
-                  <div className="tech-pill" key={`${rowIndex}-${card.name}-${index}`}>
-                    <div className="tech-icon-wrapper">
-                      <span className="tech-icon">{card.icon}</span>
-                    </div>
-                    <div className="tech-text">
-                      <span className="tech-name">{card.name}</span>
-                      <span className="tech-headline">{card.headline}</span>
-                    </div>
-                  </div>
+        <div className="w-full flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
+          {/* Left Side - Content */}
+          <div className="flex flex-col items-start justify-start flex-1 max-w-2xl">
+            <p
+              className="hero-tagline font-light max-w-2xl"
+              style={{
+                fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontWeight: 400,
+                fontSize: '21px',
+                lineHeight: '1.381',
+                marginTop: '6px',
+                marginBottom: '24px',
+                color: '#ffffff'
+              }}
+            >
+              We transform your ideas into powerful digital solutions that drive growth and innovation.
+            </p>
+
+            <p
+              className="about-description font-normal max-w-2xl"
+              style={{
+                fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontWeight: 400,
+                fontSize: '17px',
+                lineHeight: '1.5',
+                marginBottom: '20px',
+                color: 'rgba(255, 255, 255, 0.8)'
+              }}
+            >
+              We make your vision come to execute. Our team combines expertise, creativity, and cutting-edge technology to help businesses achieve their goals.
+            </p>
+
+            {/* Technologies Section - Marquee */}
+            <div
+              className="overflow-hidden w-full max-w-2xl relative"
+              style={{
+                marginTop: '4px',
+                whiteSpace: 'nowrap',
+                paddingTop: '12px',
+                paddingBottom: '12px'
+              }}
+            >
+              {/* Left fade gradient */}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: '50px',
+                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0) 100%)',
+                  zIndex: 10,
+                  pointerEvents: 'none'
+                }}
+              />
+
+              {/* Right fade gradient */}
+              <div
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: '50px',
+                  background: 'linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0) 100%)',
+                  zIndex: 10,
+                  pointerEvents: 'none'
+                }}
+              />
+
+              <div className="marquee-container inline-flex gap-3">
+                {[technologies, technologies].map((list, listIndex) => (
+                  list.map((tech, index) => (
+                    <span
+                      key={`${listIndex}-${tech}-${index}`}
+                      className="lang-tag px-5 rounded-full bg-white/10 backdrop-blur-sm border-2 border-transparent transition-all duration-300 cursor-pointer"
+                      style={{
+                        fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                        fontWeight: 400,
+                        fontSize: '14px',
+                        lineHeight: '1.5',
+                        color: '#ffffff',
+                        display: 'inline-block',
+                        boxSizing: 'border-box',
+                        margin: '0 4px',
+                        flexShrink: 0,
+                        paddingTop: '0.75rem',
+                        paddingBottom: '0.75rem'
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  ))
                 ))}
               </div>
-              <div className="fade-left" />
-              <div className="fade-right" />
             </div>
-          ))}
-          <style jsx="true">{`
-            @keyframes marqueeForward {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
 
-            @keyframes marqueeReverse {
-              0% { transform: translateX(-50%); }
-              100% { transform: translateX(0); }
-            }
+            {/* Buttons */}
+            <div className="flex gap-3 mt-8">
+              <a
+                href="#projects"
+                className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
+                style={{
+                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  lineHeight: '1.5',
+                  backgroundColor: '#006EDB',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#0056b3'
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#006EDB'
+                }}
+              >
+                View Project
+              </a>
 
-            .marquee-layer {
-              display: flex;
-              gap: 24px;
-              width: 220%;
-              animation: marqueeForward 38s linear infinite;
-              padding: 12px 0;
-              position: relative;
-            }
+              <a
+                href="#clients"
+                className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
+                style={{
+                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  lineHeight: '1.5',
+                  backgroundColor: 'transparent',
+                  color: '#006EDB',
+                  textDecoration: 'none',
+                  border: '2px solid #006EDB'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#006EDB'
+                  e.target.style.color = '#ffffff'
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent'
+                  e.target.style.color = '#006EDB'
+                }}
+              >
+                Our Clients
+              </a>
+            </div>
+          </div>
 
-            .marquee-layer.reverse {
-              animation: marqueeReverse 40s linear infinite;
-            }
+          {/* Right Side - SVG Illustration */}
+          <div
+            className="relative flex items-center justify-center flex-1 w-full md:w-auto"
+            style={{
+              height: '100%',
+              maxHeight: 'calc(100vh - 100px)',
+              minHeight: '280px',
+              alignSelf: 'center',
+              marginTop: '-40px'
+            }}
+          >
+            <svg
+            width="460"
+            height="460"
+            viewBox="0 0 400 400"
+            className="creative-svg"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          >
+            <defs>
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0071e3" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00a8ff" stopOpacity="0.6" />
+              </linearGradient>
+              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#61DAFB" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#0071e3" stopOpacity="0.6" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
-            .tech-pill {
-              display: flex;
-              align-items: center;
-              gap: 18px;
-              min-width: 360px;
-              max-width: 360px;
-              padding: 20px 24px;
-              border-radius: 24px;
-              border: 1px solid rgba(148, 163, 184, 0.12);
-              background: rgba(15, 23, 42, 0.76);
-              backdrop-filter: blur(10px);
-            }
+            <circle
+              cx="200"
+              cy="200"
+              r="120"
+              fill="none"
+              stroke="url(#gradient1)"
+              strokeWidth="3"
+              opacity="0.6"
+              className="pulse-circle"
+            />
 
-            .tech-icon-wrapper {
-              width: 62px;
-              height: 62px;
-              border-radius: 18px;
-              background: #1E293B;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border: 1px solid rgba(148, 163, 184, 0.16);
-            }
+            <circle
+              cx="200"
+              cy="200"
+              r="80"
+              fill="none"
+              stroke="url(#gradient2)"
+              strokeWidth="2"
+              opacity="0.5"
+              className="rotate-slow"
+            />
 
-            .tech-icon {
-              font-size: 28px;
-            }
+            <circle
+              cx="200"
+              cy="200"
+              r="50"
+              fill="url(#gradient1)"
+              opacity="0.3"
+              className="pulse-inner"
+            />
 
-            .tech-text {
-              display: flex;
-              flex-direction: column;
-              gap: 4px;
-            }
+            <polygon
+              points="200,100 250,150 200,200 150,150"
+              fill="none"
+              stroke="#0071e3"
+              strokeWidth="2"
+              opacity="0.7"
+              className="rotate-slow"
+            />
 
-            .tech-name {
-              font-family: "Poppins", sans-serif;
-              font-size: 14px;
-              font-weight: 600;
-              letter-spacing: 0.18em;
-              text-transform: uppercase;
-              color: rgba(148, 181, 231, 0.85);
-            }
+            <polygon
+              points="200,200 280,200 200,280 120,200"
+              fill="none"
+              stroke="#61DAFB"
+              strokeWidth="2"
+              opacity="0.7"
+              className="rotate-fast"
+            />
 
-            .tech-headline {
-              font-family: "Volkhov", "Georgia", serif;
-              font-size: 19px;
-              color: #ffffff;
-              letter-spacing: -0.01em;
-            }
+            <line
+              x1="200"
+              y1="80"
+              x2="200"
+              y2="120"
+              stroke="#0071e3"
+              strokeWidth="2"
+              opacity="0.6"
+            />
 
-            .fade-left,
-            .fade-right {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              width: 120px;
-              pointer-events: none;
-              z-index: 2;
-            }
+            <line
+              x1="200"
+              y1="280"
+              x2="200"
+              y2="320"
+              stroke="#0071e3"
+              strokeWidth="2"
+              opacity="0.6"
+            />
 
-            .fade-left {
-              left: 0;
-              background: linear-gradient(90deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 100%);
-            }
+            <line
+              x1="80"
+              y1="200"
+              x2="120"
+              y2="200"
+              stroke="#61DAFB"
+              strokeWidth="2"
+              opacity="0.6"
+            />
 
-            .fade-right {
-              right: 0;
-              background: linear-gradient(270deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 100%);
-            }
+            <line
+              x1="280"
+              y1="200"
+              x2="320"
+              y2="200"
+              stroke="#61DAFB"
+              strokeWidth="2"
+              opacity="0.6"
+            />
 
-            @media (max-width: 1024px) {
-              .tech-pill {
-                min-width: 320px;
-                max-width: 320px;
-                padding: 18px 20px;
-              }
-
-              .tech-headline {
-                font-size: 17px;
-              }
-            }
-
-            @media (max-width: 640px) {
-              .tech-pill {
-                min-width: 260px;
-                max-width: 260px;
-              }
-
-              .tech-name {
-                font-size: 12px;
-                letter-spacing: 0.12em;
-              }
-
-              .tech-headline {
-                font-size: 15px;
-              }
-
-              .fade-left,
-              .fade-right {
-                width: 80px;
-              }
-            }
-          `}</style>
+            <circle
+              cx="200"
+              cy="200"
+              r="12"
+              fill="#0071e3"
+              filter="url(#glow)"
+              className="pulse-center"
+            />
+          </svg>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   )
 }
 
 export default Technologies
+
