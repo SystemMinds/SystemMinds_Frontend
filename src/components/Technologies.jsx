@@ -41,7 +41,7 @@ function Technologies() {
         paddingBottom: '48px'
       }}
     >
-      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 h-full flex flex-col">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 h-full flex flex-col">
         <div className="w-full flex flex-col items-center text-center mb-12">
           <p
             className="uppercase mb-3"
@@ -355,6 +355,20 @@ function Technologies() {
         </div>
       </div>
     </div>
+      <style jsx="true">{`
+        @media (max-width: 768px) {
+          #technologies {
+            min-height: auto !important;
+            padding-top: 48px !important;
+            padding-bottom: 64px !important;
+          }
+
+          #technologies .px-8 {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
+      `}</style>
   </section>
   )
 }

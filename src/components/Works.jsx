@@ -101,7 +101,6 @@ function Works() {
         paddingBottom: '80px',
         overflow: 'hidden',
         scrollMarginTop: '90px',
-        height: '100vh',
         minHeight: '600px',
         display: 'flex',
         flexDirection: 'column',
@@ -109,7 +108,7 @@ function Works() {
         alignItems: 'center'
       }}
     >
-      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-white flex flex-col items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 text-white flex flex-col items-center">
         <div
           className="flex flex-col items-center text-center"
           style={{
@@ -143,10 +142,13 @@ function Works() {
           </p>
         </div>
 
-        <div className="relative w-full mt-12 space-y-10">
+        <div className="relative w-full mt-12 space-y-8">
           {[firstRow, secondRow].map((row, rowIndex) => (
             <div key={rowIndex} className="relative overflow-hidden">
-              <div className={`marquee-layer ${rowIndex === 1 ? 'reverse' : ''}`} style={{ animationPlayState: isVisible ? 'running' : 'paused' }}>
+              <div
+                className={`marquee-layer ${rowIndex === 1 ? 'reverse' : ''}`}
+                style={{ animationPlayState: isVisible ? 'running' : 'paused' }}
+              >
                 {[...row, ...row].map((card, index) => (
                   <div className="tech-pill" key={`${rowIndex}-${card.name}-${index}`}>
                     <div className="tech-icon-wrapper">
@@ -176,24 +178,26 @@ function Works() {
 
             .marquee-layer {
               display: flex;
-              gap: 24px;
-              width: 220%;
-              animation: marqueeForward 38s linear infinite;
-              padding: 12px 0;
+              gap: 20px;
+              width: 210%;
+              animation: marqueeForward 16s linear infinite;
+              padding: 1px 0;
               position: relative;
+              align-items: center;
             }
 
             .marquee-layer.reverse {
-              animation: marqueeReverse 40s linear infinite;
+              animation: marqueeReverse 16s linear infinite;
             }
 
             .tech-pill {
               display: flex;
               align-items: center;
-              gap: 18px;
-              min-width: 360px;
-              max-width: 360px;
-              padding: 20px 24px;
+              gap: 16px;
+              min-width: 340px;
+              max-width: 340px;
+              height: 96px;
+              padding: 0 20px;
               border-radius: 24px;
               border: 1px solid rgba(148, 163, 184, 0.12);
               background: rgba(15, 23, 42, 0.76);
@@ -201,8 +205,8 @@ function Works() {
             }
 
             .tech-icon-wrapper {
-              width: 62px;
-              height: 62px;
+              width: 52px;
+              height: 52px;
               border-radius: 18px;
               background: #1E293B;
               display: flex;
@@ -261,11 +265,16 @@ function Works() {
               .tech-pill {
                 min-width: 320px;
                 max-width: 320px;
-                padding: 18px 20px;
+                padding: 0 18px;
               }
 
               .tech-headline {
                 font-size: 17px;
+              }
+
+              .marquee-layer,
+              .marquee-layer.reverse {
+                animation-duration: 12s;
               }
             }
 
@@ -273,6 +282,7 @@ function Works() {
               .tech-pill {
                 min-width: 260px;
                 max-width: 260px;
+                padding: 0 16px;
               }
 
               .tech-name {
@@ -288,10 +298,29 @@ function Works() {
               .fade-right {
                 width: 80px;
               }
+
+              .marquee-layer,
+              .marquee-layer.reverse {
+                animation-duration: 9s;
+              }
             }
           `}</style>
         </div>
       </div>
+      <style jsx="true">{`
+        @media (max-width: 768px) {
+          #works {
+            min-height: auto !important;
+            padding-top: 56px !important;
+            padding-bottom: 64px !important;
+          }
+
+          #works .px-8 {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

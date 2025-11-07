@@ -35,7 +35,7 @@ function WorkWeDo() {
       className="relative"
       style={{
         backgroundColor: 'transparent',
-        minHeight: '100vh',
+        minHeight: '600px',
         paddingTop: '100px',
         paddingBottom: '120px',
         overflow: 'hidden',
@@ -58,7 +58,7 @@ function WorkWeDo() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-start px-8 md:px-16 lg:px-24 w-full h-full text-center" style={{ marginTop: '-80px' }}>
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center" style={{ marginTop: '-80px' }}>
         {/* Header */}
         <div className="text-center mb-16">
           <p
@@ -166,6 +166,20 @@ function WorkWeDo() {
           ))}
         </div>
       </div>
+      <style jsx="true">{`
+        @media (max-width: 768px) {
+          #work-we-do {
+            min-height: auto !important;
+            padding-top: 64px !important;
+            padding-bottom: 72px !important;
+          }
+
+          #work-we-do .w-full {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

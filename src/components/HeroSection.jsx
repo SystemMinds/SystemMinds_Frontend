@@ -60,18 +60,20 @@ function HeroSection() {
               </h1>
 
               {/* Paragraph */}
-              <p 
-                style={{
-                  fontFamily: '"Poppins", sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '1.7',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  maxWidth: '480px'
-                }}
-              >
-                Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
-              </p>
+              <div className="space-y-4" style={{ maxWidth: '560px' }}>
+                <p 
+                  style={{
+                    fontFamily: '"Poppins", sans-serif',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '1.7',
+                    color: 'rgba(255, 255, 255, 0.75)'
+                  }}
+                >
+                  SystemMinds is a full-stack digital studio delivering robust products, future-ready platforms, and tailor-made enterprise solutions. We blend strategy, UI engineering, and cloud-native development to accelerate growth for ambitious brands.
+                </p>
+              
+              </div>
 
               {/* Buttons */}
               <div className="flex items-center gap-6">
