@@ -86,7 +86,10 @@ function Header() {
     const target = document.getElementById(sectionId)
     if (target) {
       const headerHeight = headerRef.current?.offsetHeight || 0
-      const extraOffset = sectionId === 'technologies' ? -12 : sectionId === 'works' ? 0 : 24
+      let extraOffset = 24
+      if (sectionId === 'technologies') extraOffset = -12
+      else if (sectionId === 'works') extraOffset = 0
+      else if (sectionId === 'about') extraOffset = -16
       const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset
       window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' })
     }

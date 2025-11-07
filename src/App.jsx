@@ -7,12 +7,10 @@ import Technologies from './components/Technologies.jsx'
 import Works from './components/Works.jsx'
 import ProductGrid from './components/ProductGrid.jsx'
 import Footer from './components/Footer.jsx'
-import ContinuousWaves from './components/ContinuousWaves.jsx'
 
 function App() {
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#0A0A0A' }}>
-      <ContinuousWaves />
       <Header />
       <main className="w-full relative z-10">
         <HeroSection />

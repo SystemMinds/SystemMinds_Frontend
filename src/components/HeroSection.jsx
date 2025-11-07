@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImage from '../assets/images/hero.jpg'
+import ContinuousWaves from './ContinuousWaves.jsx'
 
 function HeroSection() {
   return (
@@ -8,6 +9,7 @@ function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{ height: '100vh', minHeight: '600px', backgroundColor: 'transparent', paddingTop: '56px', paddingBottom: '0' }}
     >
+      <ContinuousWaves variant="hero" className="absolute inset-0" />
       {/* Left Side - Text Content */}
       <div className="absolute inset-0 z-10 flex items-center">
         <div className="w-full max-w-7xl mx-auto px-8 lg:px-12">

@@ -15,12 +15,12 @@ function AboutUs() {
         display: 'flex',
         alignItems: 'flex-start',
         paddingTop: '80px',
-        paddingBottom: '120px',
+        paddingBottom: '100px',
         overflow: 'hidden',
         scrollMarginTop: '90px'
       }}
     >
-      <div className="relative z-10 flex flex-col items-start justify-start px-8 md:px-16 lg:px-24 w-full h-full" style={{ paddingTop: '20px' }}>
+      <div className="relative z-10 flex flex-col items-start justify-start px-8 md:px-16 lg:px-24 w-full h-full" style={{ paddingTop: '0px' }}>
         <h2 
           className="hero-title font-semibold tracking-tight"
           style={{ 
