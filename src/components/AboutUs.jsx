@@ -1,6 +1,6 @@
 import React from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
-import logoImage from '../assets/images/logo.png'
+import logoImage from '../assets/images/Logo.png'
 
 function AboutUs() {
   const [aboutRef] = useScrollAnimation({ threshold: 0.1, once: true })
