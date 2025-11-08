@@ -1,6 +1,6 @@
 import React from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
-import botIllustration from '../assets/images/bot-removebg-preview.png'
+import logoImage from '../assets/images/logo.png'
 
 function AboutUs() {
   const [aboutRef] = useScrollAnimation({ threshold: 0.1, once: true })
@@ -24,8 +24,8 @@ function AboutUs() {
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[32%_68%] items-center lg:items-start px-6 md:px-12 lg:px-12 w-full gap-12 lg:gap-14 about-inner" style={{ paddingTop: '0px' }}>
         <div className="relative flex justify-center lg:justify-start items-center order-2 lg:order-1 about-illustration" style={{ width: '100%', paddingTop: '56px', position: 'relative', zIndex: 1, marginTop: '0' }}>
           <img
-            src={botIllustration}
-            alt="SystemMinds assistant illustration"
+            src={logoImage}
+            alt="SystemMinds logo"
             className="about-bot"
           />
         </div>
@@ -161,7 +161,7 @@ function AboutUs() {
           max-width: 480px;
         }
         .about-bot {
-          max-width: 280px;
+          max-width: 360px;
           width: 100%;
           height: auto;
           object-fit: contain;
@@ -193,7 +193,7 @@ function AboutUs() {
             margin: 0 auto !important;
           }
           .about-illustration .about-bot {
-            max-width: 360px !important;
+            max-width: 320px !important;
           }
           .about-content {
             max-width: 640px !important;
@@ -249,6 +249,10 @@ function AboutUs() {
           }
           .about-content .hero-tagline {
             font-size: 18px !important;
+          }
+          .about-bot {
+            max-width: 220px !important;
+            margin-top: -20px !important;
           }
         }
         @media (max-width: 480px) {
