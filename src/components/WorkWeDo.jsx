@@ -36,59 +36,67 @@ function WorkWeDo() {
       style={{
         backgroundColor: 'transparent',
         minHeight: '600px',
-        paddingTop: '100px',
-        paddingBottom: '120px',
+        paddingTop: '84px',
+        paddingBottom: '96px',
         overflow: 'hidden',
         scrollMarginTop: '90px'
       }}
     >
-      {/* Plus Signs Pattern - Right Side */}
-      <div className="absolute right-8 top-20 hidden lg:block">
-        <div className="grid grid-cols-3 gap-8">
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#7C3AED', fontSize: '24px', opacity: 0.5 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#F97316', fontSize: '24px', opacity: 0.6 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-          <span style={{ color: '#E8D5FF', fontSize: '24px', opacity: 0.3 }}>+</span>
-        </div>
-      </div>
-
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center" style={{ marginTop: '-80px' }}>
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center services-wrapper" style={{ marginTop: '0' }}>
         {/* Header */}
-        <div className="text-center mb-16">
-          <p
-            className="uppercase mb-3"
+        <div className="text-center mb-16" style={{ position: 'relative', zIndex: 2 }}>
+          <h2
+            className="mb-3 services-title"
             style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 600,
-              fontSize: '14px',
-              letterSpacing: '0.1em',
-              color: 'rgba(255, 255, 255, 0.6)'
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontWeight: 700,
+              fontSize: '64px',
+              letterSpacing: '-0.005em',
+              lineHeight: '1.08',
+              color: '#FFFFFF',
+              textTransform: 'none'
             }}
           >
-            CATEGORY
-          </p>
-          <h2
+            Services
+          </h2>
+          <p
+            className="services-subtitle"
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
-              fontWeight: 700,
-              fontSize: '42px',
-              lineHeight: '1.3',
+              fontWeight: 500,
+              fontSize: '26px',
               letterSpacing: '-0.01em',
-              color: '#FFFFFF'
+              lineHeight: '1.35',
+              color: 'rgba(255, 255, 255, 0.88)',
+              marginBottom: '8px'
             }}
           >
-            We Offer Best Services
-          </h2>
+            We Offer Best{' '}
+            <span className="relative inline-block">
+              Services
+              <svg
+                className="absolute"
+                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
+                viewBox="0 0 350 12"
+                fill="none"
+              >
+                <path
+                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
+                  stroke="#DF6951"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </p>
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          style={{ position: 'relative', zIndex: 2 }}
+        >
           {services.map((service, index) => (
             <div
               key={index}
@@ -116,23 +124,24 @@ function WorkWeDo() {
 
               {/* Card */}
               <div
-                className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="relative bg-white/5 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:bg-white/8 hover:shadow-2xl hover:-translate-y-1"
                 style={{
                   border: '1px solid rgba(255, 255, 255, 0.1)',
-                  minHeight: '280px'
+                  minHeight: '220px',
+                  padding: '24px'
                 }}
               >
                 {/* Icon with background */}
                 <div
                   className="mb-6 inline-flex items-center justify-center"
                   style={{
-                    width: '80px',
-                    height: '80px',
-                    background: 'rgba(255, 243, 224, 0.15)',
-                    borderRadius: '15px'
+                    width: '64px',
+                    height: '64px',
+                    background: 'rgba(255, 243, 224, 0.12)',
+                    borderRadius: '14px'
                   }}
                 >
-                  <span style={{ fontSize: '40px' }}>{service.icon}</span>
+                  <span style={{ fontSize: '32px' }}>{service.icon}</span>
                 </div>
 
                 {/* Title */}
@@ -154,7 +163,7 @@ function WorkWeDo() {
                   style={{
                     fontFamily: '"Poppins", sans-serif',
                     fontWeight: 400,
-                    fontSize: '14px',
+                    fontSize: '13px',
                     lineHeight: '1.7',
                     color: 'rgba(255, 255, 255, 0.6)'
                   }}
@@ -167,16 +176,63 @@ function WorkWeDo() {
         </div>
       </div>
       <style jsx="true">{`
+        @media (max-width: 1024px) {
+          #work-we-do {
+            padding-top: 52px !important;
+            padding-bottom: 64px !important;
+          }
+          #work-we-do .services-title {
+            font-size: 52px !important;
+          }
+          #work-we-do .services-subtitle {
+            font-size: 24px !important;
+          }
+        }
         @media (max-width: 768px) {
           #work-we-do {
-            min-height: auto !important;
-            padding-top: 64px !important;
-            padding-bottom: 72px !important;
+            padding-top: 40px !important;
+            padding-bottom: 52px !important;
           }
-
           #work-we-do .w-full {
             padding-left: 20px !important;
             padding-right: 20px !important;
+          }
+          #work-we-do .services-title {
+            font-size: 42px !important;
+          }
+          #work-we-do .services-subtitle {
+            font-size: 21px !important;
+          }
+          #work-we-do .grid {
+            gap: 18px !important;
+          }
+          #work-we-do .grid > div .relative {
+            min-height: 200px !important;
+            padding: 18px !important;
+          }
+          #work-we-do .grid > div .relative div {
+            width: 54px !important;
+            height: 54px !important;
+          }
+          #work-we-do .grid > div .relative div span {
+            font-size: 26px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          #work-we-do .grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            gap: 16px !important;
+          }
+          #work-we-do .grid > div .relative {
+            min-height: 185px !important;
+            padding: 16px !important;
+          }
+          #work-we-do .grid > div .relative div {
+            width: 52px !important;
+            height: 52px !important;
+          }
+          #work-we-do .grid > div .relative div span {
+            font-size: 24px !important;
           }
         }
       `}</style>

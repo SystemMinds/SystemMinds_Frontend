@@ -37,13 +37,13 @@ function Technologies() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '0px',
-        paddingBottom: '48px'
+        paddingTop: '52px',
+        paddingBottom: '56px'
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 h-full flex flex-col">
         <div className="w-full flex flex-col items-center text-center mb-12">
-          <p
+          <h2
             className="uppercase mb-3"
             style={{
               fontFamily: '"Poppins", sans-serif',
@@ -54,49 +54,75 @@ function Technologies() {
             }}
           >
             Technologies
-          </p>
-          <h2
+          </h2>
+          <p
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
               fontWeight: 700,
-              fontSize: '42px',
-              lineHeight: '1.3',
-              letterSpacing: '-0.01em',
-              color: '#FFFFFF'
+              fontSize: '52px',
+              lineHeight: '1.18',
+              letterSpacing: '-0.02em',
+              color: '#FFFFFF',
+              marginBottom: '0'
             }}
           >
-            What we implement
-          </h2>
+            What we{' '}
+            <span className="relative inline-block">
+              implement
+              <svg
+                className="absolute"
+                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
+                viewBox="0 0 350 12"
+                fill="none"
+              >
+                <path
+                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
+                  stroke="#DF6951"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </p>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
+        <div className="w-full flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12 technologies-body">
           {/* Left Side - Content */}
-          <div className="flex flex-col items-start justify-start flex-1 max-w-2xl">
+          <div
+            className="flex flex-col justify-start flex-1 technologies-copy"
+            style={{ position: 'relative', zIndex: 2, maxWidth: '560px', width: '100%', margin: '0 auto', textAlign: 'left' }}
+          >
             <p
-              className="hero-tagline font-light max-w-2xl"
-              style={{
-                fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                fontWeight: 400,
-                fontSize: '21px',
-                lineHeight: '1.381',
-                marginTop: '6px',
-                marginBottom: '24px',
-                color: '#ffffff'
-              }}
+              className="hero-tagline font-light"
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontWeight: 400,
+              fontSize: '21px',
+              lineHeight: '1.381',
+              marginTop: '6px',
+              marginBottom: '24px',
+              color: '#ffffff',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              textAlign: 'inherit'
+            }}
             >
               We transform your ideas into powerful digital solutions that drive growth and innovation.
             </p>
 
             <p
-              className="about-description font-normal max-w-2xl"
-              style={{
-                fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                fontWeight: 400,
-                fontSize: '17px',
-                lineHeight: '1.5',
-                marginBottom: '20px',
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}
+              className="about-description font-normal"
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontWeight: 400,
+              fontSize: '17px',
+              lineHeight: '1.5',
+              marginBottom: '20px',
+              color: 'rgba(255, 255, 255, 0.8)',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              textAlign: 'inherit'
+            }}
             >
               We make your vision come to execute. Our team combines expertise, creativity, and cutting-edge technology to help businesses achieve their goals.
             </p>
@@ -167,7 +193,7 @@ function Technologies() {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-3 mt-8">
+            <div className="flex gap-3 mt-8 flex-wrap technologies-cta">
               <a
                 href="#projects"
                 className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
@@ -220,13 +246,15 @@ function Technologies() {
 
           {/* Right Side - SVG Illustration */}
           <div
-            className="relative flex items-center justify-center flex-1 w-full md:w-auto"
+            className="relative flex items-center justify-center flex-1 w-full md:w-auto technologies-visual"
             style={{
               height: '100%',
               maxHeight: 'calc(100vh - 100px)',
               minHeight: '280px',
               alignSelf: 'center',
-              marginTop: '-40px'
+              marginTop: '-40px',
+              position: 'relative',
+              zIndex: 1
             }}
           >
             <svg
@@ -356,16 +384,78 @@ function Technologies() {
       </div>
     </div>
       <style jsx="true">{`
+        @media (max-width: 1280px) {
+          .technologies-body {
+            gap: 56px;
+          }
+        }
+        @media (max-width: 1024px) {
+          #technologies {
+            padding-top: 40px !important;
+            padding-bottom: 48px !important;
+          }
+          .technologies-body {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 40px;
+          }
+          .technologies-copy {
+            align-items: center !important;
+            text-align: center !important;
+            max-width: 620px;
+            order: 1;
+          }
+          .technologies-visual {
+            order: 2;
+            margin-top: 20px !important;
+          }
+        }
+        @media (max-width: 815px) {
+          .technologies-body {
+            flex-direction: column !important;
+          }
+          .technologies-copy {
+            order: 1;
+          }
+          .technologies-visual {
+            order: 2;
+            margin-top: 20px !important;
+          }
+        }
         @media (max-width: 768px) {
           #technologies {
             min-height: auto !important;
-            padding-top: 48px !important;
-            padding-bottom: 64px !important;
+            padding-top: 36px !important;
+            padding-bottom: 48px !important;
           }
 
           #technologies .px-8 {
             padding-left: 20px !important;
             padding-right: 20px !important;
+          }
+          .technologies-body {
+            gap: 24px !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .technologies-copy {
+            align-items: center !important;
+            max-width: 540px !important;
+          }
+          .technologies-copy .hero-tagline,
+          .technologies-copy .about-description {
+            text-align: center !important;
+            max-width: 100% !important;
+          }
+          .technologies-visual {
+            margin-top: 12px !important;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+          .technologies-cta {
+            justify-content: center;
           }
         }
       `}</style>

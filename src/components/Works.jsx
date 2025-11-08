@@ -97,8 +97,8 @@ function Works() {
       className="relative"
       style={{
         backgroundColor: 'transparent',
-        paddingTop: '36px',
-        paddingBottom: '80px',
+        paddingTop: '32px',
+        paddingBottom: '72px',
         overflow: 'hidden',
         scrollMarginTop: '90px',
         minHeight: '600px',
@@ -118,17 +118,44 @@ function Works() {
           }}
         >
           <h2
+            className="uppercase mb-3"
+            style={{
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 600,
+              fontSize: '14px',
+              letterSpacing: '0.1em',
+              color: 'rgba(255, 255, 255, 0.6)'
+            }}
+          >
+            Our Projects
+          </h2>
+          <p
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
               fontWeight: 700,
               fontSize: '52px',
               letterSpacing: '-0.02em',
               color: '#FFFFFF',
-              marginBottom: '10px'
+              marginBottom: '14px'
             }}
           >
-            Works
-          </h2>
+            <span className="relative inline-block">
+              Works
+              <svg
+                className="absolute"
+                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
+                viewBox="0 0 350 12"
+                fill="none"
+              >
+                <path
+                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
+                  stroke="#DF6951"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </p>
           <p
             style={{
               fontFamily: '"Poppins", sans-serif',
@@ -308,11 +335,17 @@ function Works() {
         </div>
       </div>
       <style jsx="true">{`
+        @media (max-width: 1024px) {
+          #works {
+            padding-top: 44px !important;
+            padding-bottom: 60px !important;
+          }
+        }
         @media (max-width: 768px) {
           #works {
             min-height: auto !important;
-            padding-top: 56px !important;
-            padding-bottom: 64px !important;
+            padding-top: 38px !important;
+            padding-bottom: 52px !important;
           }
 
           #works .px-8 {

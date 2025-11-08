@@ -1,5 +1,4 @@
 import React from 'react'
-import heroImage from '../assets/images/hero.jpg'
 import ContinuousWaves from './ContinuousWaves.jsx'
 
 function HeroSection() {
@@ -7,16 +6,15 @@ function HeroSection() {
     <section
       id="hero"
       className="relative w-full overflow-hidden"
-      style={{ height: '100vh', minHeight: '600px', backgroundColor: 'transparent', paddingTop: '56px', paddingBottom: '0' }}
+      style={{ minHeight: '100vh', backgroundColor: 'transparent', paddingTop: '64px', paddingBottom: '0' }}
     >
       <ContinuousWaves variant="hero" className="absolute inset-0" />
-      {/* Left Side - Text Content */}
-      <div className="absolute inset-0 z-10 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div className="relative z-10 w-full">
+        <div className="hero-shell max-w-7xl mx-auto px-6 md:px-12 lg:px-12">
+          <div className="hero-layout">
             {/* Left Column - Text */}
-            <div className="text-left space-y-6">
-              {/* Small Heading */}
+            <div className="hero-copy">
               <h3 
                 className="uppercase"
                 style={{
@@ -30,7 +28,6 @@ function HeroSection() {
                 TRANSFORM YOUR IDEAS INTO REALITY
               </h3>
 
-              {/* Main Heading with decorative dash */}
               <h1 
                 className="relative"
                 style={{
@@ -59,8 +56,7 @@ function HeroSection() {
                 </span> &amp; Innovative Products
               </h1>
 
-              {/* Paragraph */}
-              <div className="space-y-4" style={{ maxWidth: '560px' }}>
+              <div className="hero-body" style={{ maxWidth: '560px' }}>
                 <p 
                   style={{
                     fontFamily: '"Poppins", sans-serif',
@@ -72,12 +68,9 @@ function HeroSection() {
                 >
                   SystemMinds is a full-stack digital studio delivering robust products, future-ready platforms, and tailor-made enterprise solutions. We blend strategy, UI engineering, and cloud-native development to accelerate growth for ambitious brands.
                 </p>
-              
               </div>
 
-              {/* Buttons */}
-              <div className="flex items-center gap-6">
-                {/* Find out more button */}
+              <div className="hero-actions">
                 <button
                   className="transition-all duration-300 hover:shadow-lg"
                   style={{
@@ -98,15 +91,17 @@ function HeroSection() {
                   Find out more
                 </button>
 
-                {/* Play Demo button */}
-                <div className="flex items-center gap-3 cursor-pointer group">
+                <div className="hero-play group">
                   <div 
-                    className="flex items-center justify-center transition-all duration-300"
+                    className="transition-all duration-300"
                     style={{
                       width: '45px',
                       height: '45px',
                       backgroundColor: '#DF6951',
                       borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       boxShadow: '0 12px 24px rgba(223, 105, 81, 0.3)'
                     }}
                   >
@@ -137,14 +132,158 @@ function HeroSection() {
               </div>
             </div>
 
-            {/* Right Column - Image (Empty for now, will be styled with CSS) */}
-            <div className="relative hidden lg:block">
-              {/* This space is for the image section */}
+            {/* Right Column - Placeholder for future visual */}
+            <div className="hero-visual">
+              <div className="hero-visual-placeholder" />
             </div>
           </div>
         </div>
       </div>
 
+      <style jsx="true">{`
+        .hero-shell {
+          width: 100%;
+          padding-top: 25px;
+          padding-bottom: 72px;
+        }
+        .hero-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          align-items: center;
+        }
+        .hero-copy {
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+          width: 100%;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .hero-body {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .hero-actions {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+        .hero-play {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+        }
+        .hero-visual {
+          display: none;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+        .hero-visual-placeholder {
+          width: 100%;
+          height: 100%;
+        }
+        @media (min-width: 1024px) {
+          .hero-layout {
+            flex-direction: row;
+            align-items: center;
+            gap: 3.5rem;
+          }
+          .hero-copy {
+            width: 50%;
+            max-width: 560px;
+          }
+          .hero-visual {
+            display: flex;
+            width: 50%;
+            min-height: 320px;
+          }
+        }
+        @media (max-width: 1024px) {
+          #hero {
+            min-height: auto !important;
+          }
+          .hero-shell {
+            padding-top: 52px !important;
+            padding-bottom: 72px !important;
+          }
+          .hero-layout {
+            align-items: center;
+          }
+          .hero-copy {
+            align-items: center !important;
+            text-align: center !important;
+            max-width: 640px !important;
+          }
+          .hero-body {
+            align-items: center;
+          }
+          .hero-body p {
+            text-align: center;
+          }
+          .hero-actions {
+            justify-content: center;
+          }
+        }
+        @media (max-width: 820px) {
+          .hero-shell {
+            padding-left: 1.75rem !important;
+            padding-right: 1.75rem !important;
+            gap: 0;
+          }
+          .hero-actions {
+            flex-wrap: wrap;
+          }
+        }
+        @media (max-width: 768px) {
+          .hero-shell {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+            padding-top: 52px !important;
+            padding-bottom: 56px !important;
+          }
+          .hero-copy h1 {
+            font-size: 48px !important;
+            line-height: 1.18 !important;
+          }
+          .hero-body p {
+            max-width: 100% !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .hero-copy h1 {
+            font-size: 44px !important;
+          }
+          .hero-actions {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 18px;
+          }
+          .hero-play {
+            justify-content: center;
+          }
+          .hero-play span {
+            text-align: center;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-shell {
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+            padding-top: 44px !important;
+            padding-bottom: 48px !important;
+          }
+          .hero-copy h1 {
+            font-size: 38px !important;
+          }
+          .hero-body p {
+            font-size: 14.5px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }
