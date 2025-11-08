@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ContinuousWaves from './ContinuousWaves.jsx'
 
 function HeroSection() {
+  const navigate = useNavigate()
+
   return (
     <section
       id="hero"
@@ -85,6 +88,7 @@ function HeroSection() {
                     cursor: 'pointer',
                     boxShadow: '0 15px 25px rgba(241, 165, 1, 0.15)'
                   }}
+                  onClick={() => navigate('/about-company')}
                   onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
                   onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
                 >

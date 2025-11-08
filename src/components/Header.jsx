@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SystemMindsLogo from './SystemMindsLogo.jsx'
+import { useLocation, useNavigate } from 'react-router-dom'
+import logoImage from '../assets/images/logo1-.png'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -9,6 +10,8 @@ function Header() {
   const [isVisible, setIsVisible] = useState(false)
   const tooltipTimerRef = React.useRef(null)
   const headerRef = React.useRef(null)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const menuItems = [
     'Home',
@@ -101,7 +104,11 @@ function Header() {
     const sectionId = sectionIds[item]
 
     if (sectionId) {
-      scrollToSection(sectionId)
+      if (location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: sectionId } })
+      } else {
+        scrollToSection(sectionId)
+      }
     }
 
     if (isMobile) {
@@ -121,23 +128,16 @@ function Header() {
         boxShadow: isScrolled ? '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)' : 'none'
       }}
     >
-      <nav className="max-w-7xl mx-auto px-3 relative">
+      <nav className="max-w-7xl mx-auto px-6 md:px-12 relative">
         <div className="flex items-center justify-between h-14">
           {/* Left: SystemMinds Logo */}
           <div className="flex items-center flex-shrink-0">
-            <SystemMindsLogo className="w-6 h-6" color={isScrolled ? '#1d1d1f' : '#ffffff'} />
-            <span 
-              className="ml-2 font-semibold transition-colors duration-300"
-              style={{
-                fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                fontWeight: 600,
-                fontSize: '18px',
-                letterSpacing: '-0.01em',
-                color: isScrolled ? '#1d1d1f' : '#ffffff'
-              }}
-            >
-              SystemMinds
-            </span>
+            <img
+              src={logoImage}
+              alt="SystemMinds logo"
+              className="h-14 object-contain"
+              style={{ width: 'auto', marginLeft: '1px', marginTop: '2px' }}
+            />
           </div>
 
           {/* Center: Desktop Menu */}
