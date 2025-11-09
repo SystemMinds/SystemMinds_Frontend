@@ -184,8 +184,7 @@ function Header() {
           <div className="hidden md:flex items-center gap-1 relative">
             {/* Social Media Icons with animation */}
             <div className="flex items-center gap-3">
-              <a 
-                href="https://linkedin.com" 
+              <a href="https://www.linkedin.com/company/systemminds/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="transition-all duration-200 ease-out hover:scale-110 rounded-full"
@@ -223,7 +222,7 @@ function Header() {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/systemminds.tech" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="transition-all duration-200 ease-out hover:scale-110 rounded-full"
@@ -330,7 +329,7 @@ function Header() {
             {/* Mobile Social Media Icons with animation */}
             <div className="flex items-center gap-2">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/systemminds/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="transition-all duration-200 ease-out hover:scale-110"
@@ -362,7 +361,7 @@ function Header() {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/systemminds.tech" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="transition-all duration-200 ease-out hover:scale-110"

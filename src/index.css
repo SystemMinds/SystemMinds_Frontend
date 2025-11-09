@@ -42,13 +42,13 @@ body {
   font-family: "Poppins", "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #1d1d1f;
+  background-color: #0A0A0A;
+  color: #ffffff;
   overflow-x: hidden;
   line-height: 1.47059;
 }
 
-/* Apple exact colors */
+/* Brand palette */
 :root {
   --apple-blue: #0071e3;
   --apple-blue-hover: #0077ed;

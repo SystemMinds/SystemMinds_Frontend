@@ -1,9 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import ContinuousWaves from './ContinuousWaves.jsx'
+import { useLoading } from '../context/LoadingProvider.jsx'
 
 function HeroSection() {
   const navigate = useNavigate()
+  const { isLoading, showLoading } = useLoading()
 
   return (
     <section
@@ -12,7 +14,6 @@ function HeroSection() {
       style={{ minHeight: '100vh', backgroundColor: 'transparent', paddingTop: '64px', paddingBottom: '0' }}
     >
       <ContinuousWaves variant="hero" className="absolute inset-0" />
-
       <div className="relative z-10 w-full">
         <div className="hero-shell max-w-7xl mx-auto px-6 md:px-12 lg:px-12">
           <div className="hero-layout">
@@ -76,6 +77,7 @@ function HeroSection() {
               <div className="hero-actions">
                 <button
                   className="transition-all duration-300 hover:shadow-lg"
+                  disabled={isLoading}
                   style={{
                     fontFamily: '"Poppins", sans-serif',
                     fontWeight: 500,
@@ -85,12 +87,22 @@ function HeroSection() {
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: '10px',
-                    cursor: 'pointer',
-                    boxShadow: '0 15px 25px rgba(241, 165, 1, 0.15)'
+                    cursor: isLoading ? 'default' : 'pointer',
+                    boxShadow: '0 15px 25px rgba(241, 165, 1, 0.15)',
+                    opacity: isLoading ? 0.6 : 1,
+                    transition: 'all 0.3s ease'
                   }}
-                  onClick={() => navigate('/about-company')}
-                  onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-                  onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                  onClick={() => {
+                    if (isLoading) return
+                    showLoading(2000, () => navigate('/about-company'))
+                  }}
+                  onMouseEnter={(e) => {
+                    if (isLoading) return
+                    e.target.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)'
+                  }}
                 >
                   Find out more
                 </button>
@@ -189,6 +201,51 @@ function HeroSection() {
         .hero-visual-placeholder {
           width: 100%;
           height: 100%;
+        }
+        .hero-actions button:disabled {
+          pointer-events: none;
+        }
+        .hero-loading-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(10, 10, 10, 0.55);
+          backdrop-filter: blur(10px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          animation: fadeInOverlay 0.35s ease forwards;
+        }
+        @keyframes fadeInOverlay {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes eyeGlance {
+          0%, 15% {
+            transform: translate(1.8px, -0.6px);
+          }
+          30% {
+            transform: translate(-2.4px, 0.9px);
+          }
+          45% {
+            transform: translate(2.2px, -0.2px);
+          }
+          60% {
+            transform: translate(-2px, 0.7px);
+          }
+          75% {
+            transform: translate(1.6px, -0.5px);
+          }
+          90% {
+            transform: translate(-1.4px, 0.6px);
+          }
+          100% {
+            transform: translate(1.8px, -0.6px);
+          }
         }
         @media (min-width: 1024px) {
           .hero-layout {

@@ -5,91 +5,83 @@ function Footer() {
 
   const footerSections = [
     {
-      title: 'Shop and Learn',
+      title: 'Company',
       links: [
-        'Store',
-        'Mac',
-        'iPad',
-        'SystemMinds',
-        'Watch',
-        'AirPods',
-        'TV & Home',
-        'AirTag',
-        'Accessories',
-        'Gift Cards',
+        'About SystemMind',
+        'Leadership',
+        'Careers',
+        'Press & Media',
+        'Contact',
       ],
     },
     {
-      title: 'Apple Wallet',
-      links: ['Wallet'],
-    },
-    {
-      title: 'Account',
-      links: ['Manage Your Apple Account', 'Apple Store Account', 'iCloud.com'],
-    },
-    {
-      title: 'Entertainment',
+      title: 'Solutions',
       links: [
-        'Apple One',
-        'Apple TV+',
-        'Apple Music',
-        'Apple Arcade',
-        'Apple Podcasts',
-        'Apple Books',
-        'App Store',
+        'AI & Automation',
+        'Product Engineering',
+        'Digital Experience Platforms',
+        'Cloud Modernisation',
+        'Data & Analytics',
       ],
     },
     {
-      title: 'Apple Store',
+      title: 'Services',
       links: [
-        'Find a Store',
-        'Genius Bar',
-        'Today at Apple',
-        'Group Reservations',
-        'Apple Camp',
-        'Apple Trade In',
-        'Ways to Buy',
-        'Recycling Programme',
-        'Order Status',
-        'Shopping Help',
+        'Discovery Workshops',
+        'Design Systems',
+        'Full-stack Development',
+        'DevOps & SRE',
+        'Managed Support',
       ],
     },
     {
-      title: 'For Business',
-      links: ['Apple and Business', 'Shop for Business'],
-    },
-    {
-      title: 'For Education',
-      links: ['Apple and Education', 'Shop for Education', 'Shop for University'],
-    },
-    {
-      title: 'For Healthcare',
-      links: ['Apple and Healthcare'],
-    },
-    {
-      title: 'For Government',
-      links: ['Apple and Government'],
-    },
-    {
-      title: 'Apple Values',
+      title: 'Industries',
       links: [
-        'Accessibility',
-        'Education',
-        'Environment',
-        'Privacy',
-        'Supply Chain Innovation',
+        'Fintech',
+        'Healthcare',
+        'Retail & E-commerce',
+        'SaaS & Platforms',
+        'Public Sector',
       ],
     },
     {
-      title: 'About Apple',
+      title: 'Resources',
       links: [
-        'Newsroom',
-        'Apple Leadership',
-        'Career Opportunities',
-        'Investors',
-        'Ethics & Compliance',
-        'Events',
-        'Contact Apple',
+        'Case Studies',
+        'Our Playbooks',
+        'Insights & Blog',
+        'Events & Webinars',
+        'Brand Assets',
+      ],
+    },
+    {
+      title: 'Legal',
+      links: [
+        'Privacy Policy',
+        'Security Practices',
+        'Responsible Disclosure',
+        'Terms of Service',
+        'Vendor Code of Conduct',
+      ],
+    },
+    {
+      title: 'Partners',
+      links: [
+        'AWS',
+        'Google Cloud',
+        'Microsoft Azure',
+        'OpenAI',
+        'UiPath',
+      ],
+    },
+    {
+      title: 'Community',
+      links: [
+        'SystemMind Foundation',
+        'Tech for Good',
+        'Meetups',
+        'Open Source',
+        'Diversity & Inclusion',
       ],
     },
   ]
@@ -180,42 +172,21 @@ function Footer() {
           }}
         >
           <p>
-            ◊Instant cashback is available with the purchase of an eligible product with qualifying
-            American Express, Axis Bank and ICICI Bank cards only. Minimum transaction value of
-            ₹10001 applies. Click here to see instant cashback amounts and eligible devices. Instant
-            cashback is available for up to two orders per rolling 90-day period with an eligible
-            card. Card eligibility is subject to terms and conditions between you and your card
-            issuer. Total transaction value is calculated after any trade-in credit or eligible
-            discount is applied. Any subsequent order adjustment(s) or cancellation(s) may result
-            in instant cashback being recalculated, and any refund may be adjusted to account for
-            instant cashback clawback; this may result in no refund being made to you. Offer may be
-            revised or withdrawn at any time without any prior notice. Additional terms apply.
-            Instant cashback is not available to business customers and cannot be combined with
-            Apple Store for Education or Corporate Employee Purchase Plan pricing. Multiple separate
-            orders cannot be combined for instant cashback.
+            SystemMind partners with product and technology leaders to accelerate digital roadmaps. Our teams blend
+            strategy, design, engineering, and managed services to launch resilient platforms that scale with demand.
           </p>
           <p>
-            ‡No Cost EMI is available with the purchase of an eligible product made using qualifying
-            cards on 3- or 6-month tenures from most leading card issuers. Monthly pricing is
-            rounded to the nearest rupee. Exact pricing will be provided by your card issuer,
-            subject to your card issuer's terms and conditions. Minimum order spend applies as per
-            your card issuer's threshold. No Cost EMI is not available to business customers and
-            cannot be combined with Apple Store for Education or Corporate Employee Purchase Plan
-            pricing. Card eligibility is subject to terms and conditions between you and your card
-            issuer. Offer may be revised or withdrawn at any time without any prior notice. Terms
-            apply.
+            We operate hybrid squads across India, Europe, and North America, ensuring around-the-clock collaboration
+            and coverage. Engagement models include fixed scope accelerators, co-innovation pods, and dedicated
+            product teams supported by our reliability command center.
           </p>
           <p>
-            1. Testing conducted by Apple in July 2025 using AirPods Pro 3 paired with SystemMinds 16
-            with pre-release AirPods firmware and iOS 26. Noise reduction was tested in accordance
-            with IEC 60268-24. Comparison made against the best-selling wireless in-ear headphones
-            commercially available at the time of testing. Performance depends on device settings,
-            environment and many other factors.
+            Looking for a tailored solution? Book a discovery call and we’ll map a sprint-ready plan within three
+            business days. Pricing is transparent, milestone-driven, and aligned to measurable outcomes.
           </p>
-          <p>A subscription is required for Apple TV+.</p>
           <p>
-            Features are subject to change. Some features, applications and services may not be
-            available in all regions or all languages.
+            Data security commitments: ISO 27001 in progress, SOC 2 Type II under audit, GDPR compliant, and supported
+            by quarterly penetration testing.
           </p>
         </div>
 
@@ -230,10 +201,9 @@ function Footer() {
             }}
           >
             <p className="text-xs">
-              More ways to shop: Find an Apple Store or other retailer near you. Or call 000800 040
-              1966.
+              Want to visit us? Schedule a studio tour in Bengaluru, Pune, or Berlin. Call +91 80471 22331.
             </p>
-            <p className="text-xs">India</p>
+            <p className="text-xs">Global · Remote-first</p>
           </div>
           <div 
             className="mt-6 pt-6 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center text-xs"
@@ -243,22 +213,22 @@ function Footer() {
               fontSize: '11px'
             }}
           >
-            <p>Copyright © 2025 Apple Inc. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} SystemMind Technologies Pvt. Ltd. All rights reserved.</p>
             <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
+              <a href="#" className="hover:underline">
+                Master Services Agreement
+              </a>
+              <a href="#" className="hover:underline">
+                Service Level Commitment
+              </a>
               <a href="#" className="hover:underline">
                 Privacy Policy
               </a>
               <a href="#" className="hover:underline">
-                Terms of Use
+                Cookie Preferences
               </a>
               <a href="#" className="hover:underline">
-                Sales Policy
-              </a>
-              <a href="#" className="hover:underline">
-                Legal
-              </a>
-              <a href="#" className="hover:underline">
-                Site Map
+                Accessibility
               </a>
             </div>
           </div>

@@ -1,8 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useLoading } from '../context/LoadingProvider.jsx'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
 import logoImage from '../assets/images/Logo.png'
 
 function AboutUs() {
+  const navigate = useNavigate()
+  const { isLoading, showLoading } = useLoading()
   const [aboutRef] = useScrollAnimation({ threshold: 0.1, once: true })
 
   return (
@@ -89,7 +93,7 @@ function AboutUs() {
           </p>
           <div className="flex gap-3">
             <a
-              href="#services"
+              href="/about-company/learn-more"
               className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
               style={{ 
                 fontFamily: '"Poppins", sans-serif',
@@ -102,15 +106,24 @@ function AboutUs() {
                 border: 'none',
                 boxShadow: '0 15px 25px rgba(241, 165, 1, 0.15)',
                 borderRadius: '10px',
-                padding: '14px 28px'
+                padding: '14px 28px',
+                pointerEvents: isLoading ? 'none' : 'auto',
+                opacity: isLoading ? 0.6 : 1,
+                cursor: isLoading ? 'default' : 'pointer'
               }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#d48e01';
-                e.target.style.transform = 'translateY(-2px)';
+              onClick={(event) => {
+                event.preventDefault()
+                if (isLoading) return
+                showLoading(2000, () => navigate('/about-company/learn-more'))
               }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#F1A501';
-                e.target.style.transform = 'translateY(0)';
+              onMouseEnter={(event) => {
+                if (isLoading) return
+                event.currentTarget.style.backgroundColor = '#d48e01'
+                event.currentTarget.style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(event) => {
+                event.currentTarget.style.backgroundColor = '#F1A501'
+                event.currentTarget.style.transform = 'translateY(0)'
               }}
             >
               Learn More

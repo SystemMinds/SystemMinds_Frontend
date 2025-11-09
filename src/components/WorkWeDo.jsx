@@ -36,12 +36,77 @@ function WorkWeDo() {
       style={{
         backgroundColor: 'transparent',
         minHeight: '600px',
-        paddingTop: '84px',
+        paddingTop: '18px',
         paddingBottom: '96px',
         overflow: 'hidden',
-        scrollMarginTop: '90px'
+        scrollMarginTop: '40px'
       }}
     >
+      {/* Background Star/Glow */}
+      <div
+        className="absolute right-0 top-0 pointer-events-none"
+        style={{ zIndex: 0, width: '360px', height: '320px', transform: 'translate(80px, -110px)' }}
+      >
+        <svg
+          width="360"
+          height="320"
+          viewBox="0 0 360 320"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ opacity: 0.45 }}
+        >
+          <defs>
+            <radialGradient id="services-star-spark" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#F1A501" stopOpacity="0.45" />
+              <stop offset="75%" stopColor="#DF6951" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#0A0A0A" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <g stroke="rgba(255, 243, 224, 0.55)" strokeWidth="1.2" strokeLinecap="round">
+            <g transform="translate(40 40)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+            <g transform="translate(120 20) scale(0.75)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+            <g transform="translate(210 60) scale(0.6)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+            <g transform="translate(280 30) scale(0.8)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+            <g transform="translate(240 140) scale(0.65)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+            <g transform="translate(310 180) scale(0.5)">
+              <line x1="16" y1="0" x2="16" y2="32" />
+              <line x1="0" y1="16" x2="32" y2="16" />
+            </g>
+          </g>
+          <g fill="url(#services-star-spark)">
+            <circle cx="120" cy="50" r="14" />
+            <circle cx="220" cy="90" r="18" />
+            <circle cx="300" cy="60" r="16" />
+            <circle cx="260" cy="180" r="12" />
+            <circle cx="320" cy="150" r="10" />
+            <circle cx="290" cy="230" r="13" />
+          </g>
+          <g fill="rgba(255, 255, 255, 0.6)">
+            <circle cx="180" cy="40" r="1.5" />
+            <circle cx="150" cy="120" r="1.5" />
+            <circle cx="260" cy="220" r="1.5" />
+            <circle cx="230" cy="260" r="1.5" />
+            <circle cx="310" cy="210" r="1.5" />
+            <circle cx="330" cy="120" r="1.5" />
+          </g>
+        </svg>
+      </div>
+
       {/* Content Container */}
       <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center services-wrapper" style={{ marginTop: '0' }}>
         {/* Header */}

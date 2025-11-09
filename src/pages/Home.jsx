@@ -6,7 +6,7 @@ import AboutUs from '../components/AboutUs.jsx'
 import WorkWeDo from '../components/WorkWeDo.jsx'
 import Technologies from '../components/Technologies.jsx'
 import Works from '../components/Works.jsx'
-import ProductGrid from '../components/ProductGrid.jsx'
+import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
 
 function Home() {
@@ -40,7 +40,7 @@ function Home() {
         <WorkWeDo />
         <Technologies />
         <Works />
-        <ProductGrid />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -32,13 +32,14 @@ function Technologies() {
     <section
       id="technologies"
       ref={sectionRef}
-      className="relative bg-black text-white overflow-hidden"
+      className="relative text-white overflow-hidden"
       style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         paddingTop: '52px',
-        paddingBottom: '56px'
+        paddingBottom: '56px',
+        backgroundColor: '#0A0A0A'
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 h-full flex flex-col">
@@ -196,22 +197,25 @@ function Technologies() {
             <div className="flex gap-3 mt-8 flex-wrap technologies-cta">
               <a
                 href="#projects"
-                className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
+                className="hero-link transition-all duration-300 inline-flex items-center justify-center gap-2 rounded-2xl"
                 style={{
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontSize: '14px',
-                  fontWeight: 400,
-                  lineHeight: '1.5',
-                  backgroundColor: '#006EDB',
-                  color: '#ffffff',
+                  fontFamily: '"Poppins", "Inter", sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  padding: '12px 26px',
+                  background: 'linear-gradient(135deg, #F1A501 0%, #DF6951 100%)',
+                  color: '#FFFFFF',
                   textDecoration: 'none',
-                  border: 'none'
+                  border: 'none',
+                  boxShadow: '0 18px 40px rgba(223, 105, 81, 0.25)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#0056b3'
+                  e.target.style.transform = 'translateY(-2px)'
+                  e.target.style.boxShadow = '0 22px 50px rgba(223, 105, 81, 0.35)'
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#006EDB'
+                  e.target.style.transform = 'translateY(0)'
+                  e.target.style.boxShadow = '0 18px 40px rgba(223, 105, 81, 0.25)'
                 }}
               >
                 View Project
@@ -219,24 +223,26 @@ function Technologies() {
 
               <a
                 href="#clients"
-                className="hero-link transition-all duration-200 inline-block px-5 py-2 rounded-full"
+                className="hero-link transition-all duration-300 inline-flex items-center justify-center gap-2 rounded-2xl"
                 style={{
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontSize: '14px',
-                  fontWeight: 400,
-                  lineHeight: '1.5',
+                  fontFamily: '"Poppins", "Inter", sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  padding: '12px 26px',
                   backgroundColor: 'transparent',
-                  color: '#006EDB',
+                  color: '#FFFFFF',
                   textDecoration: 'none',
-                  border: '2px solid #006EDB'
+                  border: '2px solid rgba(255, 255, 255, 0.35)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#006EDB'
-                  e.target.style.color = '#ffffff'
+                  e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.14)'
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.55)'
+                  e.target.style.transform = 'translateY(-2px)'
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.backgroundColor = 'transparent'
-                  e.target.style.color = '#006EDB'
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.35)'
+                  e.target.style.transform = 'translateY(0)'
                 }}
               >
                 Our Clients

@@ -1,4 +1,4 @@
-/* Apple exact responsive typography */
+/* Responsive typography */
 @media (min-width: 768px) {
   .hero-title {
     font-size: 80px !important;
