@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
 
 function WorkWeDo() {
-  const [sectionRef, isVisible] = useScrollAnimation({ threshold: 0.2, once: true })
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.2, once: true })
 
   const services = [
     {
@@ -28,6 +28,81 @@ function WorkWeDo() {
     }
   ]
 
+  const cardRefs = useRef([])
+  const [cardStates, setCardStates] = useState(() =>
+    services.map(() => ({
+      isVisible: false,
+      direction: 'down'
+    }))
+  )
+  const scrollDirectionRef = useRef('down')
+  const lastScrollY = useRef(typeof window !== 'undefined' ? window.pageYOffset || 0 : 0)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0
+
+      if (currentScroll > lastScrollY.current + 2) {
+        scrollDirectionRef.current = 'down'
+      } else if (currentScroll < lastScrollY.current - 2) {
+        scrollDirectionRef.current = 'up'
+      }
+
+      lastScrollY.current = currentScroll
+    }
+
+    lastScrollY.current = window.pageYOffset || document.documentElement.scrollTop || 0
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = cardRefs.current.indexOf(entry.target)
+
+          if (index !== -1) {
+            setCardStates((prev) => {
+              const next = [...prev]
+              const previousState = next[index] || { isVisible: false, direction: 'down' }
+              const nextState = {
+                isVisible: entry.isIntersecting,
+                direction: scrollDirectionRef.current
+              }
+
+              if (
+                previousState.isVisible === nextState.isVisible &&
+                previousState.direction === nextState.direction
+              ) {
+                return prev
+              }
+
+              next[index] = nextState
+              return next
+            })
+          }
+        })
+      },
+      {
+        threshold: 0.35,
+        rootMargin: '0px 0px -10%'
+      }
+    )
+
+    cardRefs.current.forEach((card) => {
+      if (card) {
+        observer.observe(card)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [services.length])
+
   return (
     <section
       id="work-we-do"
@@ -35,7 +110,10 @@ function WorkWeDo() {
       className="relative"
       style={{
         backgroundColor: 'transparent',
-        minHeight: '600px',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         paddingTop: '18px',
         paddingBottom: '96px',
         overflow: 'hidden',
@@ -110,7 +188,16 @@ function WorkWeDo() {
       {/* Content Container */}
       <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center services-wrapper" style={{ marginTop: '0' }}>
         {/* Header */}
-        <div className="text-center mb-16" style={{ position: 'relative', zIndex: 2 }}>
+        <div
+          className="text-center mb-16"
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            opacity: sectionVisible ? 1 : 0,
+            transform: sectionVisible ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'transform 0.6s ease, opacity 0.6s ease'
+          }}
+        >
           <h2
             className="mb-3 services-title"
             style={{
@@ -162,82 +249,91 @@ function WorkWeDo() {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           style={{ position: 'relative', zIndex: 2 }}
         >
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="relative group transition-all duration-300"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: `all 0.6s ease-out ${index * 0.15}s`
-              }}
-            >
-              {/* Decorative shape for second card */}
-              {service.hasDecor && (
-                <div
-                  className="absolute -bottom-8 -left-8 z-0"
-                  style={{
-                    width: '120px',
-                    height: '120px',
-                    background: '#DF6951',
-                    borderRadius: '25px 0px 15px 5px',
-                    opacity: 0.9,
-                    transform: 'rotate(-10deg)'
-                  }}
-                />
-              )}
+          {services.map((service, index) => {
+            const state = cardStates[index] || { isVisible: false, direction: 'down' }
+            const hiddenTransform = state.direction === 'down' ? 'translateY(48px)' : 'translateY(-48px)'
 
-              {/* Card */}
+            return (
               <div
-                className="relative bg-white/5 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:bg-white/8 hover:shadow-2xl hover:-translate-y-1"
+                key={service.title}
+                ref={(el) => {
+                  cardRefs.current[index] = el
+                }}
+                className="relative group transition-all duration-300"
                 style={{
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  minHeight: '220px',
-                  padding: '24px'
+                  opacity: state.isVisible ? 1 : 0,
+                  transform: state.isVisible ? 'translateY(0)' : hiddenTransform,
+                  transition: 'transform 0.6s ease, opacity 0.6s ease',
+                  transitionDelay: `${index * 0.12}s`
                 }}
               >
-                {/* Icon with background */}
+                {/* Decorative shape for second card */}
+                {service.hasDecor && (
+                  <div
+                    className="absolute -bottom-8 -left-8 z-0"
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      background: '#DF6951',
+                      borderRadius: '25px 0px 15px 5px',
+                      opacity: 0.9,
+                      transform: 'rotate(-10deg)'
+                    }}
+                  />
+                )}
+
+                {/* Card */}
                 <div
-                  className="mb-6 inline-flex items-center justify-center"
+                  className="relative bg-white/5 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:bg-white/8 hover:shadow-2xl hover:-translate-y-1"
                   style={{
-                    width: '64px',
-                    height: '64px',
-                    background: 'rgba(255, 243, 224, 0.12)',
-                    borderRadius: '14px'
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    minHeight: '220px',
+                    padding: '24px'
                   }}
                 >
-                  <span style={{ fontSize: '32px' }}>{service.icon}</span>
+                  {/* Icon with background */}
+                  <div
+                    className="mb-6 inline-flex items-center justify-center"
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      background: 'rgba(255, 243, 224, 0.12)',
+                      borderRadius: '14px'
+                    }}
+                  >
+                    <span style={{ fontSize: '32px' }}>{service.icon}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="mb-3"
+                    style={{
+                      fontFamily: '"Poppins", sans-serif',
+                      fontWeight: 600,
+                      fontSize: '18px',
+                      lineHeight: '1.4',
+                      color: '#FFFFFF'
+                    }}
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    style={{
+                      fontFamily: '"Poppins", sans-serif',
+                      fontWeight: 400,
+                      fontSize: '13px',
+                      lineHeight: '1.7',
+                      color: 'rgba(255, 255, 255, 0.6)'
+                    }}
+                  >
+                    {service.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3
-                  className="mb-3"
-                  style={{
-                    fontFamily: '"Poppins", sans-serif',
-                    fontWeight: 600,
-                    fontSize: '18px',
-                    lineHeight: '1.4',
-                    color: '#FFFFFF'
-                  }}
-                >
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p
-                  style={{
-                    fontFamily: '"Poppins", sans-serif',
-                    fontWeight: 400,
-                    fontSize: '13px',
-                    lineHeight: '1.7',
-                    color: 'rgba(255, 255, 255, 0.6)'
-                  }}
-                >
-                  {service.description}
-                </p>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
       <style jsx="true">{`

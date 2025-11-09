@@ -7,82 +7,73 @@ function Footer() {
     {
       title: 'Company',
       links: [
-        'About SystemMind',
-        'Leadership',
-        'Careers',
-        'Press & Media',
-        'Contact',
+        { label: 'About SystemMinds', href: '/about-company' },
+        { label: 'Young minds building reliable digital products', href: '/about-company' },
+        { label: 'Projects we deliver', href: '/about-company' },
+        { label: 'Our work principles', href: '/about-company' },
+        { label: 'Let’s build something great together', href: '/about-company' },
       ],
     },
     {
-      title: 'Solutions',
+      title: 'Capabilities',
       links: [
-        'AI & Automation',
-        'Product Engineering',
-        'Digital Experience Platforms',
-        'Cloud Modernisation',
-        'Data & Analytics',
+        { label: 'Product intelligence', href: '/about-learn-more' },
+        { label: 'Experience architecture', href: '/about-learn-more' },
+        { label: 'Modern delivery', href: '/about-learn-more' },
+        { label: 'Enablement & scaling', href: '/about-learn-more' },
+        { label: 'Outcome dashboards & control tower', href: '/about-learn-more' },
       ],
     },
     {
-      title: 'Services',
+      title: 'Engagements',
       links: [
-        'Discovery Workshops',
-        'Design Systems',
-        'Full-stack Development',
-        'DevOps & SRE',
-        'Managed Support',
+        { label: 'Launch readiness · Weeks 0–4', href: '/about-learn-more' },
+        { label: 'Momentum sprints · Weeks 5–12', href: '/about-learn-more' },
+        { label: 'Scale & transfer · Weeks 13+', href: '/about-learn-more' },
+        { label: 'Hybrid pods & signal loops', href: '/about-learn-more' },
+        { label: 'Telemetry-led releases', href: '/about-learn-more' },
       ],
     },
     {
-      title: 'Industries',
+      title: 'Ways to partner',
       links: [
-        'Fintech',
-        'Healthcare',
-        'Retail & E-commerce',
-        'SaaS & Platforms',
-        'Public Sector',
+        { label: 'Co-create a roadmap', href: 'mailto:hello@systemminds.com' },
+        { label: 'Join forces as a partner', href: 'mailto:partnerships@systemminds.com' },
+        { label: 'Careers & guilds', href: 'mailto:careers@systemminds.com' },
+        { label: 'Quick brief', href: '/about-learn-more' },
+        { label: 'Studio availability', href: '/about-learn-more' },
       ],
     },
     {
-      title: 'Resources',
+      title: 'Stay connected',
       links: [
-        'Case Studies',
-        'Our Playbooks',
-        'Insights & Blog',
-        'Events & Webinars',
-        'Brand Assets',
+        { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
+        { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
+        { label: '+49 30 1234 9876', href: 'tel:+493012349876' },
+        { label: '+91 80 4567 8900', href: 'tel:+918045678900' },
+        { label: 'Studios: Bengaluru · Pune · Berlin', href: null },
       ],
     },
+  ]
+
+  const contactHighlights = [
     {
-      title: 'Legal',
-      links: [
-        'Privacy Policy',
-        'Security Practices',
-        'Responsible Disclosure',
-        'Terms of Service',
-        'Vendor Code of Conduct',
-      ],
+      label: 'Co-create a roadmap',
+      description: 'Bring a product challenge, we respond with a working session agenda within 24 hours.',
+      email: 'hello@systemminds.com',
+      phone: '+1 (415) 555-0123',
     },
     {
-      title: 'Partners',
-      links: [
-        'AWS',
-        'Google Cloud',
-        'Microsoft Azure',
-        'OpenAI',
-        'UiPath',
-      ],
+      label: 'Join forces as a partner',
+      description: 'Product firms, agencies, and venture studios collaborate with our pods globally.',
+      email: 'partnerships@systemminds.com',
+      phone: '+49 30 1234 9876',
     },
     {
-      title: 'Community',
-      links: [
-        'SystemMind Foundation',
-        'Tech for Good',
-        'Meetups',
-        'Open Source',
-        'Diversity & Inclusion',
-      ],
+      label: 'Careers & guilds',
+      description: 'Engineers, designers, and product strategists who love modern delivery join our guilds.',
+      email: 'careers@systemminds.com',
+      phone: '+91 80 4567 8900',
     },
   ]
 
@@ -141,21 +132,37 @@ function Footer() {
                   openSections[section.title] ? 'block' : 'hidden md:block'
                 }`}
               >
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-sm hover:text-white transition-colors"
-                      style={{ 
-                        fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                        fontWeight: 400,
-                        fontSize: '12px'
-                      }}
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {section.links.map((link, linkIndex) => {
+                  const linkItem = typeof link === 'string' ? { label: link } : link
+                  return (
+                    <li key={linkIndex}>
+                      {linkItem.href ? (
+                        <a
+                          href={linkItem.href}
+                          className="text-sm hover:text-white transition-colors"
+                          style={{ 
+                            fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                            fontWeight: 400,
+                            fontSize: '12px'
+                          }}
+                        >
+                          {linkItem.label}
+                        </a>
+                      ) : (
+                        <span
+                          className="text-sm text-gray-400"
+                          style={{ 
+                            fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                            fontWeight: 400,
+                            fontSize: '12px'
+                          }}
+                        >
+                          {linkItem.label}
+                        </span>
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}
@@ -172,41 +179,72 @@ function Footer() {
           }}
         >
           <p>
-            SystemMind partners with product and technology leaders to accelerate digital roadmaps. Our teams blend
-            strategy, design, engineering, and managed services to launch resilient platforms that scale with demand.
+            SystemMinds is a founder-led studio turning ideas into resilient digital products for startups, academic teams, and growing businesses.
+            We blend strategy, design, engineering, and managed services so every release feels orchestrated, measured, and ready for scale.
           </p>
           <p>
-            We operate hybrid squads across India, Europe, and North America, ensuring around-the-clock collaboration
-            and coverage. Engagement models include fixed scope accelerators, co-innovation pods, and dedicated
-            product teams supported by our reliability command center.
+            From idea-to-execution sprints to long-term platform stewardship, we operate with full-stack fluency across React, Spring Boot, modern APIs,
+            and cloud-native architectures. Dual-track discovery and delivery ensure each iteration ships value while keeping codebases maintainable.
           </p>
           <p>
-            Looking for a tailored solution? Book a discovery call and we’ll map a sprint-ready plan within three
-            business days. Pricing is transparent, milestone-driven, and aligned to measurable outcomes.
+            Engagements begin with launch readiness in weeks 0–4, accelerate momentum through weeks 5–12, and transition to scale and transfer from week 13 onward.
+            Hybrid pods, signal loops, and telemetry dashboards provide the visibility needed to align product, design, engineering, and finance.
           </p>
           <p>
-            Data security commitments: ISO 27001 in progress, SOC 2 Type II under audit, GDPR compliant, and supported
-            by quarterly penetration testing.
+            Guilds, playbooks, and partner success channels keep teams enabled long after go-live—supported by studios in India, Europe, and North America with a remote-first backbone.
           </p>
+        </div>
+
+        {/* Contact Highlights */}
+        <div className="mt-10 p-6 md:p-8">
+          <div
+            className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+            }}
+          >
+            {contactHighlights.map((card) => (
+              <div
+                key={card.label}
+                className="flex flex-col gap-2 p-1"
+              >
+                <p
+                  className="text-sm text-[#F1A501]"
+                  style={{ fontWeight: 600, fontSize: '12px', letterSpacing: '-0.01em' }}
+                >
+                  {card.label}
+                </p>
+                <p
+                  className="text-sm text-gray-300"
+                  style={{ fontSize: '12px', lineHeight: 1.6, color: 'rgba(255,255,255,0.78)' }}
+                >
+                  {card.description}
+                </p>
+                <div className="flex flex-col gap-1 text-sm">
+                  <a
+                    href={`mailto:${card.email}`}
+                    className="hover:text-white transition-colors"
+                    style={{ fontSize: '12px', color: '#ffffff' }}
+                  >
+                    {card.email}
+                  </a>
+                  <a
+                    href={`tel:${card.phone.replace(/[^+\d]/g, '')}`}
+                    className="hover:text-white transition-colors"
+                    style={{ fontSize: '12px', color: 'rgba(255,255,255,0.72)' }}
+                  >
+                    {card.phone}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-300 pt-6 mt-6">
           <div 
-            className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-            style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 400,
-              fontSize: '11px'
-            }}
-          >
-            <p className="text-xs">
-              Want to visit us? Schedule a studio tour in Bengaluru, Pune, or Berlin. Call +91 80471 22331.
-            </p>
-            <p className="text-xs">Global · Remote-first</p>
-          </div>
-          <div 
-            className="mt-6 pt-6 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center text-xs"
+            className="flex flex-col md:flex-row justify-between items-center text-xs"
             style={{ 
               fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
               fontWeight: 400,

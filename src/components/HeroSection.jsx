@@ -11,7 +11,14 @@ function HeroSection() {
     <section
       id="hero"
       className="relative w-full overflow-hidden"
-      style={{ minHeight: '100vh', backgroundColor: 'transparent', paddingTop: '64px', paddingBottom: '0' }}
+      style={{
+        minHeight: '100vh',
+        backgroundColor: 'transparent',
+        paddingTop: '64px',
+        paddingBottom: '0',
+        display: 'flex',
+        alignItems: 'center'
+      }}
     >
       <ContinuousWaves variant="hero" className="absolute inset-0" />
       <div className="relative z-10 w-full">
