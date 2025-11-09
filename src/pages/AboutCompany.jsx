@@ -16,22 +16,23 @@ function AboutCompany() {
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#0A0A0A', color: '#ffffff' }}>
       <Header />
       <main className="relative z-10" style={{ paddingTop: '96px', paddingBottom: '80px' }}>
+        {/* Who We Are */}
         <section className="px-6 md:px-12 lg:px-16">
           <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-[58%_42%] items-start">
             <div className="space-y-6">
               <p className="uppercase tracking-[0.28em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>Who we are</p>
               <h1 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '58px', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-                Building reliable digital ecosystems for ambitious brands.
+                Turning simple ideas into full-stack digital experiences.
               </h1>
               <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.76)' }}>
-                SystemMinds is a product studio and engineering partner that blends strategy, design, and modern cloud-native delivery. From real-time platforms to AI-assisted workflows, we accelerate digital transformation with measurable impact.
+              We are a dynamic and innovative startup dedicated to delivering reliable, modern, and scalable digital solutions that empower businesses to grow in the ever-evolving digital landscape. With a strong foundation in technology and a deep understanding of user experience, we specialize in creating impactful products tailored to each client’s unique needs. Our expertise spans across building eCommerce platforms, management systems, and custom service-based applications, designed to enhance efficiency and drive measurable results. By combining creativity, technical excellence, and a results-driven approach, we help businesses transform their ideas into powerful digital realities — ensuring quality, innovation, and long-term success in every project we undertake.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { value: '120+', label: 'Specialists across engineering, design & strategy' },
-                  { value: '18', label: 'Years crafting enterprise and consumer experiences' },
-                  { value: '42', label: 'Markets served with localized product rollouts' },
-                  { value: '96%', label: 'Client retention across multi-year engagements' }
+                  { value: '2+', label: 'Founders passionate about full-stack development' },
+                  { value: '15+', label: 'Projects delivered across academic and small businesses' },
+                  { value: '20+', label: 'Technologies mastered across frontend, backend, and cloud' },
+                  { value: '100%', label: 'Commitment to learning and client satisfaction' }
                 ].map((item) => (
                   <div key={item.value} className="rounded-3xl border border-white/10 px-6 py-5" style={{ background: 'rgba(15,23,42,0.45)', backdropFilter: 'blur(12px)' }}>
                     <span style={{ ...highlightStyle, fontSize: '36px', fontWeight: 700 }}>{item.value}</span>
@@ -42,49 +43,41 @@ function AboutCompany() {
             </div>
             <div className="space-y-8">
               <div className="rounded-3xl border border-white/10 p-8" style={{ background: 'rgba(17,24,39,0.7)', backdropFilter: 'blur(16px)' }}>
-                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', marginBottom: '16px' }}>Our Operating Model</h2>
+                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', marginBottom: '16px' }}>Our Development Approach</h2>
                 <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.78)' }}>
-                  <li><span style={highlightStyle}>Discovery sprints</span> to crystallize goals, user journeys, and KPIs.</li>
-                  <li><span style={highlightStyle}>Modular architecture</span> using micro frontends, APIs, and event-driven systems.</li>
-                  <li><span style={highlightStyle}>Design systems</span> that ensure brand-consistent, accessible interfaces.</li>
-                  <li><span style={highlightStyle}>DevSecOps pipelines</span> for automated testing, governance, and release cadence.</li>
+                  <li><span style={highlightStyle}>Idea to Execution</span> – from basic concepts to real-world deployment.</li>
+                  <li><span style={highlightStyle}>Full-stack development</span> – using React, Spring Boot, and modern APIs.</li>
+                  <li><span style={highlightStyle}>Iterative delivery</span> – we build, test, and improve continuously.</li>
+                  <li><span style={highlightStyle}>Practical learning</span> – every project helps us grow technically and creatively.</li>
                 </ul>
               </div>
               <div className="rounded-3xl border border-white/10 p-8" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(14px)' }}>
-                <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '24px', marginBottom: '12px' }}>Global Delivery Hubs</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
-                  <div>
-                    <p style={{ fontWeight: 600 }}>Bengaluru, IN</p>
-                    <p>Product strategy, design leadership, AI labs</p>
-                  </div>
-                  <div>
-                    <p style={{ fontWeight: 600 }}>Berlin, DE</p>
-                    <p>Data engineering, privacy compliance, IoT</p>
-                  </div>
-                  <div>
-                    <p style={{ fontWeight: 600 }}>Austin, US</p>
-                    <p>Client success, cloud operations, integrations</p>
-                  </div>
-                  <div>
-                    <p style={{ fontWeight: 600 }}>Singapore</p>
-                    <p>APAC delivery, fintech partnerships, localization</p>
-                  </div>
+                <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '24px', marginBottom: '12px' }}>Our Core Technologies</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                  {[
+                    'HTML', 'CSS', 'JavaScript', 'React.js', 'React Native', 'Bootstrap', 'Tailwind CSS',
+                    'Java', 'Python', 'Spring Boot', 'Microservices', 'Hibernate', 'SQL', 'MySQL',
+                    'MongoDB', 'PostgreSQL', 'Spring Security', 'Spring MVC', 'Spring IOC', 'Spring Batch', 'Spring AI'
+                  ].map((tech) => (
+                    <div key={tech} className="border border-white/10 rounded-xl px-3 py-2 text-center bg-[rgba(24,33,52,0.4)]">{tech}</div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Why Choose Us */}
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
             <div className="space-y-5">
               <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>Why choose us</p>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', letterSpacing: '-0.01em' }}>An end-to-end partnership you can scale with.</h2>
+              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', letterSpacing: '-0.01em' }}>Young minds building reliable digital products.</h2>
               <div className="grid gap-6">
                 {[
-                  { title: 'Strategy to execution', desc: 'Market research, product roadmapping, and GTM orchestration delivered in parallel with iterative design and development.' },
-                  { title: 'Future-ready platforms', desc: 'Event-driven microservices, serverless components, and composable commerce implementations that evolve with your roadmap.' },
-                  { title: 'Data & AI infused', desc: 'Analytics platforms, machine learning pipelines, and in-product intelligence that surfaces actionable insights for your teams.' }
+                  { title: 'Passionate Development', desc: 'Every project we take is crafted with dedication, experimentation, and focus on learning.' },
+                  { title: 'Real-world Experience', desc: 'From college projects to business platforms, we create solutions that solve actual problems.' },
+                  { title: 'End-to-End Delivery', desc: 'We handle everything – from frontend design to backend APIs and deployment.' }
                 ].map((item) => (
                   <div key={item.title} className="rounded-3xl border border-white/10 p-6" style={{ background: 'rgba(30,41,59,0.55)', backdropFilter: 'blur(12px)' }}>
                     <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '22px', marginBottom: '10px' }}>{item.title}</h3>
@@ -93,41 +86,43 @@ function AboutCompany() {
                 ))}
               </div>
             </div>
+
             <div className="grid gap-6" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.78)' }}>
               <div className="rounded-3xl border border-white/10 p-7" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(10px)' }}>
-                <h4 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', marginBottom: '8px' }}>Industries we accelerate</h4>
+                <h4 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', marginBottom: '8px' }}>Projects we work on</h4>
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2 list-disc list-inside">
-                  <li>Fintech & Banking</li>
-                  <li>Retail & eCommerce</li>
-                  <li>Healthcare Platforms</li>
-                  <li>Logistics & Supply Chain</li>
-                  <li>Media & Telecom</li>
-                  <li>Industrial IoT</li>
+                  <li>College & academic projects</li>
+                  <li>E-commerce platforms</li>
+                  <li>Portfolio & profile systems</li>
+                  <li>Service-based dashboards</li>
+                  <li>Management tools</li>
+                  <li>API integrations</li>
                 </ul>
               </div>
               <div className="rounded-3xl border border-white/10 p-7" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(10px)' }}>
-                <h4 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', marginBottom: '8px' }}>Delivery commitments</h4>
+                <h4 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', marginBottom: '8px' }}>Our Work Principles</h4>
                 <ul className="space-y-3 list-disc list-inside">
-                  <li>Dedicated pods across discovery, design, engineering, and QA.</li>
-                  <li>Transparent burn-up metrics and release cadences every two weeks.</li>
-                  <li>Embedded platform reliability checks and performance budgets.</li>
-                  <li>Continuous enablement to transition products to in-house teams.</li>
+                  <li>Build scalable and maintainable systems.</li>
+                  <li>Focus on clean code and practical design.</li>
+                  <li>Deploy projects on reliable cloud platforms.</li>
+                  <li>Keep learning and improving every day.</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Collaboration */}
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-7xl mx-auto">
             <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>How we collaborate</p>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', marginBottom: '24px', letterSpacing: '-0.01em' }}>A transparent journey from brief to launch.</h2>
+            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', marginBottom: '24px', letterSpacing: '-0.01em' }}>Our process from idea to deployment.</h2>
             <div className="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
               {[
-                { step: '01', title: 'Immersion', desc: 'Stakeholder workshops, customer interviews, and data audits to align on opportunities and guide success metrics.' },
-                { step: '02', title: 'Experience Blueprint', desc: 'Concept validation, UX architecture, and design systems that inform backlog planning and tech decisions.' },
-                { step: '03', title: 'Build & Measure', desc: 'Agile delivery with continuous integration, integrated analytics dashboards, and performance benchmarking.' },
-                { step: '04', title: 'Scale & Evolve', desc: 'Post-launch optimization, A/B testing, platform engineering, and team enablement for long-term ownership.' }
+                { step: '01', title: 'Plan', desc: 'Understand the problem and create a roadmap for the project.' },
+                { step: '02', title: 'Design', desc: 'Craft clean and user-friendly interfaces for web or mobile.' },
+                { step: '03', title: 'Develop', desc: 'Write scalable code for frontend, backend, and databases.' },
+                { step: '04', title: 'Deploy', desc: 'Host the project on cloud platforms with full functionality.' }
               ].map((item) => (
                 <div key={item.step} className="flex flex-col gap-3 rounded-3xl border border-white/10 p-6" style={{ background: 'rgba(24,33,52,0.6)', backdropFilter: 'blur(10px)' }}>
                   <span style={{ ...highlightStyle, fontSize: '32px', fontWeight: 700 }}>{item.step}</span>
@@ -139,46 +134,14 @@ function AboutCompany() {
           </div>
         </section>
 
-        <section className="px-6 md:px-12 lg:px-16 mt-20">
-          <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-[55%_45%] items-start">
-            <div className="space-y-6">
-              <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>Leadership principles</p>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', letterSpacing: '-0.01em' }}>Led by technologists, strategists, and human-centered designers.</h2>
-              <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.78)' }}>
-                <li><strong>Co-create with clients:</strong> Founding members join steering committees, driving accountability and clarity.</li>
-                <li><strong>Mentor-driven culture:</strong> Guilds across frontend, backend, data, and UX ensure reusable patterns and best practices.</li>
-                <li><strong>Inclusive innovation:</strong> Remote-first collaboration tools and quarterly hack weeks unlock cross-regional ideas.</li>
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-white/10 p-8 space-y-6" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(12px)' }}>
-              <div>
-                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.6)' }}>People first</p>
-                <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '24px', marginBottom: '10px' }}>Growth of our talent equals growth of our clients.</h3>
-                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
-                  Each squad pairs senior mentors with emerging specialists, supported by a 24/7 knowledge base, playbooks, and certification paths across cloud, security, and product craft.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
-                <div>
-                  <p style={{ fontWeight: 600 }}>Impact programs</p>
-                  <p>STEM scholarships, open-source contributions, and digital literacy for nonprofits.</p>
-                </div>
-                <div>
-                  <p style={{ fontWeight: 600 }}>Sustainability</p>
-                  <p>Green cloud assessments, carbon footprint dashboards, and paperless operations.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        {/* Final CTA */}
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-7xl mx-auto rounded-3xl border border-white/10 p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(241,165,1,0.18), rgba(241,165,1,0.05))', boxShadow: '0 25px 45px rgba(0,0,0,0.35)' }}>
             <div className="grid gap-10 lg:grid-cols-[60%_40%] items-center">
               <div className="space-y-4">
-                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '38px', letterSpacing: '-0.01em' }}>Let’s architect your next leap.</h2>
+                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '38px', letterSpacing: '-0.01em' }}>Let’s build something great together.</h2>
                 <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(15,15,15,0.78)' }}>
-                  From SaaS modernization to AI-led customer experiences, we embed with your teams to launch reliable solutions. Share your challenge and we’ll translate it into a roadmap within days.
+                  Whether it's a college project, startup idea, or a small-scale business platform — we can help you design, develop, and deploy it using the latest technologies and best practices.
                 </p>
               </div>
               <div className="flex flex-col gap-4" style={{ fontFamily: '"Poppins", sans-serif' }}>
