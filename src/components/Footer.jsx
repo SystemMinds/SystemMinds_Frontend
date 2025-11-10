@@ -5,88 +5,38 @@ const brandFont = '"Poppins", sans-serif'
 const serifFont = '"Volkhov", "Georgia", serif'
 
 function Footer() {
-  const [openSections, setOpenSections] = useState({})
+  const currentYear = new Date().getFullYear()
 
-  const footerSections = [
+  const columns = [
     {
-      title: 'Company',
-      links: [
-        { label: 'About SystemMinds', href: '/about-company' },
-        { label: 'Young minds building reliable digital products', href: '/about-company' },
-        { label: 'Projects we deliver', href: '/about-company' },
-        { label: 'Our work principles', href: '/about-company' },
-        { label: 'Let’s build something great together', href: '/about-company' },
-      ],
-    },
-    {
-      title: 'Capabilities',
-      links: [
-        { label: 'Product intelligence', href: '/about-learn-more' },
-        { label: 'Experience architecture', href: '/about-learn-more' },
-        { label: 'Modern delivery', href: '/about-learn-more' },
-        { label: 'Enablement & scaling', href: '/about-learn-more' },
-        { label: 'Outcome dashboards & control tower', href: '/about-learn-more' },
-      ],
-    },
-    {
-      title: 'Engagements',
-      links: [
-        { label: 'Launch readiness · Weeks 0–4', href: '/about-learn-more' },
-        { label: 'Momentum sprints · Weeks 5–12', href: '/about-learn-more' },
-        { label: 'Scale & transfer · Weeks 13+', href: '/about-learn-more' },
-        { label: 'Hybrid pods & signal loops', href: '/about-learn-more' },
-        { label: 'Telemetry-led releases', href: '/about-learn-more' },
-      ],
-    },
-    {
-      title: 'Ways to partner',
-      links: [
-        { label: 'Co-create a roadmap', href: 'mailto:hello@systemminds.com' },
-        { label: 'Join forces as a partner', href: 'mailto:partnerships@systemminds.com' },
-        { label: 'Careers & guilds', href: 'mailto:careers@systemminds.com' },
-        { label: 'Quick brief', href: '/about-learn-more' },
-        { label: 'Studio availability', href: '/about-learn-more' },
-      ],
-    },
-    {
-      title: 'Stay connected',
-      links: [
+      heading: 'Contact',
+      items: [
         { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
         { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
-        { label: '+49 30 1234 9876', href: 'tel:+493012349876' },
-        { label: '+91 80 4567 8900', href: 'tel:+918045678900' },
-        { label: 'Studios: Bengaluru · Pune · Berlin', href: null },
-      ],
+        { label: 'Bengaluru · Remote-first', href: null }
+      ]
     },
+    {
+      heading: 'Services',
+      items: [
+        { label: 'Product Sprints' },
+        { label: 'UI Engineering' },
+        { label: 'Cloud Setup' },
+        { label: 'QA Automation' },
+        { label: 'Care Plans' }
+      ]
+    },
+    {
+      heading: 'Resources',
+      items: [
+        { label: 'Playbooks' },
+        { label: 'Case Stories' },
+        { label: 'Newsletter' },
+        { label: 'Careers' },
+        { label: 'Press Room' }
+      ]
+    }
   ]
-
-  const contactHighlights = [
-    {
-      label: 'Co-create a roadmap',
-      description: 'Bring a product challenge, we respond with a working session agenda within 24 hours.',
-      email: 'hello@systemminds.com',
-      phone: '+1 (415) 555-0123',
-    },
-    {
-      label: 'Join forces as a partner',
-      description: 'Product firms, agencies, and venture studios collaborate with our pods globally.',
-      email: 'partnerships@systemminds.com',
-      phone: '+49 30 1234 9876',
-    },
-    {
-      label: 'Careers & guilds',
-      description: 'Engineers, designers, and product strategists who love modern delivery join our guilds.',
-      email: 'careers@systemminds.com',
-      phone: '+91 80 4567 8900',
-    },
-  ]
-
-  const toggleSection = (title) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [title]: !prev[title],
-    }))
-  }
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#07090f', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
