@@ -1,93 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
+import projects from '../data/projects.js'
 
-const workHighlights = [
-  {
-    name: 'React',
-    icon: '⚛️',
-    headline: 'Component-Driven Interfaces'
-  },
-  {
-    name: 'Next.js',
-    icon: '🚀',
-    headline: 'Hybrid Rendering Engine'
-  },
-  {
-    name: 'TypeScript',
-    icon: '🌀',
-    headline: 'Strong Typing & Tooling'
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: '🎨',
-    headline: 'Utility-First Styling'
-  },
-  {
-    name: 'Node.js',
-    icon: '🟢',
-    headline: 'Event-Driven APIs'
-  },
-  {
-    name: 'NestJS',
-    icon: '🧭',
-    headline: 'Structured Backends'
-  },
-  {
-    name: 'GraphQL',
-    icon: '🕸️',
-    headline: 'Flexible Data Layer'
-  },
-  {
-    name: 'PostgreSQL',
-    icon: '🗄️',
-    headline: 'Relational Data Core'
-  },
-  {
-    name: 'AWS',
-    icon: '☁️',
-    headline: 'Global Cloud Footprint'
-  },
-  {
-    name: 'Docker',
-    icon: '🐳',
-    headline: 'Portable Environments'
-  },
-  {
-    name: 'Kubernetes',
-    icon: '⚓',
-    headline: 'Self-Healing Clusters'
-  },
-  {
-    name: 'Terraform',
-    icon: '🧱',
-    headline: 'Infrastructure as Code'
-  },
-  {
-    name: 'Python',
-    icon: '🐍',
-    headline: 'Automation & AI'
-  },
-  {
-    name: 'TensorFlow',
-    icon: '🧠',
-    headline: 'Production ML Models'
-  },
-  {
-    name: 'LangChain',
-    icon: '🔗',
-    headline: 'Generative AI Agents'
-  },
-  {
-    name: 'Power BI',
-    icon: '📊',
-    headline: 'Business Intelligence'
-  }
+const marqueeRows = [
+  projects.filter((_, index) => index % 2 === 0),
+  projects.filter((_, index) => index % 2 === 1)
 ]
 
-const firstRow = workHighlights.filter((_, index) => index % 2 === 0)
-const secondRow = workHighlights.filter((_, index) => index % 2 === 1)
-
 function Works() {
+  const navigate = useNavigate()
   const [sectionRef, isVisible] = useScrollAnimation({ threshold: 0.2, once: true })
 
   return (
@@ -170,14 +92,21 @@ function Works() {
         </div>
 
         <div className="relative w-full mt-12 space-y-8">
-          {[firstRow, secondRow].map((row, rowIndex) => (
+          {marqueeRows.map((row, rowIndex) => {
+            const repeatedRow = Array.from({ length: 3 }, () => row).flat()
+            return (
             <div key={rowIndex} className="relative overflow-hidden">
               <div
                 className={`marquee-layer ${rowIndex === 1 ? 'reverse' : ''}`}
                 style={{ animationPlayState: isVisible ? 'running' : 'paused' }}
               >
-                {[...row, ...row].map((card, index) => (
-                  <div className="tech-pill" key={`${rowIndex}-${card.name}-${index}`}>
+                {repeatedRow.map((card, index) => (
+                  <button
+                    type="button"
+                    className="tech-pill"
+                    key={`${rowIndex}-${card.name}-${index}`}
+                    onClick={() => navigate(`/projects/${card.slug}`)}
+                  >
                     <div className="tech-icon-wrapper">
                       <span className="tech-icon">{card.icon}</span>
                     </div>
@@ -185,28 +114,28 @@ function Works() {
                       <span className="tech-name">{card.name}</span>
                       <span className="tech-headline">{card.headline}</span>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
               <div className="fade-left" />
               <div className="fade-right" />
             </div>
-          ))}
+          )})}
           <style jsx="true">{`
             @keyframes marqueeForward {
               0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
+              100% { transform: translateX(-33.333%); }
             }
 
             @keyframes marqueeReverse {
-              0% { transform: translateX(-50%); }
+              0% { transform: translateX(-33.333%); }
               100% { transform: translateX(0); }
             }
 
             .marquee-layer {
               display: flex;
               gap: 20px;
-              width: 210%;
+              width: max-content;
               animation: marqueeForward 16s linear infinite;
               padding: 1px 0;
               position: relative;
@@ -221,14 +150,30 @@ function Works() {
               display: flex;
               align-items: center;
               gap: 16px;
-              min-width: 340px;
-              max-width: 340px;
-              height: 96px;
-              padding: 0 20px;
+              min-width: 360px;
+              max-width: 360px;
+              height: 104px;
+              padding: 0 22px;
               border-radius: 24px;
-              border: 1px solid rgba(148, 163, 184, 0.12);
-              background: rgba(15, 23, 42, 0.76);
-              backdrop-filter: blur(10px);
+              border: 1px solid rgba(148, 163, 184, 0.16);
+              background: rgba(15, 23, 42, 0.78);
+              backdrop-filter: blur(12px);
+              cursor: pointer;
+              transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+              color: inherit;
+              outline: none;
+            }
+
+            .tech-pill:hover,
+            .tech-pill:focus-visible {
+              transform: translateY(-4px);
+              background: rgba(15, 23, 42, 0.88);
+              box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+            }
+
+            .tech-pill:focus-visible {
+              outline: 2px solid rgba(241, 165, 1, 0.6);
+              outline-offset: 4px;
             }
 
             .tech-icon-wrapper {
@@ -290,13 +235,13 @@ function Works() {
 
             @media (max-width: 1024px) {
               .tech-pill {
-                min-width: 320px;
-                max-width: 320px;
-                padding: 0 18px;
+                min-width: 340px;
+                max-width: 340px;
+                padding: 0 20px;
               }
 
               .tech-headline {
-                font-size: 17px;
+                font-size: 18px;
               }
 
               .marquee-layer,
@@ -307,8 +252,8 @@ function Works() {
 
             @media (max-width: 640px) {
               .tech-pill {
-                min-width: 260px;
-                max-width: 260px;
+                min-width: 280px;
+                max-width: 280px;
                 padding: 0 16px;
               }
 
