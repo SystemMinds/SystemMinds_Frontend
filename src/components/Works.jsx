@@ -101,10 +101,10 @@ function Works() {
         paddingBottom: '72px',
         overflow: 'hidden',
         scrollMarginTop: '90px',
-        minHeight: '600px',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center'
       }}
     >
