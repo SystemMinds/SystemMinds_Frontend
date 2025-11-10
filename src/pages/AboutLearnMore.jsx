@@ -9,75 +9,91 @@ const highlightStyle = {
 
 const testimonialItems = [
   {
-    quote: '“SystemMinds wrapped product strategy, design, and engineering into a single sprint cadence. Our mobile banking relaunch hit 4.6★ inside eight weeks.”',
-    name: 'Priya Nair',
-    title: 'Chief Digital Officer · NEXA Bank'
+    quote: '“We write clean, reusable, and future-ready code so products stay easy to enhance long after launch.”',
+    name: 'Craftsmanship',
+    title: 'Clean code and simple design that lasts'
   },
   {
-    quote: '“They helped us define the north-star vision, build the experience, and automate testing in one loop. We now ship value every Friday.”',
-    name: 'Luca Hermann',
-    title: 'Head of Product · Flowbit'
+    quote: '“Transparent collaboration keeps every milestone on track and every stakeholder in the loop.”',
+    name: 'Collaboration',
+    title: 'Agile rituals, open communication, shared ownership'
   },
   {
-    quote: '“SystemMinds orchestrated our AI roadmap, from data governance to in-product experiments. Adoption jumped 3x quarter over quarter.”',
-    name: 'Jordan Pierce',
-    title: 'VP Operations · RetailNorth'
+    quote: '“We blend innovation with practicality to deliver measurable business value—fast.”',
+    name: 'Impact',
+    title: 'Innovation with a results-driven mindset'
   }
 ]
 
 const timeline = [
   {
-    phase: 'Launch Readiness',
-    headline: 'Weeks 0 – 4',
-    detail: 'Immersion, metrics design, architecture runway, and experience blueprinting with executive alignment.'
+    phase: 'Who We Are',
+    headline: 'Passionate builders',
+    detail:
+      'We are developers, designers, and tech enthusiasts driven by innovation and problem-solving. Every engagement is treated as our own, meeting rigorous standards for quality, security, and performance.'
   },
   {
-    phase: 'Build Momentum',
-    headline: 'Weeks 5 – 12',
-    detail: 'Cross-functional pods deliver releases every two weeks with qualitative and quantitative insights baked in.'
+    phase: 'What We Do',
+    headline: 'End-to-end delivery',
+    detail:
+      'From web and mobile apps to APIs, cloud deployments, and enterprise platforms, we craft reusable, scalable architectures tailored to each business—ensuring your software grows alongside your ambitions.'
   },
   {
-    phase: 'Scale & Transfer',
-    headline: 'Weeks 13+',
-    detail: 'Operationalize observability, platform guardrails, and playbooks so your teams can own the roadmap.'
+    phase: 'Our Vision',
+    headline: 'Innovation that scales',
+    detail:
+      'We aim to be the trusted technology partner for startups, SMEs, and enterprises—building solutions that simplify work, connect people, and fuel growth.'
+  },
+  {
+    phase: 'Our Mission',
+    headline: 'Impact through technology',
+    detail:
+      'We deliver modern, affordable digital solutions that make life easier for teams and customers alike, turning ideas into smart, scalable realities.'
   }
 ]
 
 const capabilityGroups = [
   {
-    label: 'Product intelligence',
-    items: ['Opportunity framing workshops', 'Customer journey analytics', 'North-star metrics dashboards']
+    label: 'Services we deliver',
+    items: [
+      'Website and web application development',
+      'Mobile app development with React Native',
+      'Backend systems and API development',
+      'Cloud deployment and integration',
+      'Custom business software solutions',
+      'Maintenance and continuous support'
+    ]
   },
   {
-    label: 'Experience architecture',
-    items: ['Design system codification', 'Inclusive interaction patterns', 'Performance-first UI engineering']
+    label: 'Frontend expertise',
+    items: ['HTML · CSS · JavaScript', 'React.js & React Native', 'Tailwind CSS', 'Bootstrap']
   },
   {
-    label: 'Modern delivery',
-    items: ['Composable and headless platforms', 'Event-driven microservices', 'Cloud FinOps governance']
+    label: 'Backend expertise',
+    items: ['Java · Python', 'Spring Boot · Spring MVC · Spring Security', 'Microservices · Hibernate']
   },
   {
-    label: 'Enablement & scaling',
-    items: ['Playbooks & capability handoffs', 'DevSecOps training tracks', 'Change management support']
+    label: 'Additional tools',
+    items: ['API integration & deployment', 'Spring Batch', 'Spring AI', 'MySQL · PostgreSQL · MongoDB · SQL']
   }
 ]
 
 const contactCards = [
   {
-    label: 'Co-create a roadmap',
-    description: 'Bring a product challenge, we respond with a working session agenda within 24 hours.',
+    label: 'Start a project',
+    description: 'Share your challenge and we will shape a roadmap that fits your goals and timelines.',
     email: 'hello@systemminds.com',
     phone: '+1 (415) 555-0123'
   },
   {
-    label: 'Join forces as a partner',
-    description: 'Product firms, agencies, and venture studios collaborate with our pods globally.',
+    label: 'Partner with us',
+    description: 'Agencies, startups, and enterprises collaborate with us to co-build scalable digital products.',
     email: 'partnerships@systemminds.com',
     phone: '+49 30 1234 9876'
   },
   {
-    label: 'Careers & guilds',
-    description: 'Engineers, designers, product strategists, and operators who love modern delivery.',
+    label: 'Join the team',
+    description: 'Developers, designers, and strategists who love clean code and modern delivery are welcome.',
     email: 'careers@systemminds.com',
     phone: '+91 80 4567 8900'
   }
@@ -85,19 +101,24 @@ const contactCards = [
 
 const snapshotItems = [
   {
-    label: 'Product vision board',
-    caption: 'Co-create north-star journeys and experience guardrails.',
+    label: 'End-to-end builds',
+    caption: 'Web, mobile, API, and enterprise solutions tailored to your product vision.',
     gradient: 'linear-gradient(135deg, rgba(241,165,1,0.22), rgba(241,165,1,0.05))'
   },
   {
-    label: 'Delivery control tower',
-    caption: 'Live visibility into velocity, burn, and experiment results.',
+    label: 'Technology stack',
+    caption: 'React, Spring Boot, Python, and cloud-native tooling ready for scale.',
     gradient: 'linear-gradient(135deg, rgba(56,189,248,0.24), rgba(12,74,110,0.4))'
   },
   {
-    label: 'Intelligence layer',
-    caption: 'Telemetry dashboards that loop customer signal to backlog.',
+    label: 'Quality by design',
+    caption: 'Reusable codebases, automated checks, and secure delivery standards.',
     gradient: 'linear-gradient(135deg, rgba(192,132,252,0.28), rgba(76,29,149,0.45))'
+  },
+  {
+    label: 'Partnership focus',
+    caption: 'Transparent collaboration keeps launches fast and dependable.',
+    gradient: 'linear-gradient(135deg, rgba(134,239,172,0.28), rgba(21,128,61,0.35))'
   }
 ]
 
@@ -115,23 +136,34 @@ function AboutLearnMore() {
             <div className="grid gap-10 lg:grid-cols-[56%_44%] items-stretch">
               <div className="p-8 md:p-12 space-y-6">
                 <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs tracking-[0.28em]" style={{ fontFamily: '"Poppins", sans-serif', background: 'rgba(241,165,1,0.12)', color: '#F1A501' }}>
-                  PARTNERSHIP PLAYBOOK
+                  ABOUT SYSTEMMINDS
                 </span>
                 <h1
                   className="learn-more-headline"
                   style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '56px', lineHeight: 1.1, letterSpacing: '-0.02em' }}
                 >
-                  Build once. Launch often. Scale without drag.
+                  Smart, scalable software delivered with care.
                 </h1>
-                <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
-                  The Learn More hub unpacks how SystemMinds assembles pods, curates rituals, and embeds intelligence to keep digital programmes moving fast and staying accountable.
-                </p>
+                <div className="space-y-4">
+                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                    SystemMinds is a fast-growing IT solutions startup focused on delivering modern, efficient, and scalable digital products that transform ideas into reality.
+                  </p>
+                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                    We specialise in building web applications, mobile apps, APIs, and enterprise solutions that empower businesses to move faster with confidence.
+                  </p>
+                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                    Our team blends creativity, technical expertise, and a results-driven mindset to craft clean, reusable, high-performance software.
+                  </p>
+                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                    We focus on reusable, scalable architectures built with React.js, Java, Python, Spring Boot, and modern frontend frameworks—and we are constantly learning, adapting, and improving to stay ahead in an ever-changing tech landscape.
+                  </p>
+                </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {[
-                    { badge: 'Hybrid pods', text: 'Cross-functional leaders embedded with your teams from day zero.' },
-                    { badge: 'Signal loops', text: 'Insight pipelines connect customer feedback straight to the backlog.' },
-                    { badge: 'Launch metrics', text: 'A shared scorecard aligns finance, product, and engineering.' },
-                    { badge: 'Playbooks', text: 'Reusable frameworks so new teams ramp in days, not months.' }
+                    { badge: 'IT SOLUTIONS', text: 'Fast-growing startup delivering modern, scalable, and reliable digital products.' },
+                    { badge: 'FULL-STACK DELIVERY', text: 'Web, mobile, API, and enterprise systems tailored to every stage of growth.' },
+                    { badge: 'CLEAN CODE', text: 'Reusable architectures engineered for performance, security, and longevity.' },
+                    { badge: 'DESIGN + BUILD', text: 'Simple, thoughtful experiences powered by smart engineering.' }
                   ].map((item) => (
                     <div key={item.badge} className="rounded-3xl border border-white/10 p-4" style={{ background: 'rgba(24,34,54,0.65)', backdropFilter: 'blur(12px)' }}>
                       <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.22em', color: '#F1A501' }}>{item.badge}</p>
@@ -142,11 +174,14 @@ function AboutLearnMore() {
               </div>
               <div className="relative">
                 <div className="absolute inset-0 opacity-80" style={{ background: 'radial-gradient(circle at top, rgba(241,165,1,0.18), transparent 70%)' }} />
-                <div className="relative h-full w-full flex flex-col justify-between border-l border-white/10" style={{ background: 'rgba(8,15,27,0.85)', backdropFilter: 'blur(18px)' }}>
+                <div
+                  className="relative h-full w-full flex flex-col border-l border-white/10"
+                  style={{ background: 'rgba(8,15,27,0.85)', backdropFilter: 'blur(18px)', justifyContent: 'flex-start', gap: '28px' }}
+                >
                   <div className="p-8 md:p-10 space-y-5">
-                    <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', lineHeight: 1.2 }}>Engagement snapshot</h2>
+                    <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', lineHeight: 1.2 }}>At a glance</h2>
                     <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.72)' }}>
-                      Every partnership starts with a blueprint phase that aligns strategy, design, and delivery. Here’s how the first 90 days typically look.
+                      SystemMinds is a dynamic IT solutions startup crafting modern, scalable, and reliable digital products across platforms.
                     </p>
                     <div className="grid gap-4">
                       {snapshotItems.map((item) => (
@@ -163,10 +198,10 @@ function AboutLearnMore() {
                   </div>
                   <div className="grid grid-cols-2 gap-y-6 gap-x-8 px-8 pb-10" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     {[
-                      { label: 'Discovery depth', value: '15+ stakeholder and customer interviews' },
-                      { label: 'Design momentum', value: 'Design system foundations in week 3' },
-                      { label: 'Delivery velocity', value: 'First release candidate by week 6' },
-                      { label: 'Confidence gates', value: 'Automated checks across performance, security, accessibility' }
+                      { label: 'Focus areas', value: 'Web, mobile, APIs, and enterprise solutions' },
+                      { label: 'Tech foundation', value: 'React, Java, Python, Spring Boot, and modern frameworks' },
+                      { label: 'Ways of working', value: 'Transparent communication and agile practices' },
+                      { label: 'Long-term value', value: 'Partnerships that evolve with your business' }
                     ].map((item) => (
                       <div key={item.label}>
                         <p style={{ fontSize: '13px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.46)' }}>{item.label}</p>
@@ -182,8 +217,8 @@ function AboutLearnMore() {
 
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-6xl mx-auto rounded-[28px] border border-white/10 p-8 md:p-12" style={{ background: 'rgba(14,21,38,0.78)', backdropFilter: 'blur(14px)' }}>
-            <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.55)', fontSize: '12px' }}>Operating rhythm</p>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', marginBottom: '24px', marginTop: '10px', letterSpacing: '-0.01em' }}>How our collaborations unfold.</h2>
+            <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.55)', fontSize: '12px' }}>Our narrative</p>
+            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', marginBottom: '24px', marginTop: '10px', letterSpacing: '-0.01em' }}>Who we are, what we do, and where we’re heading.</h2>
             <div className="space-y-6">
               {timeline.map((item) => (
                 <div key={item.phase} className="rounded-3xl border border-white/10 px-6 py-5 lg:px-8 lg:py-6" style={{ background: 'rgba(8,13,24,0.72)', display: 'grid', gap: '10px', gridTemplateColumns: '1fr', fontFamily: '"Poppins", sans-serif' }}>
@@ -201,16 +236,17 @@ function AboutLearnMore() {
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-[45%_55%]">
             <div className="rounded-[26px] border border-white/10 p-8 space-y-6" style={{ background: 'linear-gradient(180deg, rgba(241,165,1,0.12), rgba(10,10,10,0.85))', backdropFilter: 'blur(16px)' }}>
-              <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Why teams stay</p>
-              <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Shape product futures with data-rich decision loops.</h3>
+              <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Why choose SystemMinds</p>
+              <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Innovation and reliability in every build.</h3>
               <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.75)' }}>
-                From concept to scale, SystemMinds integrates telemetry, user research, and architectural guardrails so your teams always know what to ship next and how it performs in the wild.
+                Our vision is to become a trusted technology partner for startups, SMEs, and enterprises worldwide by blending innovation with reliability. Our mission is to empower businesses with smart, affordable, modern digital solutions that deliver measurable impact.
               </p>
               <div className="grid gap-4">
                 {[
-                  { title: 'Dual-track autonomy', desc: 'Discovery and delivery tracks share insights every 72 hours to keep bets sharp.' },
-                  { title: 'Outcome dashboards', desc: 'Executives see burn, value, and risk on a single pane connected to real data.' },
-                  { title: 'Culture of enablement', desc: 'Guilds, playbooks, and office hours ensure knowledge transfers stick.' }
+                  { title: 'Clean, reusable code', desc: 'Future-ready architectures keep your software maintainable and scalable.' },
+                  { title: 'Transparent collaboration', desc: 'Open communication and agile practices keep every milestone on track.' },
+                  { title: 'On-time delivery', desc: 'A disciplined, results-driven approach ensures quality and performance every release.' },
+                  { title: 'Long-term partnerships', desc: 'We stay invested after launch with support built for growth.' }
                 ].map((item) => (
                   <div key={item.title} className="rounded-2xl border border-white/10 p-4" style={{ background: 'rgba(16,24,40,0.7)' }}>
                     <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '18px', color: '#F1A501' }}>{item.title}</p>
@@ -220,7 +256,7 @@ function AboutLearnMore() {
               </div>
             </div>
             <div className="rounded-[26px] border border-white/10 p-8 xl:p-10" style={{ background: 'rgba(13,20,35,0.78)', backdropFilter: 'blur(16px)', fontFamily: '"Poppins", sans-serif' }}>
-              <p className="uppercase tracking-[0.24em]" style={{ color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Capability modules</p>
+              <p className="uppercase tracking-[0.24em]" style={{ color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Our expertise</p>
               <div className="grid gap-6 md:grid-cols-2 mt-6">
                 {capabilityGroups.map((group) => (
                   <div key={group.label} className="rounded-2xl border border-white/10 p-5 h-full flex flex-col" style={{ background: 'rgba(8,13,24,0.75)' }}>
@@ -242,8 +278,8 @@ function AboutLearnMore() {
 
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-6xl mx-auto">
-            <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Voices from our partners</p>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', marginTop: '12px', marginBottom: '28px', letterSpacing: '-0.01em' }}>Results delivered with confidence.</h2>
+            <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>What sets us apart</p>
+            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', marginTop: '12px', marginBottom: '28px', letterSpacing: '-0.01em' }}>Principles that guide every partnership.</h2>
             <div className="grid gap-8 md:grid-cols-3">
               {testimonialItems.map((item) => (
                 <div key={item.name} className="rounded-[24px] border border-white/10 p-6 flex flex-col" style={{ background: 'rgba(9,16,30,0.82)', backdropFilter: 'blur(12px)', position: 'relative' }}>
@@ -262,11 +298,8 @@ function AboutLearnMore() {
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-7xl mx-auto grid gap-10 xl:grid-cols-[60%_40%] items-start">
             <div className="rounded-[28px] border border-white/10 p-8 lg:p-10 space-y-6" style={{ background: 'rgba(14,22,40,0.8)', backdropFilter: 'blur(14px)', fontFamily: '"Poppins", sans-serif' }}>
-              <p className="uppercase tracking-[0.24em]" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>Partner access</p>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '36px', lineHeight: 1.2 }}>Choose how you want to start the conversation.</h2>
-              <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.74)' }}>
-                We assemble the right strategists, designers, and engineers based on the stage of your product. Use the options below or share context in the quick brief.
-              </p>
+              <p className="uppercase tracking-[0.24em]" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>Let’s work together</p>
+              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '36px', lineHeight: 1.2 }}>Design, build, and scale your next big idea.</h2>
               <div className="grid gap-5">
                 {contactCards.map((card) => (
                   <div key={card.label} className="rounded-3xl border border-white/10 p-6" style={{ background: 'rgba(9,15,27,0.78)', backdropFilter: 'blur(12px)' }}>
@@ -280,14 +313,6 @@ function AboutLearnMore() {
                 ))}
               </div>
 
-              <div className="rounded-3xl border border-white/10 p-6 lg:p-7" style={{ background: 'rgba(8,14,26,0.85)', backdropFilter: 'blur(16px)' }}>
-                <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '18px', color: '#F1A501' }}>Studio availability</p>
-                <ul style={{ fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.72)', marginTop: '8px' }}>
-                  <li>Hybrid meetups in Bengaluru, Berlin, Austin, Singapore</li>
-                  <li>Dedicated partner success channel with 2-hour SLA</li>
-                  <li>Quarterly roadmap reviews with leadership pods</li>
-                </ul>
-              </div>
             </div>
 
             <div className="rounded-[28px] border border-white/10 p-7 lg:p-9" style={{ background: 'linear-gradient(180deg, rgba(241,165,1,0.35), rgba(10,10,10,0.92))', boxShadow: '0 25px 45px rgba(0,0,0,0.4)' }}>
@@ -370,9 +395,12 @@ function AboutLearnMore() {
           <div className="max-w-7xl mx-auto rounded-[30px] border border-white/10 p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(241,165,1,0.28), rgba(16,24,42,0.85))', boxShadow: '0 25px 50px rgba(0,0,0,0.35)' }}>
             <div className="grid gap-8 lg:grid-cols-[55%_45%] items-center">
               <div className="space-y-4">
-                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', letterSpacing: '-0.01em', color: '#ffffff' }}>Let’s map your next release window.</h2>
+                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', letterSpacing: '-0.01em', color: '#ffffff' }}>Let’s shape the future of technology together.</h2>
                 <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.82)' }}>
-                  Share your product mission or technical constraints. We will respond with a tailored approach, including a draft roadmap and the specialists who will lead the charge.
+                  SystemMinds is your technology partner for building modern, scalable, and reliable digital products—from concept to continuous improvement.
+                </p>
+                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.82)' }}>
+                  Tell us about the opportunity, and we will respond with a tailored approach, a suggested roadmap, and the specialists ready to bring it to life. Together, let’s shape the future of technology—one solution at a time.
                 </p>
               </div>
               <div className="flex flex-col gap-4" style={{ fontFamily: '"Poppins", sans-serif' }}>

@@ -7,36 +7,36 @@ const serifFont = '"Volkhov", "Georgia", serif'
 function Footer() {
   const currentYear = new Date().getFullYear()
 
-const columns = [
-  {
-    heading: 'Contact',
-    items: [
-      { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
-      { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
-      { label: 'Bengaluru · Remote-first', href: null }
-    ]
-  },
-  {
-    heading: 'Services',
-    items: [
-      { label: 'Product Sprints' },
-      { label: 'UI Engineering' },
-      { label: 'Cloud Setup' },
-      { label: 'QA Automation' },
-      { label: 'Care Plans' }
-    ]
-  },
-  {
-    heading: 'Resources',
-    items: [
-      { label: 'Playbooks' },
-      { label: 'Case Stories' },
-      { label: 'Newsletter' },
-      { label: 'Careers' },
-      { label: 'Press Room' }
-    ]
-  }
-]
+  const columns = [
+    {
+      heading: 'Contact',
+      items: [
+        { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
+        { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
+        { label: 'Bengaluru · Remote-first', href: null }
+      ]
+    },
+    {
+      heading: 'Services',
+      items: [
+        { label: 'Product Sprints' },
+        { label: 'UI Engineering' },
+        { label: 'Cloud Setup' },
+        { label: 'QA Automation' },
+        { label: 'Care Plans' }
+      ]
+    },
+    {
+      heading: 'Resources',
+      items: [
+        { label: 'Playbooks' },
+        { label: 'Case Stories' },
+        { label: 'Newsletter' },
+        { label: 'Careers' },
+        { label: 'Press Room' }
+      ]
+    }
+  ]
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#07090f', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
