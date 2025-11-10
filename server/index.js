@@ -1,7 +1,7 @@
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import nodemailer from 'nodemailer'
+import { sendMail } from './sendEmail.js'
 
 const args = new Set(process.argv.slice(2))
 const shouldServeStatic = args.has('--serve-static')
@@ -14,16 +14,6 @@ app.use(express.json({ limit: '2mb' }))
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: 'info.systemminds@gmail.com',
-    pass: 'gtzrhicqwdpfbotn',
-  },
-})
-
 app.post('/api/send-email', async (req, res) => {
   const { subject, body, replyTo, fromName, to } = req.body || {}
 
@@ -32,16 +22,7 @@ app.post('/api/send-email', async (req, res) => {
   }
 
   try {
-    const response = await transporter.sendMail({
-      from: {
-        name: fromName || 'SystemMinds Website',
-        address: 'info.systemminds@gmail.com',
-      },
-      to: to || 'info.systemminds@gmail.com',
-      subject: subject || 'SystemMinds website message',
-      html: body,
-      replyTo: replyTo || undefined,
-    })
+    const response = await sendMail({ subject, body, replyTo, fromName, to })
 
     return res.json({ ok: true, messageId: response.messageId })
   } catch (error) {
