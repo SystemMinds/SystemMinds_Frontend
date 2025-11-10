@@ -1,159 +1,121 @@
-import React, { useState } from 'react'
+import React from 'react'
+import logoImage from '../assets/images/Logo.png'
+
+const brandFont = '"Poppins", sans-serif'
+const serifFont = '"Volkhov", "Georgia", serif'
 
 function Footer() {
-  const [openSections, setOpenSections] = useState({})
+  const currentYear = new Date().getFullYear()
 
-  const footerSections = [
-    {
-      title: 'Company',
-      links: [
-        'About SystemMind',
-        'Leadership',
-        'Careers',
-        'Press & Media',
-        'Contact',
-      ],
-    },
-    {
-      title: 'Solutions',
-      links: [
-        'AI & Automation',
-        'Product Engineering',
-        'Digital Experience Platforms',
-        'Cloud Modernisation',
-        'Data & Analytics',
-      ],
-    },
-    {
-      title: 'Services',
-      links: [
-        'Discovery Workshops',
-        'Design Systems',
-        'Full-stack Development',
-        'DevOps & SRE',
-        'Managed Support',
-      ],
-    },
-    {
-      title: 'Industries',
-      links: [
-        'Fintech',
-        'Healthcare',
-        'Retail & E-commerce',
-        'SaaS & Platforms',
-        'Public Sector',
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        'Case Studies',
-        'Our Playbooks',
-        'Insights & Blog',
-        'Events & Webinars',
-        'Brand Assets',
-      ],
-    },
-    {
-      title: 'Legal',
-      links: [
-        'Privacy Policy',
-        'Security Practices',
-        'Responsible Disclosure',
-        'Terms of Service',
-        'Vendor Code of Conduct',
-      ],
-    },
-    {
-      title: 'Partners',
-      links: [
-        'AWS',
-        'Google Cloud',
-        'Microsoft Azure',
-        'OpenAI',
-        'UiPath',
-      ],
-    },
-    {
-      title: 'Community',
-      links: [
-        'SystemMind Foundation',
-        'Tech for Good',
-        'Meetups',
-        'Open Source',
-        'Diversity & Inclusion',
-      ],
-    },
-  ]
-
-  const toggleSection = (title) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [title]: !prev[title],
-    }))
+const columns = [
+  {
+    heading: 'Contact',
+    items: [
+      { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
+      { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
+      { label: 'Bengaluru · Remote-first', href: null }
+    ]
+  },
+  {
+    heading: 'Services',
+    items: [
+      { label: 'Product Sprints' },
+      { label: 'UI Engineering' },
+      { label: 'Cloud Setup' },
+      { label: 'QA Automation' },
+      { label: 'Care Plans' }
+    ]
+  },
+  {
+    heading: 'Resources',
+    items: [
+      { label: 'Playbooks' },
+      { label: 'Case Stories' },
+      { label: 'Newsletter' },
+      { label: 'Careers' },
+      { label: 'Press Room' }
+    ]
   }
+]
 
   return (
-    <footer className="relative text-gray-400" style={{ backgroundColor: 'transparent', overflow: 'hidden' }}>
-      <div className="relative z-10">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8 mb-8">
-          {footerSections.map((section, index) => (
-            <div key={index} className="mb-4">
-              {/* Desktop View */}
-              <h4 
-                className="font-semibold text-white mb-3 hidden md:block"
-                style={{ 
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '12px'
-                }}
-              >
-                {section.title}
-              </h4>
-              
-              {/* Mobile Accordion */}
+    <footer className="text-white" style={{ backgroundColor: '#07090f', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="border-b border-white/10" style={{ background: 'rgba(10,12,18,0.9)' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 xl:px-16 py-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-2">
+            <p style={{ fontFamily: brandFont, fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)' }}>
+              Subscribe to our
+            </p>
+            <div className="flex items-center gap-3">
+              <img src={logoImage} alt="SystemMinds logo" style={{ width: '44px', height: '44px', objectFit: 'contain' }} />
+              <h3 style={{ fontFamily: serifFont, fontSize: '26px', letterSpacing: '-0.02em' }}>SystemMinds</h3>
+            </div>
+          </div>
+          <form
+            className="w-full md:max-w-lg"
+            onSubmit={(event) => {
+              event.preventDefault()
+              event.currentTarget.reset()
+            }}
+          >
+            <div className="flex items-center rounded-full border border-white/15 px-3 py-1.5" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}>
+              <input
+                type="email"
+                required
+                placeholder="Enter email address"
+                className="flex-1 bg-transparent px-2 py-1 focus:outline-none text-sm sm:text-base"
+                style={{ fontFamily: brandFont, color: '#ffffff' }}
+              />
               <button
-                className="md:hidden w-full flex items-center justify-between font-semibold text-white mb-3"
-                onClick={() => toggleSection(section.title)}
-                style={{ 
-                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '12px'
-                }}
+                type="submit"
+                className="rounded-full px-5 py-2 text-xs sm:text-sm"
+                style={{ fontFamily: brandFont, fontWeight: 500, letterSpacing: '0.08em', backgroundColor: '#F1A501', color: '#0A0A0A', border: '1px solid rgba(255,255,255,0.2)' }}
               >
-                <span>{section.title}</span>
-                <svg
-                  className={`w-4 h-4 transition-transform ${
-                    openSections[section.title] ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                Submit
               </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
-              <ul
-                className={`space-y-2 ${
-                  openSections[section.title] ? 'block' : 'hidden md:block'
-                }`}
-              >
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-sm hover:text-white transition-colors"
-                      style={{ 
-                        fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-                        fontWeight: 400,
-                        fontSize: '12px'
-                      }}
-                    >
-                      {link}
-                    </a>
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 xl:px-16 py-8">
+        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+          {columns.map((column) => (
+            <div key={column.heading} className="space-y-3">
+              <p style={{ fontFamily: brandFont, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.18em' }}>{column.heading}</p>
+              <ul className="space-y-2">
+                {column.items.map((item) => (
+                  <li key={item.label}>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        style={{
+                          fontFamily: brandFont,
+                          fontSize: '14px',
+                          color: 'rgba(255,255,255,0.7)',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '10px'
+                        }}
+                      >
+                        <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span
+                        style={{
+                          fontFamily: brandFont,
+                          fontSize: '14px',
+                          color: 'rgba(255,255,255,0.7)',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '10px'
+                        }}
+                      >
+                        <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                        {item.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -161,83 +123,19 @@ function Footer() {
           ))}
         </div>
 
-        {/* Footer Notes */}
-        <div 
-          className="border-t border-gray-300 pt-6 space-y-4 text-xs"
-          style={{ 
-            fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-            fontWeight: 400,
-            fontSize: '11px',
-            lineHeight: '1.5'
-          }}
-        >
-          <p>
-            SystemMind partners with product and technology leaders to accelerate digital roadmaps. Our teams blend
-            strategy, design, engineering, and managed services to launch resilient platforms that scale with demand.
+        <div className="mt-6 pt-4 border-t border-white/10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p style={{ fontFamily: brandFont, fontSize: '13px', color: 'rgba(255,255,255,0.58)' }}>
+            © {currentYear} SystemMinds. Building dependable digital products for ambitious teams.
           </p>
-          <p>
-            We operate hybrid squads across India, Europe, and North America, ensuring around-the-clock collaboration
-            and coverage. Engagement models include fixed scope accelerators, co-innovation pods, and dedicated
-            product teams supported by our reliability command center.
-          </p>
-          <p>
-            Looking for a tailored solution? Book a discovery call and we’ll map a sprint-ready plan within three
-            business days. Pricing is transparent, milestone-driven, and aligned to measurable outcomes.
-          </p>
-          <p>
-            Data security commitments: ISO 27001 in progress, SOC 2 Type II under audit, GDPR compliant, and supported
-            by quarterly penetration testing.
-          </p>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-gray-300 pt-6 mt-6">
-          <div 
-            className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-            style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 400,
-              fontSize: '11px'
-            }}
-          >
-            <p className="text-xs">
-              Want to visit us? Schedule a studio tour in Bengaluru, Pune, or Berlin. Call +91 80471 22331.
-            </p>
-            <p className="text-xs">Global · Remote-first</p>
-          </div>
-          <div 
-            className="mt-6 pt-6 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center text-xs"
-            style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 400,
-              fontSize: '11px'
-            }}
-          >
-            <p>© {new Date().getFullYear()} SystemMind Technologies Pvt. Ltd. All rights reserved.</p>
-            <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
-              <a href="#" className="hover:underline">
-                Master Services Agreement
-              </a>
-              <a href="#" className="hover:underline">
-                Service Level Commitment
-              </a>
-              <a href="#" className="hover:underline">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:underline">
-                Cookie Preferences
-              </a>
-              <a href="#" className="hover:underline">
-                Accessibility
-              </a>
-            </div>
+          <div className="flex flex-wrap gap-4" style={{ fontFamily: brandFont, fontSize: '13px' }}>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Privacy Policy</a>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Terms</a>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Contact</a>
           </div>
         </div>
-      </div>
       </div>
     </footer>
   )
 }
 
 export default Footer
-
