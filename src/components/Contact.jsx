@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation.jsx'
+import { useEmailSender } from '../hooks/useEmailSender.js'
+import { useToast } from '../context/ToastProvider.jsx'
 
 function Contact() {
   const [sectionRef, isVisible] = useScrollAnimation({ threshold: 0.1, once: true })
@@ -10,33 +12,112 @@ function Contact() {
     message: '',
   })
   const [status, setStatus] = useState({ type: null, message: '' })
+  const statusTimerRef = useRef(null)
+  const { sendEmail, isReady, isSending, lastError } = useEmailSender({
+    subject: 'SystemMinds • New contact enquiry',
+  })
+  const { showToast } = useToast()
+
+  const defaultErrorMessage = useMemo(
+    () =>
+      lastError?.message ||
+      'Something went wrong while sending your message. Please try again after a moment or email us directly at info.systemminds@gmail.com.',
+    [lastError]
+  )
+
+  useEffect(() => {
+    return () => {
+      if (statusTimerRef.current) {
+        clearTimeout(statusTimerRef.current)
+      }
+    }
+  }, [])
+
+  const updateStatus = (nextStatus) => {
+    if (statusTimerRef.current) {
+      clearTimeout(statusTimerRef.current)
+      statusTimerRef.current = null
+    }
+    setStatus(nextStatus)
+    if (nextStatus?.type) {
+      statusTimerRef.current = setTimeout(() => {
+        setStatus({ type: null, message: '' })
+        statusTimerRef.current = null
+      }, 5000)
+    }
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
     if (!formData.fullName || !formData.email || !formData.message) {
-      setStatus({
+      updateStatus({
         type: 'error',
         message: 'Please fill out your name, email, and project details so we can reach you back.',
       })
       return
     }
 
-    setStatus({
-      type: 'success',
-      message: 'Thanks for reaching out! Our team will get back to you within 24 hours.',
-    })
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
+    if (!isReady) {
+      updateStatus({
+        type: 'error',
+        message: 'Email service is still getting ready. Please wait a second and try again.',
+      })
+      return
+    }
+
+    const composedBody = `
+      <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #0A0A0A;">
+        <h2 style="margin-bottom: 16px;">New contact enquiry from the SystemMinds website</h2>
+        <p style="margin: 4px 0;"><strong>Name:</strong> ${formData.fullName}</p>
+        <p style="margin: 4px 0;"><strong>Email:</strong> ${formData.email}</p>
+        ${
+          formData.phone
+            ? `<p style="margin: 4px 0;"><strong>Phone:</strong> ${formData.phone}</p>`
+            : ''
+        }
+        <p style="margin: 16px 0;"><strong>Project details:</strong></p>
+        <p style="white-space: pre-line; margin: 0; line-height: 1.5;">${formData.message}</p>
+      </div>
+    `
+
+    try {
+      await sendEmail({
+        body: composedBody,
+        replyTo: formData.email,
+        fromName: formData.fullName,
+      })
+      updateStatus({
+        type: 'success',
+        message: 'Thanks for reaching out! Our team will get back to you within 24 hours.',
+      })
+      showToast({
+        type: 'success',
+        title: 'Message sent',
+        message: 'Thanks for reaching out! Our team will get back to you within 24 hours.',
+      })
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        message: '',
+      })
+    } catch (error) {
+      updateStatus({
+        type: 'error',
+        message: defaultErrorMessage,
+      })
+      showToast({
+        type: 'error',
+        title: 'Message failed',
+        message: defaultErrorMessage,
+      })
+    }
   }
 
   const inputBaseClasses =
@@ -178,12 +259,13 @@ function Contact() {
               <div className="flex justify-end pt-1">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-3 text-base font-semibold text-white transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-3 text-base font-semibold text-white transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{
                     background: 'linear-gradient(135deg, #F1A501 0%, #DF6951 100%)',
                     boxShadow: '0 18px 40px rgba(223, 105, 81, 0.25)',
                     fontFamily: '"Poppins", "Inter", sans-serif',
                   }}
+                  disabled={!isReady || isSending}
                   onMouseEnter={(event) => {
                     event.currentTarget.style.transform = 'translateY(-2px)'
                     event.currentTarget.style.boxShadow = '0 22px 50px rgba(223, 105, 81, 0.35)'
@@ -193,7 +275,7 @@ function Contact() {
                     event.currentTarget.style.boxShadow = '0 18px 40px rgba(223, 105, 81, 0.25)'
                   }}
                 >
-                  Request consultation
+                  {isSending ? 'Sending…' : 'Request consultation'}
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0l-6-6m6 6l-6 6" />
                   </svg>

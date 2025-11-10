@@ -131,17 +131,74 @@ function Header() {
       <nav className="max-w-7xl mx-auto px-6 md:px-12 relative">
         <div className="flex items-center justify-between h-14">
           {/* Left: SystemMinds Logo */}
-          <div className="flex items-center flex-shrink-0">
+          <button
+            type="button"
+            className="flex items-center gap-2 flex-shrink-0 focus:outline-none"
+            onClick={(event) => {
+              event.preventDefault()
+              handleNavClick('Home', event)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                handleNavClick('Home', event)
+              }
+            }}
+            style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
+            aria-label="Go to top"
+          >
             <img
               src={logoImage}
               alt="SystemMinds logo"
-              className="h-14 object-contain"
+              className="h-12 object-contain transition-all duration-200"
               style={{ width: 'auto', marginLeft: '1px', marginTop: '2px' }}
             />
-          </div>
+            <span
+              className="inline-flex items-baseline gap-1 font-semibold tracking-tight"
+              style={{
+                fontFamily: '"Volkhov", "Georgia", serif',
+                fontSize: '18px',
+                color: isScrolled ? '#1d1d1f' : '#ffffff',
+                transition: 'color 0.3s ease',
+                flexWrap: 'nowrap',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              <span style={{ display: 'inline-flex', alignItems: 'baseline', gap: '2px' }}>
+                <span style={{ color: '#FF8A3D', fontSize: '20px', lineHeight: 1 }}>S</span>
+                <span
+                  style={{
+                    color: isScrolled ? '#1d1d1f' : '#ffffff',
+                    fontSize: '15px',
+                    letterSpacing: '0.04em'
+                  }}
+                >
+                  YSTEM
+                </span>
+              </span>
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'baseline',
+                  gap: '2px'
+                }}
+              >
+                <span style={{ color: '#FF8A3D', fontSize: '20px', lineHeight: 1 }}>M</span>
+                <span
+                  style={{
+                    color: isScrolled ? '#1d1d1f' : '#ffffff',
+                    fontSize: '15px',
+                    letterSpacing: '0.04em'
+                  }}
+                >
+                  INDS
+                </span>
+              </span>
+            </span>
+          </button>
 
           {/* Center: Desktop Menu */}
-          <div className="hidden md:flex items-center absolute left-1/2 top-1/2" style={{ gap: '24px', transform: 'translate(-50%, -38%)' }}>
+          <div className="hidden lg:flex items-center absolute left-1/2 top-1/2" style={{ gap: '24px', transform: 'translate(-50%, -38%)' }}>
             {menuItems.map((item, index) => (
               <a
                 key={item}
@@ -181,7 +238,7 @@ function Header() {
           </div>
 
           {/* Right: Social Media Button and Icons */}
-          <div className="hidden md:flex items-center gap-1 relative">
+          <div className="hidden lg:flex items-center gap-1 relative">
             {/* Social Media Icons with animation */}
             <div className="flex items-center gap-3">
               <a href="https://www.linkedin.com/company/systemminds/" 
@@ -325,7 +382,7 @@ function Header() {
           </div>
 
           {/* Mobile Social Media and Menu */}
-          <div className="md:hidden flex items-center gap-2 relative">
+          <div className="lg:hidden flex items-center gap-2 relative">
             {/* Mobile Social Media Icons with animation */}
             <div className="flex items-center gap-2">
               <a 
@@ -451,7 +508,7 @@ function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div 
-            className="md:hidden absolute right-3 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-100"
+            className="lg:hidden absolute right-3 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-100"
             style={{
               animation: 'slideIn 0.4s ease-out',
               minWidth: '140px',

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import { useEmailSender } from '../hooks/useEmailSender.js'
+import { useToast } from '../context/ToastProvider.jsx'
 
 const highlightStyle = {
   fontFamily: '"Volkhov", "Georgia", serif',
@@ -123,6 +125,112 @@ const snapshotItems = [
 ]
 
 function AboutLearnMore() {
+  const {
+    sendEmail: sendQuickBriefEmail,
+    isReady: isQuickBriefReady,
+    isSending: isQuickBriefSending,
+    lastError: quickBriefError,
+  } = useEmailSender({
+    subject: 'SystemMinds • Quick brief submission',
+  })
+
+  const [quickBriefStatus, setQuickBriefStatus] = useState({ type: null, message: '' })
+  const statusTimerRef = useRef(null)
+  const { showToast } = useToast()
+
+  useEffect(() => {
+    return () => {
+      if (statusTimerRef.current) {
+        clearTimeout(statusTimerRef.current)
+      }
+    }
+  }, [])
+
+  const updateQuickBriefStatus = (nextStatus) => {
+    if (statusTimerRef.current) {
+      clearTimeout(statusTimerRef.current)
+      statusTimerRef.current = null
+    }
+    setQuickBriefStatus(nextStatus)
+    if (nextStatus?.type) {
+      statusTimerRef.current = setTimeout(() => {
+        setQuickBriefStatus({ type: null, message: '' })
+        statusTimerRef.current = null
+      }, 5000)
+    }
+  }
+
+  const quickBriefErrorMessage = useMemo(
+    () =>
+      quickBriefError?.message ||
+      'We could not send your brief just now. Please retry shortly or contact us at info.systemminds@gmail.com.',
+    [quickBriefError]
+  )
+
+  const handleQuickBriefSubmit = async (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const name = data.get('name')
+    const email = data.get('email')
+    const company = data.get('company')
+    const message = data.get('message')
+
+    if (!name || !email || !message) {
+      updateQuickBriefStatus({
+        type: 'error',
+        message: 'Please share your name, work email, and what you would like to explore with us.',
+      })
+      return
+    }
+
+    if (!isQuickBriefReady) {
+      updateQuickBriefStatus({
+        type: 'error',
+        message: 'Email service is almost ready. Give it a moment and try again.',
+      })
+      return
+    }
+
+    const body = `
+      <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #0A0A0A;">
+        <h2 style="margin-bottom: 16px;">New quick brief submission</h2>
+        <p style="margin: 4px 0;"><strong>Name:</strong> ${name}</p>
+        <p style="margin: 4px 0;"><strong>Email:</strong> ${email}</p>
+        ${company ? `<p style="margin: 4px 0;"><strong>Company:</strong> ${company}</p>` : ''}
+        <p style="margin: 16px 0;"><strong>Project notes:</strong></p>
+        <p style="white-space: pre-line; margin: 0; line-height: 1.5;">${message}</p>
+      </div>
+    `
+
+    try {
+      await sendQuickBriefEmail({
+        body,
+        replyTo: email,
+        fromName: name,
+      })
+      updateQuickBriefStatus({
+        type: 'success',
+        message: 'Thanks for the brief! Our team will be in touch shortly.',
+      })
+      showToast({
+        type: 'success',
+        title: 'Brief received',
+        message: 'Thanks for the brief! Our team will be in touch shortly.',
+      })
+      form.reset()
+    } catch (error) {
+      updateQuickBriefStatus({
+        type: 'error',
+        message: quickBriefErrorMessage,
+      })
+      showToast({
+        type: 'error',
+        title: 'Brief failed',
+        message: quickBriefErrorMessage,
+      })
+    }
+  }
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
@@ -323,13 +431,7 @@ function AboutLearnMore() {
               <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)', marginBottom: '20px' }}>
                 Tell us about the opportunity, the audience, and the outcomes you are chasing. We’ll curate a response deck tailored to your context.
               </p>
-              <form
-                className="grid gap-4 quick-brief-form"
-                onSubmit={(event) => {
-                  event.preventDefault()
-                  event.currentTarget.reset()
-                }}
-              >
+              <form className="grid gap-4 quick-brief-form" onSubmit={handleQuickBriefSubmit}>
                 <label className="flex flex-col gap-2">
                   <span style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.85)' }}>Your name</span>
                   <input
@@ -378,11 +480,23 @@ function AboutLearnMore() {
                 </label>
                 <button
                   type="submit"
-                  className="quick-brief-submit rounded-xl px-6 py-3 font-medium transition-transform duration-200"
+                  className="quick-brief-submit rounded-xl px-6 py-3 font-medium transition-transform duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ fontFamily: '"Poppins", sans-serif', color: '#0A0A0A', background: 'linear-gradient(135deg, #F1A501, #FFC94A)', boxShadow: '0 18px 32px rgba(10,10,10,0.35)' }}
+                  disabled={!isQuickBriefReady || isQuickBriefSending}
                 >
-                  Send brief
+                  {isQuickBriefSending ? 'Sending…' : 'Send brief'}
                 </button>
+                {quickBriefStatus.type && (
+                  <p
+                    style={{
+                      fontFamily: '"Poppins", sans-serif',
+                      fontSize: '13px',
+                      color: quickBriefStatus.type === 'success' ? 'rgba(0,255,178,0.85)' : 'rgba(255,95,86,0.8)',
+                    }}
+                  >
+                    {quickBriefStatus.message}
+                  </p>
+                )}
                 <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>
                   Your information stays private and is only used to follow up on this enquiry.
                 </p>
