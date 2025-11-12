@@ -19,7 +19,7 @@ function Header() {
     'Services',
     'Technologies',
     'Works',
-    'Our Journey',
+    'Journey',
     'Contact',
   ]
 
@@ -29,7 +29,7 @@ function Header() {
     'Services': 'work-we-do',
     'Technologies': 'technologies',
     'Works': 'works',
-    'Our Journey': 'our-journey',
+    'Journey': 'our-journey',
     'Contact': 'contact',
   }
 
@@ -220,11 +220,12 @@ function Header() {
                   paddingBottom: '6px',
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(-10px)',
-                  transition: `all 0.6s ease-out ${index * 0.1}s`
+                  transition: `all 0.6s ease-out ${index * 0.1}s`,
+                  whiteSpace: 'nowrap'
                 }}
                 onClick={(event) => handleNavClick(item, event)}
               >
-                <span className="transition-all duration-200 ease-out inline-block group-hover:scale-110 group-hover:tracking-wider">
+                <span className="transition-all duration-200 ease-out inline-block group-hover:scale-110 group-hover:tracking-wider" style={{ whiteSpace: 'nowrap' }}>
                   {item}
                 </span>
                 {/* Animated underline */}
@@ -577,7 +578,8 @@ function Header() {
                     letterSpacing: '0.05em',
                     fontSize: '11px',
                     opacity: 0,
-                    animation: `fadeIn 0.3s ease-out ${index * 0.05}s forwards`
+                    animation: `fadeIn 0.3s ease-out ${index * 0.05}s forwards`,
+                    whiteSpace: 'nowrap'
                   }}
                   onClick={(event) => handleNavClick(item, event, true)}
                 >

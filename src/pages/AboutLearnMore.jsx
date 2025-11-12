@@ -252,7 +252,7 @@ function AboutLearnMore() {
                 >
                   Smart, scalable software delivered with care.
                 </h1>
-                <div className="space-y-4">
+                <div className="space-y-4 about-learn-more-description">
                   <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                     SystemMinds is a fast-growing IT solutions startup focused on delivering modern, efficient, and scalable digital products that transform ideas into reality.
                   </p>
@@ -274,8 +274,8 @@ function AboutLearnMore() {
                     { badge: 'DESIGN + BUILD', text: 'Simple, thoughtful experiences powered by smart engineering.' }
                   ].map((item) => (
                     <div key={item.badge} className="rounded-3xl border border-white/10 p-4" style={{ background: 'rgba(24,34,54,0.65)', backdropFilter: 'blur(12px)' }}>
-                      <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.22em', color: '#F1A501' }}>{item.badge}</p>
-                      <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.text}</p>
+                      <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.22em', color: '#F1A501' }}>{item.badge}</p>
+                      <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.text}</p>
                     </div>
                   ))}
                 </div>
@@ -287,8 +287,8 @@ function AboutLearnMore() {
                   style={{ background: 'rgba(8,15,27,0.85)', backdropFilter: 'blur(18px)', justifyContent: 'flex-start', gap: '28px' }}
                 >
                   <div className="p-8 md:p-10 space-y-5">
-                    <h2 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', lineHeight: 1.2, color: '#ffffff' }}>At a glance</h2>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
+                    <h2 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '14px', lineHeight: 1.2, color: '#ffffff' }}>At a glance</h2>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                       SystemMinds is a dynamic IT solutions startup crafting modern, scalable, and reliable digital products across platforms.
                     </p>
                     <div className="grid gap-4">
@@ -298,8 +298,8 @@ function AboutLearnMore() {
                           className="rounded-2xl border border-white/10 p-4 flex flex-col gap-3"
                           style={{ background: item.gradient, backdropFilter: 'blur(12px)', minHeight: '118px' }}
                         >
-                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', color: '#ffffff' }}>{item.label}</p>
-                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.caption}</p>
+                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '14px', color: '#ffffff' }}>{item.label}</p>
+                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.caption}</p>
                         </div>
                       ))}
                     </div>
@@ -312,8 +312,8 @@ function AboutLearnMore() {
                       { label: 'Long-term value', value: 'Partnerships that evolve with your business' }
                     ].map((item) => (
                       <div key={item.label}>
-                        <p style={{ fontSize: '13px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.46)' }}>{item.label}</p>
-                        <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px', lineHeight: 1.6 }}>{item.value}</p>
+                        <p style={{ fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.46)' }}>{item.label}</p>
+                        <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px', lineHeight: 1.6 }}>{item.value}</p>
                       </div>
                     ))}
                   </div>
@@ -334,7 +334,7 @@ function AboutLearnMore() {
                     <span style={{ ...highlightStyle, fontSize: '16px', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{item.phase}</span>
                     <span style={{ fontSize: '14px', padding: '6px 12px', borderRadius: '999px', background: 'rgba(241,165,1,0.12)', color: '#F1A501' }}>{item.headline}</span>
                   </div>
-                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.detail}</p>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.detail}</p>
                 </div>
               ))}
             </div>
@@ -346,7 +346,7 @@ function AboutLearnMore() {
             <div className="rounded-[26px] border border-white/10 p-8 space-y-6" style={{ background: 'linear-gradient(180deg, rgba(241,165,1,0.12), rgba(10,10,10,0.85))', backdropFilter: 'blur(16px)' }}>
               <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Why choose SystemMinds</p>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', color: '#ffffff' }}>Innovation and reliability in every build.</h3>
-              <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
+              <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                 Our vision is to become a trusted technology partner for startups, SMEs, and enterprises worldwide by blending innovation with reliability. Our mission is to empower businesses with smart, affordable, modern digital solutions that deliver measurable impact.
               </p>
               <div className="grid gap-4">
@@ -357,8 +357,8 @@ function AboutLearnMore() {
                   { title: 'Long-term partnerships', desc: 'We stay invested after launch with support built for growth.' }
                 ].map((item) => (
                   <div key={item.title} className="rounded-2xl border border-white/10 p-4" style={{ background: 'rgba(16,24,40,0.7)' }}>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', color: '#F1A501' }}>{item.title}</p>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.desc}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '14px', color: '#F1A501' }}>{item.title}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -369,7 +369,7 @@ function AboutLearnMore() {
                 {capabilityGroups.map((group) => (
                   <div key={group.label} className="rounded-2xl border border-white/10 p-5 h-full flex flex-col" style={{ background: 'rgba(8,13,24,0.75)' }}>
                     <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '18px', color: '#F1A501', marginBottom: '10px' }}>{group.label}</p>
-                    <ul className="space-y-3" style={{ fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.76)' }}>
+                    <ul className="space-y-3" style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.76)' }}>
                       {group.items.map((item) => (
                         <li key={item} style={{ display: 'flex', gap: '10px' }}>
                           <span style={{ color: '#F1A501' }}>•</span>
@@ -392,10 +392,10 @@ function AboutLearnMore() {
               {testimonialItems.map((item) => (
                 <div key={item.name} className="rounded-[24px] border border-white/10 p-6 flex flex-col" style={{ background: 'rgba(9,16,30,0.82)', backdropFilter: 'blur(12px)', position: 'relative' }}>
                   <span style={{ position: 'absolute', top: '18px', left: '18px', width: '40px', height: '2px', background: '#F1A501' }} />
-                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.82)', marginTop: '18px' }}>{item.quote}</p>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.82)', marginTop: '18px' }}>{item.quote}</p>
                   <div style={{ marginTop: 'auto', paddingTop: '20px' }}>
                     <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '18px', color: '#F1A501' }}>{item.name}</p>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.58)', marginTop: '4px' }}>{item.title}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.58)', marginTop: '4px' }}>{item.title}</p>
                   </div>
                 </div>
               ))}
@@ -412,7 +412,7 @@ function AboutLearnMore() {
                 {contactCards.map((card) => (
                   <div key={card.label} className="rounded-3xl border border-white/10 p-6" style={{ background: 'rgba(9,15,27,0.78)', backdropFilter: 'blur(12px)' }}>
                     <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', color: '#F1A501' }}>{card.label}</p>
-                    <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.72)', marginTop: '8px' }}>{card.description}</p>
+                    <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.72)', marginTop: '8px' }}>{card.description}</p>
                     <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '14px' }}>
                       <a href={`mailto:${card.email}`} style={{ color: '#ffffff' }}>{card.email}</a>
                       <a href={`tel:${card.phone.replace(/[^+\d]/g, '')}`} style={{ color: 'rgba(255,255,255,0.65)' }}>{card.phone}</a>
@@ -428,7 +428,7 @@ function AboutLearnMore() {
                 Quick Brief
               </p>
               <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '30px', marginTop: '18px', marginBottom: '18px', color: '#ffffff' }}>Send us the spark.</h3>
-              <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)', marginBottom: '20px' }}>
+              <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)', marginBottom: '20px' }}>
                 Tell us about the opportunity, the audience, and the outcomes you are chasing. We’ll curate a response deck tailored to your context.
               </p>
               <form className="grid gap-4 quick-brief-form" onSubmit={handleQuickBriefSubmit}>
@@ -510,10 +510,10 @@ function AboutLearnMore() {
             <div className="grid gap-8 lg:grid-cols-[55%_45%] items-center">
               <div className="space-y-4">
                 <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '40px', letterSpacing: '-0.01em', color: '#ffffff' }}>Let’s shape the future of technology together.</h2>
-                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.82)' }}>
+                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
                   SystemMinds is your technology partner for building modern, scalable, and reliable digital products—from concept to continuous improvement.
                 </p>
-                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.82)' }}>
+                <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
                   Tell us about the opportunity, and we will respond with a tailored approach, a suggested roadmap, and the specialists ready to bring it to life. Together, let’s shape the future of technology—one solution at a time.
                 </p>
               </div>
@@ -537,26 +537,24 @@ function AboutLearnMore() {
           </div>
         </section>
         <style jsx="true">{`
-          .learn-more-headline {
-            font-size: 56px;
+          @keyframes responsiveFontSize {
+            0%, 100% {
+              font-size: 14px;
+            }
           }
-
           @media (max-width: 1024px) {
-            .learn-more-headline {
-              font-size: 48px;
+            .about-learn-more-description p {
+              font-size: 13px !important;
             }
           }
-
           @media (max-width: 768px) {
-            .learn-more-headline {
-              font-size: 40px;
-              line-height: 1.15;
+            .about-learn-more-description p {
+              font-size: 13px !important;
             }
           }
-
-          @media (max-width: 520px) {
-            .learn-more-headline {
-              font-size: 34px;
+          @media (max-width: 640px) {
+            .about-learn-more-description p {
+              font-size: 12px !important;
             }
           }
 

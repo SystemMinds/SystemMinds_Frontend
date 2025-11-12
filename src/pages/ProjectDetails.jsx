@@ -9,6 +9,10 @@ function ProjectDetails() {
   const navigate = useNavigate()
   const project = getProject(slug)
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [slug])
+
   if (!project) {
     return (
       <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#0A0A0A', color: '#ffffff' }}>
@@ -67,21 +71,23 @@ function ProjectDetails() {
                     {project.heroTag}
                   </span>
                   <h1
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold"
                     style={{
                       fontFamily: '"Volkhov", "Georgia", serif',
-                      fontSize: '56px',
-                      lineHeight: 1.05,
-                      letterSpacing: '-0.015em'
+                      lineHeight: 1.2,
+                      letterSpacing: '-0.02em',
+                      color: '#ffffff'
                     }}
                   >
                     {project.name}
                   </h1>
                   <p
+                    className="project-details-summary"
                     style={{
                       fontFamily: '"Poppins", sans-serif',
-                      fontSize: '18px',
-                      lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.82)',
+                      fontSize: '14px',
+                      lineHeight: 1.6,
+                      color: 'rgba(255,255,255,0.85)',
                       maxWidth: '760px'
                     }}
                   >
@@ -118,19 +124,20 @@ function ProjectDetails() {
               >
                 <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '20px', padding: '20px', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <p style={{ textTransform: 'uppercase', letterSpacing: '0.18em', fontSize: '12px', color: 'rgba(255,255,255,0.58)' }}>The challenge</p>
-                  <p style={{ marginTop: '10px' }}>{project.challenge}</p>
+                  <p style={{ marginTop: '10px', fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>{project.challenge}</p>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '20px', padding: '20px', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <p style={{ textTransform: 'uppercase', letterSpacing: '0.18em', fontSize: '12px', color: 'rgba(255,255,255,0.58)' }}>Our solution</p>
-                  <p style={{ marginTop: '10px' }}>{project.solution}</p>
+                  <p style={{ marginTop: '10px', fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>{project.solution}</p>
                 </div>
               </div>
               <p
+                className="project-details-overview"
                 style={{
                   fontFamily: '"Poppins", sans-serif',
-                  fontSize: '17px',
-                  lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.78)'
+                  fontSize: '14px',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.85)'
                 }}
               >
                 {project.overview}
@@ -147,7 +154,7 @@ function ProjectDetails() {
                 style={{ background: 'rgba(12,20,34,0.8)', padding: '24px', backdropFilter: 'blur(12px)' }}
               >
                   <div className="flex items-center justify-between mb-6">
-                    <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', color: '#FFFFFF' }}>Project snapshots</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', color: '#FFFFFF' }}>Project snapshots</h2>
                   </div>
                 <div className="project-gallery-wrapper">
                   <div className="project-gallery-track">
@@ -246,8 +253,8 @@ function ProjectDetails() {
         <section className="px-6 md:px-12 lg:px-16 mt-16">
           <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[58%_42%]">
             <div className="rounded-[28px] border border-white/10 p-8 md:p-10 space-y-6" style={{ background: 'rgba(14,22,40,0.85)', backdropFilter: 'blur(18px)' }}>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Architecture highlights</h2>
-              <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.78)' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', color: '#ffffff' }}>Architecture highlights</h2>
+              <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
                 {project.architectureHighlights.map((item) => (
                   <li key={item} style={{ display: 'flex', gap: '14px' }}>
                     <span style={{ color: '#F1A501' }}>•</span>
@@ -258,7 +265,7 @@ function ProjectDetails() {
             </div>
 
             <div className="rounded-[28px] border border-white/10 p-8 md:p-10 space-y-6" style={{ background: 'rgba(9,15,27,0.92)', backdropFilter: 'blur(16px)' }}>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '32px', lineHeight: 1.2 }}>Tech stack</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', color: '#ffffff' }}>Tech stack</h2>
               <div className="space-y-6">
                 {Object.entries(project.techStack).map(([label, items]) => (
                   <div key={label} style={{ fontFamily: '"Poppins", sans-serif' }}>
@@ -289,14 +296,14 @@ function ProjectDetails() {
 
         <section className="px-6 md:px-12 lg:px-16 mt-16">
           <div className="max-w-6xl mx-auto rounded-[28px] border border-white/10 p-8 md:p-10 space-y-6" style={{ background: 'rgba(12,20,34,0.9)', backdropFilter: 'blur(14px)' }}>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Delivery flow</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', color: '#ffffff' }}>Delivery flow</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {project.deliveryFlow.map((step) => (
                 <div key={step.title} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '22px', padding: '20px', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', fontWeight: 600, color: '#F1A501', marginBottom: '10px' }}>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', fontWeight: 600, color: '#F1A501', marginBottom: '10px' }}>
                     {step.title}
                   </p>
-                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7 }}>{step.description}</p>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6 }}>{step.description}</p>
                 </div>
               ))}
             </div>
@@ -305,8 +312,8 @@ function ProjectDetails() {
 
         <section className="px-6 md:px-12 lg:px-16 mt-16">
           <div className="max-w-6xl mx-auto rounded-[28px] border border-white/10 p-8 md:p-10 space-y-6" style={{ background: 'rgba(241,165,1,0.1)', backdropFilter: 'blur(12px)' }}>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Impact & outcomes</h2>
-            <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', color: 'rgba(48,32,0,0.9)' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', color: '#ffffff' }}>Impact & outcomes</h2>
+            <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
               {project.outcomes.map((outcome) => (
                 <li key={outcome} style={{ display: 'flex', gap: '12px' }}>
                   <span style={{ color: '#DF6951' }}>•</span>
@@ -356,6 +363,31 @@ function ProjectDetails() {
         </section>
       </main>
       <Footer />
+      <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 1024px) {
+          .project-details-summary,
+          .project-details-overview {
+            font-size: 13px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .project-details-summary,
+          .project-details-overview {
+            font-size: 13px !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .project-details-summary,
+          .project-details-overview {
+            font-size: 12px !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }
