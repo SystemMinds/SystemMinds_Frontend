@@ -40,37 +40,37 @@ function Footer() {
     }
   }
 
-  const columns = [
-    {
-      heading: 'Contact',
-      items: [
-        { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
-        { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
-        { label: 'Bengaluru · Remote-first', href: null }
-      ]
-    },
-    {
-      heading: 'Services',
-      items: [
-        { label: 'Product Sprints' },
-        { label: 'UI Engineering' },
-        { label: 'Cloud Setup' },
-        { label: 'QA Automation' },
-        { label: 'Care Plans' }
-      ]
-    },
-    {
-      heading: 'Resources',
-      items: [
-        { label: 'Playbooks' },
-        { label: 'Case Stories' },
-        { label: 'Newsletter' },
-        { label: 'Careers', href: '/career', newTab: true },
-        { label: 'Our Journey', href: '/#our-journey' },
-        { label: 'Press Room' }
-      ]
-    }
-  ]
+  const contactColumn = {
+    heading: 'Contact',
+    items: [
+      { label: 'hello@systemminds.com', href: 'mailto:hello@systemminds.com' },
+      { label: '+1 (415) 555-0123', href: 'tel:+14155550123' },
+      { label: 'Bengaluru · Remote-first', href: null }
+    ]
+  }
+
+  const servicesColumn = {
+    heading: 'Services',
+    items: [
+      { label: 'Product Sprints' },
+      { label: 'UI Engineering' },
+      { label: 'Cloud Setup' },
+      { label: 'QA Automation' },
+      { label: 'Care Plans' }
+    ]
+  }
+
+  const resourcesColumn = {
+    heading: 'Resources',
+    items: [
+      { label: 'Playbooks' },
+      { label: 'Case Stories' },
+      { label: 'Newsletter' },
+      { label: 'Careers', href: '/career', newTab: true },
+      { label: 'Our Journey', href: '/#our-journey' },
+      { label: 'Press Room' }
+    ]
+  }
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#07090f', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
@@ -169,71 +169,245 @@ function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 xl:px-16 py-10">
-        <div
-          className="grid gap-4 md:gap-5 lg:gap-6 sm:grid-cols-2 md:grid-cols-3"
-          style={{ alignItems: 'flex-start', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))' }}
-        >
-          {columns.map((column) => (
-            <div key={column.heading} className="space-y-3 text-center sm:text-left">
-              <p style={{ fontFamily: brandFont, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.18em' }}>{column.heading}</p>
-              <ul className="space-y-2">
-                {column.items.map((item) => (
-                  <li key={item.label}>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target={item.newTab ? '_blank' : undefined}
-                        rel={item.newTab ? 'noopener noreferrer' : undefined}
-                        style={{
-                          fontFamily: brandFont,
-                          fontSize: '14px',
-                          color: 'rgba(255,255,255,0.7)',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '10px',
-                          cursor: 'pointer',
-                          transition: 'color 0.2s ease'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
-                      >
-                        <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span
-                        style={{
-                          fontFamily: brandFont,
-                          fontSize: '14px',
-                          color: 'rgba(255,255,255,0.7)',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '10px'
-                        }}
-                      >
-                        <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
-                        {item.label}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 xl:px-16 py-10 footer-content">
+        {/* Contact - Top Center on Mobile */}
+        <div className="space-y-3 text-center mb-8 md:mb-0 footer-contact">
+          <p className="footer-heading" style={{ fontFamily: brandFont, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.18em' }}>{contactColumn.heading}</p>
+          <ul className="space-y-2">
+            {contactColumn.items.map((item) => (
+              <li key={item.label}>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="footer-link"
+                    style={{
+                      fontFamily: brandFont,
+                      fontSize: '14px',
+                      color: 'rgba(255,255,255,0.7)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      cursor: 'pointer',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                    {item.label}
+                  </a>
+                ) : (
+                  <span
+                    className="footer-link"
+                    style={{
+                      fontFamily: brandFont,
+                      fontSize: '14px',
+                      color: 'rgba(255,255,255,0.7)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '10px'
+                    }}
+                  >
+                    <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                    {item.label}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-white/10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
-          <p style={{ fontFamily: brandFont, fontSize: '13px', color: 'rgba(255,255,255,0.58)' }}>
-            © {currentYear} SystemMinds. Building dependable digital products for ambitious teams.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center sm:justify-end" style={{ fontFamily: brandFont, fontSize: '13px' }}>
-            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Privacy Policy</a>
-            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Terms</a>
-            <a href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Contact</a>
+        {/* Services and Resources - Side by Side */}
+        <div className="footer-services-resources">
+          <div className="space-y-3 footer-column">
+            <p className="footer-heading" style={{ fontFamily: brandFont, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.18em' }}>{servicesColumn.heading}</p>
+            <ul className="space-y-2">
+              {servicesColumn.items.map((item) => (
+                <li key={item.label}>
+                  <span
+                    className="footer-link"
+                    style={{
+                      fontFamily: brandFont,
+                      fontSize: '14px',
+                      color: 'rgba(255,255,255,0.7)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '10px'
+                    }}
+                  >
+                    <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-3 footer-column">
+            <p className="footer-heading" style={{ fontFamily: brandFont, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.18em' }}>{resourcesColumn.heading}</p>
+            <ul className="space-y-2">
+              {resourcesColumn.items.map((item) => (
+                <li key={item.label}>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.newTab ? '_blank' : undefined}
+                      rel={item.newTab ? 'noopener noreferrer' : undefined}
+                      className="footer-link"
+                      style={{
+                        fontFamily: brandFont,
+                        fontSize: '14px',
+                        color: 'rgba(255,255,255,0.7)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        transition: 'color 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
+                    >
+                      <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span
+                      className="footer-link"
+                      style={{
+                        fontFamily: brandFont,
+                        fontSize: '14px',
+                        color: 'rgba(255,255,255,0.7)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '10px'
+                      }}
+                    >
+                      <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                      {item.label}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
+
+      <div className="w-full border-t border-white/10 footer-bottom-wrapper">
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 xl:px-16 py-6 flex flex-col md:flex-row md:items-start lg:items-center md:justify-between text-center md:text-left footer-bottom">
+          <p className="footer-copyright" style={{ fontFamily: brandFont, fontSize: '13px', color: 'rgba(255,255,255,0.58)' }}>
+            © {currentYear} SystemMinds. Building dependable digital products for ambitious teams.
+          </p>
+          <div className="flex gap-4 justify-center md:justify-end footer-links" style={{ fontFamily: brandFont, fontSize: '13px', flexWrap: 'nowrap' }}>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)', whiteSpace: 'nowrap' }}>Privacy Policy</a>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)', whiteSpace: 'nowrap' }}>Terms</a>
+            <a href="#" style={{ color: 'rgba(255,255,255,0.65)', whiteSpace: 'nowrap' }}>Contact</a>
+          </div>
+        </div>
+      </div>
+      <style jsx="true">{`
+        .footer-links {
+          flex-wrap: nowrap !important;
+        }
+        .footer-links a {
+          white-space: nowrap;
+        }
+        .footer-bottom-wrapper {
+          width: 100%;
+        }
+        @media (min-width: 1024px) {
+          .footer-bottom {
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100%;
+          }
+          .footer-copyright {
+            flex: 0 1 auto;
+          }
+          .footer-links {
+            flex: 0 0 auto;
+            margin-left: auto;
+          }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .footer-bottom {
+            flex-direction: row !important;
+            align-items: flex-start !important;
+          }
+          .footer-copyright {
+            text-align: left !important;
+          }
+          .footer-links {
+            justify-content: flex-end !important;
+            align-self: flex-start !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .footer-content {
+            display: flex;
+            flex-direction: column;
+          }
+          .footer-contact {
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          .footer-services-resources {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+          }
+          .footer-column {
+            text-align: center;
+          }
+          .footer-heading {
+            font-size: 11px !important;
+          }
+          .footer-link {
+            font-size: 12px !important;
+          }
+          .footer-copyright {
+            font-size: 11px !important;
+          }
+          .footer-links {
+            font-size: 11px !important;
+            flex-wrap: nowrap !important;
+          }
+          .footer-links a {
+            font-size: 11px !important;
+            white-space: nowrap;
+          }
+        }
+        @media (min-width: 768px) {
+          .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+          }
+          .footer-contact {
+            text-align: left;
+            margin-bottom: 0;
+          }
+          .footer-column {
+            text-align: left;
+          }
+          .footer-services-resources {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          }
+        }
+        @media (min-width: 1024px) {
+          .footer-content {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+          .footer-services-resources {
+            grid-column: span 2;
+          }
+        }
+      `}</style>
     </footer>
   )
 }

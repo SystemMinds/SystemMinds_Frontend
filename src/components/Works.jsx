@@ -19,10 +19,10 @@ function Works() {
       className="relative"
       style={{
         backgroundColor: 'transparent',
-        paddingTop: '32px',
+        paddingTop: '8px',
         paddingBottom: '72px',
         overflow: 'hidden',
-        scrollMarginTop: '90px',
+        scrollMarginTop: '32px',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -30,7 +30,7 @@ function Works() {
         alignItems: 'center'
       }}
     >
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 text-white flex flex-col items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-12 text-white flex flex-col items-center">
         <div
           className="flex flex-col items-center text-center"
           style={{
@@ -40,50 +40,26 @@ function Works() {
           }}
         >
           <h2
-            className="uppercase mb-3"
-            style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 600,
-              fontSize: '14px',
-              letterSpacing: '0.1em',
-              color: 'rgba(255, 255, 255, 0.6)'
-            }}
-          >
-            Our Projects
-          </h2>
-          <p
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{
               fontFamily: '"Volkhov", "Georgia", serif',
-              fontWeight: 700,
-              fontSize: '52px',
+              lineHeight: '1.2',
               letterSpacing: '-0.02em',
-              color: '#FFFFFF',
-              marginBottom: '14px'
+              marginBottom: '12px',
+              color: '#ffffff'
             }}
           >
-            <span className="relative inline-block">
-              Works
-              <svg
-                className="absolute"
-                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
-                viewBox="0 0 350 12"
-                fill="none"
-              >
-                <path
-                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
-                  stroke="#DF6951"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-          </p>
+            Works
+          </h2>
           <p
+            className="works-description"
             style={{
               fontFamily: '"Poppins", sans-serif',
-              fontSize: '16px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.62)',
+              fontWeight: 400,
+              fontSize: '15px',
+              lineHeight: '1.5',
+              marginTop: '8px',
+              color: 'rgba(255, 255, 255, 0.8)',
               maxWidth: '560px'
             }}
           >
@@ -280,10 +256,21 @@ function Works() {
         </div>
       </div>
       <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 14px;
+          }
+        }
+        .works-description {
+          animation: responsiveFontSize 0.1s ease;
+        }
         @media (max-width: 1024px) {
           #works {
             padding-top: 44px !important;
             padding-bottom: 60px !important;
+          }
+          .works-description {
+            font-size: 13px !important;
           }
         }
         @media (max-width: 768px) {
@@ -296,6 +283,14 @@ function Works() {
           #works .px-8 {
             padding-left: 20px !important;
             padding-right: 20px !important;
+          }
+          .works-description {
+            font-size: 12px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .works-description {
+            font-size: 11px !important;
           }
         }
       `}</style>

@@ -40,14 +40,13 @@ function HeroSection() {
               </h3>
 
               <h1 
-                className="relative"
+                className="relative text-3xl sm:text-4xl md:text-5xl font-bold"
                 style={{
                   fontFamily: '"Volkhov", "Georgia", serif',
-                  fontWeight: 700,
-                  fontSize: '52px',
-                  lineHeight: '1.2',
+                  lineHeight: '1.1',
                   letterSpacing: '-0.02em',
-                  color: '#FFFFFF'
+                  color: '#FFFFFF',
+                  marginBottom: '16px'
                 }}
               >
                 Professional <span className="relative inline-block">Services
@@ -69,15 +68,29 @@ function HeroSection() {
 
               <div className="hero-body" style={{ maxWidth: '560px' }}>
                 <p 
+                  className="hero-description"
                   style={{
                     fontFamily: '"Poppins", sans-serif',
                     fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '1.7',
-                    color: 'rgba(255, 255, 255, 0.75)'
+                    fontSize: '15px',
+                    lineHeight: '1.5',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    marginBottom: '16px'
                   }}
                 >
                   SystemMinds is a full-stack digital studio delivering robust products, future-ready platforms, and tailor-made enterprise solutions. We blend strategy, UI engineering, and cloud-native development to accelerate growth for ambitious brands.
+                </p>
+                <p 
+                  className="hero-description"
+                  style={{
+                    fontFamily: '"Poppins", sans-serif',
+                    fontWeight: 400,
+                    fontSize: '15px',
+                    lineHeight: '1.5',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                  }}
+                >
+                  With expertise spanning React.js, Spring Boot, Python, and modern cloud technologies, we transform complex business challenges into elegant, scalable digital solutions. Our team combines technical excellence with creative problem-solving to deliver products that not only meet today's needs but are built to evolve with your business.
                 </p>
               </div>
 
@@ -164,6 +177,14 @@ function HeroSection() {
       </div>
 
       <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 15px;
+          }
+        }
+        .hero-description {
+          animation: responsiveFontSize 0.1s ease;
+        }
         .hero-shell {
           width: 100%;
           padding-top: 25px;
@@ -306,6 +327,11 @@ function HeroSection() {
             flex-wrap: wrap;
           }
         }
+        @media (max-width: 1024px) {
+          .hero-description {
+            font-size: 14px !important;
+          }
+        }
         @media (max-width: 768px) {
           .hero-shell {
             padding-left: 1.5rem !important;
@@ -314,8 +340,11 @@ function HeroSection() {
             padding-bottom: 56px !important;
           }
           .hero-copy h1 {
-            font-size: 48px !important;
+            font-size: 36px !important;
             line-height: 1.18 !important;
+          }
+          .hero-description {
+            font-size: 13px !important;
           }
           .hero-body p {
             max-width: 100% !important;
@@ -323,7 +352,10 @@ function HeroSection() {
         }
         @media (max-width: 640px) {
           .hero-copy h1 {
-            font-size: 44px !important;
+            font-size: 30px !important;
+          }
+          .hero-description {
+            font-size: 13px !important;
           }
           .hero-actions {
             flex-direction: column;
@@ -345,10 +377,10 @@ function HeroSection() {
             padding-bottom: 48px !important;
           }
           .hero-copy h1 {
-            font-size: 38px !important;
+            font-size: 24px !important;
           }
-          .hero-body p {
-            font-size: 14.5px !important;
+          .hero-description {
+            font-size: 12px !important;
           }
         }
       `}</style>

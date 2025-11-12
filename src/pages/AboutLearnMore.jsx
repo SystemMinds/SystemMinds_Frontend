@@ -247,22 +247,22 @@ function AboutLearnMore() {
                   ABOUT SYSTEMMINDS
                 </span>
                 <h1
-                  className="learn-more-headline"
-                  style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '56px', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold"
+                  style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', color: '#ffffff' }}
                 >
                   Smart, scalable software delivered with care.
                 </h1>
                 <div className="space-y-4">
-                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                     SystemMinds is a fast-growing IT solutions startup focused on delivering modern, efficient, and scalable digital products that transform ideas into reality.
                   </p>
-                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                     We specialise in building web applications, mobile apps, APIs, and enterprise solutions that empower businesses to move faster with confidence.
                   </p>
-                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                     Our team blends creativity, technical expertise, and a results-driven mindset to craft clean, reusable, high-performance software.
                   </p>
-                  <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                     We focus on reusable, scalable architectures built with React.js, Java, Python, Spring Boot, and modern frontend frameworks—and we are constantly learning, adapting, and improving to stay ahead in an ever-changing tech landscape.
                   </p>
                 </div>
@@ -275,7 +275,7 @@ function AboutLearnMore() {
                   ].map((item) => (
                     <div key={item.badge} className="rounded-3xl border border-white/10 p-4" style={{ background: 'rgba(24,34,54,0.65)', backdropFilter: 'blur(12px)' }}>
                       <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.22em', color: '#F1A501' }}>{item.badge}</p>
-                      <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', marginTop: '6px' }}>{item.text}</p>
+                      <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.text}</p>
                     </div>
                   ))}
                 </div>
@@ -287,8 +287,8 @@ function AboutLearnMore() {
                   style={{ background: 'rgba(8,15,27,0.85)', backdropFilter: 'blur(18px)', justifyContent: 'flex-start', gap: '28px' }}
                 >
                   <div className="p-8 md:p-10 space-y-5">
-                    <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', lineHeight: 1.2 }}>At a glance</h2>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.72)' }}>
+                    <h2 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', lineHeight: 1.2, color: '#ffffff' }}>At a glance</h2>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                       SystemMinds is a dynamic IT solutions startup crafting modern, scalable, and reliable digital products across platforms.
                     </p>
                     <div className="grid gap-4">
@@ -298,8 +298,8 @@ function AboutLearnMore() {
                           className="rounded-2xl border border-white/10 p-4 flex flex-col gap-3"
                           style={{ background: item.gradient, backdropFilter: 'blur(12px)', minHeight: '118px' }}
                         >
-                          <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '16px', color: '#ffffff' }}>{item.label}</p>
-                          <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.5, color: 'rgba(255,255,255,0.75)' }}>{item.caption}</p>
+                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', color: '#ffffff' }}>{item.label}</p>
+                          <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.caption}</p>
                         </div>
                       ))}
                     </div>
@@ -313,7 +313,7 @@ function AboutLearnMore() {
                     ].map((item) => (
                       <div key={item.label}>
                         <p style={{ fontSize: '13px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.46)' }}>{item.label}</p>
-                        <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.82)', marginTop: '6px', lineHeight: 1.6 }}>{item.value}</p>
+                        <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px', lineHeight: 1.6 }}>{item.value}</p>
                       </div>
                     ))}
                   </div>
@@ -326,7 +326,7 @@ function AboutLearnMore() {
         <section className="px-6 md:px-12 lg:px-16 mt-20">
           <div className="max-w-6xl mx-auto rounded-[28px] border border-white/10 p-8 md:p-12" style={{ background: 'rgba(14,21,38,0.78)', backdropFilter: 'blur(14px)' }}>
             <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.55)', fontSize: '12px' }}>Our narrative</p>
-            <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', marginBottom: '24px', marginTop: '10px', letterSpacing: '-0.01em' }}>Who we are, what we do, and where we’re heading.</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', marginTop: '10px', color: '#ffffff' }}>Who we are, what we do, and where we're heading.</h2>
             <div className="space-y-6">
               {timeline.map((item) => (
                 <div key={item.phase} className="rounded-3xl border border-white/10 px-6 py-5 lg:px-8 lg:py-6" style={{ background: 'rgba(8,13,24,0.72)', display: 'grid', gap: '10px', gridTemplateColumns: '1fr', fontFamily: '"Poppins", sans-serif' }}>
@@ -334,7 +334,7 @@ function AboutLearnMore() {
                     <span style={{ ...highlightStyle, fontSize: '16px', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{item.phase}</span>
                     <span style={{ fontSize: '14px', padding: '6px 12px', borderRadius: '999px', background: 'rgba(241,165,1,0.12)', color: '#F1A501' }}>{item.headline}</span>
                   </div>
-                  <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'rgba(255,255,255,0.76)' }}>{item.detail}</p>
+                  <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.detail}</p>
                 </div>
               ))}
             </div>
@@ -345,8 +345,8 @@ function AboutLearnMore() {
           <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-[45%_55%]">
             <div className="rounded-[26px] border border-white/10 p-8 space-y-6" style={{ background: 'linear-gradient(180deg, rgba(241,165,1,0.12), rgba(10,10,10,0.85))', backdropFilter: 'blur(16px)' }}>
               <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.58)', fontSize: '12px' }}>Why choose SystemMinds</p>
-              <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '34px', lineHeight: 1.2 }}>Innovation and reliability in every build.</h3>
-              <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.75)' }}>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', color: '#ffffff' }}>Innovation and reliability in every build.</h3>
+              <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                 Our vision is to become a trusted technology partner for startups, SMEs, and enterprises worldwide by blending innovation with reliability. Our mission is to empower businesses with smart, affordable, modern digital solutions that deliver measurable impact.
               </p>
               <div className="grid gap-4">
@@ -357,8 +357,8 @@ function AboutLearnMore() {
                   { title: 'Long-term partnerships', desc: 'We stay invested after launch with support built for growth.' }
                 ].map((item) => (
                   <div key={item.title} className="rounded-2xl border border-white/10 p-4" style={{ background: 'rgba(16,24,40,0.7)' }}>
-                    <p style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '18px', color: '#F1A501' }}>{item.title}</p>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.76)', marginTop: '6px' }}>{item.desc}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', color: '#F1A501' }}>{item.title}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)', marginTop: '6px' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>

@@ -20,13 +20,13 @@ function AboutUs() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '56px',
-        paddingBottom: '96px',
+        paddingTop: '8px',
+        paddingBottom: '72px',
         overflow: 'hidden',
-        scrollMarginTop: '90px'
+        scrollMarginTop: '32px'
       }}
     >
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[32%_68%] items-center lg:items-start px-6 md:px-12 lg:px-12 w-full gap-12 lg:gap-14 about-inner" style={{ paddingTop: '0px' }}>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[32%_68%] items-center lg:items-start px-6 md:px-12 lg:px-12 w-full gap-8 lg:gap-10 about-inner" style={{ paddingTop: '0px' }}>
         <div className="relative flex justify-center lg:justify-start items-center order-2 lg:order-1 about-illustration" style={{ width: '100%', paddingTop: '56px', position: 'relative', zIndex: 1, marginTop: '0' }}>
           <img
             src={logoImage}
@@ -37,14 +37,12 @@ function AboutUs() {
 
         <div className="flex flex-col items-start justify-start text-left order-1 lg:order-2 about-content" style={{ width: '100%', gap: '18px', paddingRight: '48px', position: 'relative', zIndex: 2, marginTop: '0' }}>
           <h2 
-            className="hero-title font-semibold tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 600,
-              fontSize: '56px',
-              letterSpacing: '-0.005em',
-              lineHeight: '1.07143',
-              marginBottom: '12px',
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              marginBottom: '16px',
               color: '#ffffff'
             }}
           >
@@ -67,15 +65,14 @@ function AboutUs() {
             </span>
           </h2>
         <p 
-          className="hero-tagline font-light"
             style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-            fontWeight: 300,
-            fontSize: '19px',
-            lineHeight: '1.6',
+              fontFamily: '"Poppins", sans-serif',
+            fontWeight: 400,
+            fontSize: '15px',
+            lineHeight: '1.5',
             marginTop: '8px',
             marginBottom: '20px',
-            color: 'rgba(255, 255, 255, 0.9)'
+            color: 'rgba(255, 255, 255, 0.8)'
             }}
           >
             Transform Your Ideas Into Reality. Professional Services & Innovative Products.
@@ -83,14 +80,40 @@ function AboutUs() {
           <p 
             className="about-description font-normal"
             style={{ 
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: '"Poppins", sans-serif',
               fontWeight: 400,
-              fontSize: '17px',
-              lineHeight: '1.5',
-              color: 'rgba(255, 255, 255, 0.7)'
+              fontSize: '14px',
+              lineHeight: '1.6',
+              color: 'rgba(255, 255, 255, 0.85)',
+              marginBottom: '16px'
             }}
           >
           At SystemMinds, we build digital products that help businesses grow. Our designers, engineers, and cloud specialists modernise old systems, craft beautiful customer journeys, and keep everything running smoothly. From the first workshop to launch and support, we stay beside you so ideas go live quickly and scale with confidence.
+          </p>
+          <p 
+            className="about-description font-normal"
+            style={{ 
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '1.6',
+              color: 'rgba(255, 255, 255, 0.85)',
+              marginBottom: '16px'
+            }}
+          >
+          We specialize in full-stack development, leveraging cutting-edge technologies like React.js for frontend excellence, Spring Boot for robust backend systems, and Python for versatile application development. Our approach combines agile methodologies with modern DevOps practices to ensure rapid delivery without compromising on quality.
+          </p>
+          <p 
+            className="about-description font-normal"
+            style={{ 
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '1.6',
+              color: 'rgba(255, 255, 255, 0.85)'
+            }}
+          >
+          Whether you need a complete digital transformation, a custom e-commerce platform, a mobile application, or enterprise-grade API solutions, SystemMinds delivers end-to-end services that align with your business objectives and technical requirements.
           </p>
           <div className="flex gap-3">
             <a
@@ -163,6 +186,14 @@ function AboutUs() {
         
       </div>
       <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 14px;
+          }
+        }
+        .about-description {
+          animation: responsiveFontSize 0.1s ease;
+        }
         .about-inner {
           width: 100%;
         }
@@ -256,13 +287,26 @@ function AboutUs() {
             animation: floatBot 6s ease-in-out infinite;
           }
         }
+        @media (max-width: 1024px) {
+          .about-description {
+            font-size: 13px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .about-description {
+            font-size: 13px !important;
+          }
+        }
         @media (max-width: 540px) {
           .about-content h2 {
-            font-size: 46px !important;
+            font-size: 30px !important;
             line-height: 1.15 !important;
           }
           .about-content .hero-tagline {
-            font-size: 18px !important;
+            font-size: 14px !important;
+          }
+          .about-description {
+            font-size: 12px !important;
           }
           .about-bot {
             max-width: 220px !important;
@@ -272,6 +316,9 @@ function AboutUs() {
         @media (max-width: 480px) {
           .about-inner {
             gap: 1.5rem !important;
+          }
+          .about-description {
+            font-size: 12px !important;
           }
           .about-bot {
             max-width: 280px !important;

@@ -18,13 +18,13 @@ function AboutCompany() {
       <main className="relative z-10" style={{ paddingTop: '96px', paddingBottom: '80px' }}>
         {/* Who We Are */}
         <section className="px-6 md:px-12 lg:px-16">
-          <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-[58%_42%] items-start">
+          <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-[58%_42%] items-start">
             <div className="space-y-6">
               <p className="uppercase tracking-[0.28em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>Who we are</p>
-              <h1 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '58px', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', color: '#ffffff' }}>
                 Turning simple ideas into full-stack digital experiences.
               </h1>
-              <p style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '18px', lineHeight: 1.7, color: 'rgba(255,255,255,0.76)' }}>
+              <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
               We are a dynamic and innovative startup dedicated to delivering reliable, modern, and scalable digital solutions that empower businesses to grow in the ever-evolving digital landscape. With a strong foundation in technology and a deep understanding of user experience, we specialize in creating impactful products tailored to each client’s unique needs. Our expertise spans across building eCommerce platforms, management systems, and custom service-based applications, designed to enhance efficiency and drive measurable results. By combining creativity, technical excellence, and a results-driven approach, we help businesses transform their ideas into powerful digital realities — ensuring quality, innovation, and long-term success in every project we undertake.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -36,15 +36,15 @@ function AboutCompany() {
                 ].map((item) => (
                   <div key={item.value} className="rounded-3xl border border-white/10 px-6 py-5" style={{ background: 'rgba(15,23,42,0.45)', backdropFilter: 'blur(12px)' }}>
                     <span style={{ ...highlightStyle, fontSize: '36px', fontWeight: 700 }}>{item.value}</span>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, marginTop: '6px', color: 'rgba(255,255,255,0.72)' }}>{item.label}</p>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, marginTop: '6px', color: 'rgba(255, 255, 255, 0.85)' }}>{item.label}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="space-y-8">
               <div className="rounded-3xl border border-white/10 p-8" style={{ background: 'rgba(17,24,39,0.7)', backdropFilter: 'blur(16px)' }}>
-                <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '28px', marginBottom: '16px' }}>Our Development Approach</h2>
-                <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.78)' }}>
+                <h2 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', marginBottom: '12px', color: '#ffffff' }}>Our Development Approach</h2>
+                <ul className="space-y-4" style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                   <li><span style={highlightStyle}>Idea to Execution</span> – from basic concepts to real-world deployment.</li>
                   <li><span style={highlightStyle}>Full-stack development</span> – using React, Spring Boot, and modern APIs.</li>
                   <li><span style={highlightStyle}>Iterative delivery</span> – we build, test, and improve continuously.</li>
@@ -52,8 +52,8 @@ function AboutCompany() {
                 </ul>
               </div>
               <div className="rounded-3xl border border-white/10 p-8" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(14px)' }}>
-                <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '24px', marginBottom: '12px' }}>Our Core Technologies</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                <h3 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', marginBottom: '12px', color: '#ffffff' }}>Our Core Technologies</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3" style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
                   {[
                     'HTML', 'CSS', 'JavaScript', 'React.js', 'React Native', 'Bootstrap', 'Tailwind CSS',
                     'Java', 'Python', 'Spring Boot', 'Microservices', 'Hibernate', 'SQL', 'MySQL',
@@ -68,11 +68,11 @@ function AboutCompany() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="px-6 md:px-12 lg:px-16 mt-20">
+        <section className="px-6 md:px-12 lg:px-12 mt-10">
           <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
             <div className="space-y-5">
               <p className="uppercase tracking-[0.24em]" style={{ fontFamily: '"Poppins", sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '12px' }}>Why choose us</p>
-              <h2 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '42px', letterSpacing: '-0.01em' }}>Young minds building reliable digital products.</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ fontFamily: '"Volkhov", "Georgia", serif', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '16px', color: '#ffffff' }}>Young minds building reliable digital products.</h2>
               <div className="grid gap-6">
                 {[
                   { title: 'Passionate Development', desc: 'Every project we take is crafted with dedication, experimentation, and focus on learning.' },
@@ -80,16 +80,16 @@ function AboutCompany() {
                   { title: 'End-to-End Delivery', desc: 'We handle everything – from frontend design to backend APIs and deployment.' }
                 ].map((item) => (
                   <div key={item.title} className="rounded-3xl border border-white/10 p-6" style={{ background: 'rgba(30,41,59,0.55)', backdropFilter: 'blur(12px)' }}>
-                    <h3 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '22px', marginBottom: '10px' }}>{item.title}</h3>
-                    <p style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.74)' }}>{item.desc}</p>
+                    <h3 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', marginBottom: '8px', color: '#ffffff' }}>{item.title}</h3>
+                    <p style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="grid gap-6" style={{ fontFamily: '"Poppins", sans-serif', fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.78)' }}>
+            <div className="grid gap-6" style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.85)' }}>
               <div className="rounded-3xl border border-white/10 p-7" style={{ background: 'rgba(17,24,39,0.6)', backdropFilter: 'blur(10px)' }}>
-                <h4 style={{ fontFamily: '"Volkhov", "Georgia", serif', fontSize: '20px', marginBottom: '8px' }}>Projects we work on</h4>
+                <h4 style={{ fontFamily: '"Poppins", sans-serif', fontWeight: 600, fontSize: '15px', marginBottom: '8px', color: '#ffffff' }}>Projects we work on</h4>
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2 list-disc list-inside">
                   <li>College & academic projects</li>
                   <li>E-commerce platforms</li>

@@ -37,53 +37,37 @@ function Technologies() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '52px',
-        paddingBottom: '56px',
-        backgroundColor: '#0A0A0A'
+        paddingTop: '8px',
+        paddingBottom: '72px',
+        backgroundColor: '#0A0A0A',
+        scrollMarginTop: '32px'
       }}
     >
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-12 h-full flex flex-col">
-        <div className="w-full flex flex-col items-center text-center mb-12">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-12 h-full flex flex-col">
+        <div className="w-full flex flex-col items-center text-center mb-10">
           <h2
-            className="uppercase mb-3"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 600,
-              fontSize: '14px',
-              letterSpacing: '0.1em',
-              color: 'rgba(255, 255, 255, 0.6)'
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              marginBottom: '12px',
+              color: '#ffffff'
             }}
           >
             Technologies
           </h2>
           <p
             style={{
-              fontFamily: '"Volkhov", "Georgia", serif',
-              fontWeight: 700,
-              fontSize: '52px',
-              lineHeight: '1.18',
-              letterSpacing: '-0.02em',
-              color: '#FFFFFF',
-              marginBottom: '0'
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '15px',
+              lineHeight: '1.5',
+              marginTop: '8px',
+              color: 'rgba(255, 255, 255, 0.8)'
             }}
           >
-            What we{' '}
-            <span className="relative inline-block">
-              implement
-              <svg
-                className="absolute"
-                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
-                viewBox="0 0 350 12"
-                fill="none"
-              >
-                <path
-                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
-                  stroke="#DF6951"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            What we implement
           </p>
         </div>
 
@@ -94,15 +78,15 @@ function Technologies() {
             style={{ position: 'relative', zIndex: 2, maxWidth: '560px', width: '100%', margin: '0 auto', textAlign: 'left' }}
           >
             <p
-              className="hero-tagline font-light"
+              className="hero-tagline font-light tech-description"
             style={{
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: '"Poppins", sans-serif',
               fontWeight: 400,
-              fontSize: '21px',
-              lineHeight: '1.381',
-              marginTop: '6px',
-              marginBottom: '24px',
-              color: '#ffffff',
+              fontSize: '15px',
+              lineHeight: '1.5',
+              marginTop: '8px',
+              marginBottom: '16px',
+              color: 'rgba(255, 255, 255, 0.8)',
               marginLeft: 'auto',
               marginRight: 'auto',
               textAlign: 'inherit'
@@ -112,20 +96,20 @@ function Technologies() {
             </p>
 
             <p
-              className="about-description font-normal"
+              className="about-description font-normal tech-description"
             style={{
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: '"Poppins", sans-serif',
               fontWeight: 400,
-              fontSize: '17px',
-              lineHeight: '1.5',
+              fontSize: '14px',
+              lineHeight: '1.6',
               marginBottom: '20px',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: 'rgba(255, 255, 255, 0.85)',
               marginLeft: 'auto',
               marginRight: 'auto',
               textAlign: 'inherit'
             }}
             >
-              We make your vision come to execute. Our team combines expertise, creativity, and cutting-edge technology to help businesses achieve their goals.
+              Our team combines expertise, creativity, and cutting-edge technology to transform your vision into reality. We leverage modern frameworks like React.js and React Native for dynamic interfaces, Spring Boot and Java for robust backend systems, Python for automation, and databases including MySQL, PostgreSQL, and MongoDB to deliver optimal solutions for every project.
             </p>
 
             {/* Technologies Section - Marquee */}
@@ -390,6 +374,14 @@ function Technologies() {
       </div>
     </div>
       <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 14px;
+          }
+        }
+        .tech-description {
+          animation: responsiveFontSize 0.1s ease;
+        }
         @media (max-width: 1280px) {
           .technologies-body {
             gap: 56px;
@@ -412,6 +404,9 @@ function Technologies() {
             max-width: 620px;
             order: 1;
           }
+          .tech-description {
+            font-size: 13px !important;
+          }
           .technologies-visual {
             order: 2;
             margin-top: 20px !important;
@@ -423,6 +418,9 @@ function Technologies() {
           }
           .technologies-copy {
             order: 1;
+          }
+          .tech-description {
+            font-size: 13px !important;
           }
           .technologies-visual {
             order: 2;
@@ -449,6 +447,9 @@ function Technologies() {
             align-items: center !important;
             max-width: 540px !important;
           }
+          .tech-description {
+            font-size: 12px !important;
+          }
           .technologies-copy .hero-tagline,
           .technologies-copy .about-description {
             text-align: center !important;
@@ -462,6 +463,11 @@ function Technologies() {
           }
           .technologies-cta {
             justify-content: center;
+          }
+        }
+        @media (max-width: 480px) {
+          .tech-description {
+            font-size: 11px !important;
           }
         }
       `}</style>

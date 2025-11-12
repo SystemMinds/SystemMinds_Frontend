@@ -51,30 +51,34 @@ function OurJourney() {
   return (
     <section 
       id="our-journey" 
-      className="py-16 px-5 sm:px-10 lg:px-16"
-      style={{ backgroundColor: '#0A0A0A' }}
+      className="py-8 px-6 md:px-12 lg:px-12"
+      style={{ backgroundColor: '#0A0A0A', scrollMarginTop: '32px' }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{ 
-              fontFamily: serifFont,
-              color: '#ffffff',
-              lineHeight: '1.1',
-              letterSpacing: '-0.02em'
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              marginBottom: '12px',
+              color: '#ffffff'
             }}
           >
             Our Journey
           </h2>
           <p 
-            className="text-base sm:text-lg max-w-3xl mx-auto"
             style={{ 
-              fontFamily: brandFont,
-              color: 'rgba(255,255,255,0.8)',
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '15px',
               lineHeight: '1.5',
-              fontSize: '17px'
+              marginTop: '8px',
+              color: 'rgba(255, 255, 255, 0.8)',
+              maxWidth: '560px',
+              margin: '0 auto'
             }}
           >
             From a startup vision to a trusted technology partner—here's how SystemMinds came to be.
@@ -82,7 +86,7 @@ function OurJourney() {
         </div>
 
         {/* Timeline */}
-        <div className="relative mb-12">
+        <div className="relative mb-10">
           {/* Timeline Line */}
           <div 
             className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2"
@@ -90,7 +94,7 @@ function OurJourney() {
           />
           
           {/* Journey Steps */}
-          <div className="space-y-10 md:space-y-16">
+          <div className="space-y-8 md:space-y-12">
             {journeySteps.map((step, index) => (
               <div 
                 key={index}
@@ -141,10 +145,11 @@ function OurJourney() {
                     <p 
                       className="mb-3"
                       style={{ 
-                        fontFamily: brandFont,
-                        color: 'rgba(255,255,255,0.7)',
-                        lineHeight: '1.5',
-                        fontSize: '14px'
+                        fontFamily: '"Poppins", sans-serif',
+                        fontWeight: 400,
+                        fontSize: '14px',
+                        lineHeight: '1.6',
+                        color: 'rgba(255, 255, 255, 0.85)'
                       }}
                     >
                       {step.description}
@@ -158,10 +163,11 @@ function OurJourney() {
                     >
                       <p 
                         style={{ 
-                          fontFamily: brandFont,
-                          color: 'rgba(255,255,255,0.6)',
+                          fontFamily: '"Poppins", sans-serif',
+                          fontWeight: 400,
+                          fontSize: '13px',
                           lineHeight: '1.4',
-                          fontSize: '13px'
+                          color: 'rgba(255, 255, 255, 0.7)'
                         }}
                       >
                         "{step.quote}"
@@ -178,11 +184,14 @@ function OurJourney() {
         </div>
 
         {/* Values Section */}
-        <div className="mt-12">
-          <h3 
-            className="text-2xl sm:text-3xl font-bold mb-8 text-center"
-            style={{ 
-              fontFamily: serifFont,
+        <div className="mt-10">
+          <h3
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+            style={{
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              marginBottom: '24px',
               color: '#ffffff'
             }}
           >
@@ -213,12 +222,13 @@ function OurJourney() {
                 >
                   {value.title}
                 </h4>
-                <p 
-                  style={{ 
-                    fontFamily: brandFont,
-                    color: 'rgba(255,255,255,0.7)',
+                <p
+                  style={{
+                    fontFamily: '"Poppins", sans-serif',
+                    fontWeight: 400,
+                    fontSize: '14px',
                     lineHeight: '1.6',
-                    fontSize: '14px'
+                    color: 'rgba(255, 255, 255, 0.85)'
                   }}
                 >
                   {value.description}

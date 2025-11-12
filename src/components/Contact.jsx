@@ -142,13 +142,11 @@ function Contact() {
           }`}
         >
           <h2
-            className="hero-title font-semibold tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 600,
-              fontSize: '56px',
-              letterSpacing: '-0.005em',
-              lineHeight: '1.07143',
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
               marginBottom: '12px',
               color: '#ffffff',
             }}
@@ -157,16 +155,15 @@ function Contact() {
           </h2>
           <p
             style={{
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 300,
-              fontSize: '20px',
-              lineHeight: '1.6',
-              marginTop: '1px',
-          
-              color: 'rgba(255, 255, 255, 0.76)',
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '15px',
+              lineHeight: '1.5',
+              marginTop: '8px',
+              color: 'rgba(255, 255, 255, 0.8)',
             }}
           >
-            Let’s build what’s next for your business
+            Let's build what's next for your business
           </p>
         </div>
 

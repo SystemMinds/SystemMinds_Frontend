@@ -8,23 +8,43 @@ function WorkWeDo() {
     {
       icon: '💻',
       title: 'Web Development',
-      description: 'Building responsive and scalable web applications tailored to your business needs.'
+      description: 'Building responsive and scalable web applications tailored to your business needs. We create modern, user-friendly interfaces using React.js, ensuring optimal performance across all devices and browsers.'
     },
     {
       icon: '📱',
       title: 'Mobile Apps',
-      description: 'Creating innovative mobile solutions for iOS and Android platforms.',
+      description: 'Creating innovative mobile solutions for iOS and Android platforms. Our React Native expertise enables cross-platform development, reducing time-to-market while maintaining native app quality.',
       hasDecor: true
     },
     {
       icon: '☁️',
       title: 'Cloud Solutions',
-      description: 'Implementing robust cloud infrastructure and services for seamless operations.'
+      description: 'Implementing robust cloud infrastructure and services for seamless operations. We design scalable architectures that grow with your business, ensuring high availability and cost efficiency.'
     },
     {
       icon: '⚙️',
       title: 'API Integration',
-      description: 'Connecting systems through efficient and secure API development.'
+      description: 'Connecting systems through efficient and secure API development. We build RESTful and microservices-based APIs using Spring Boot, enabling seamless data exchange and system interoperability.'
+    },
+    {
+      icon: '🔄',
+      title: 'System Modernization',
+      description: 'Transforming legacy systems into modern, maintainable solutions. We help businesses migrate from outdated technologies to contemporary frameworks, improving performance and reducing technical debt.'
+    },
+    {
+      icon: '📊',
+      title: 'Enterprise Solutions',
+      description: 'Developing comprehensive business management systems tailored to your workflows. From CRM platforms to inventory management, we build solutions that streamline operations and boost productivity.'
+    },
+    {
+      icon: '🛒',
+      title: 'E-Commerce Platforms',
+      description: 'Creating powerful online stores with secure payment gateways and inventory management. We build custom e-commerce solutions that provide exceptional shopping experiences and drive sales growth.'
+    },
+    {
+      icon: '🔐',
+      title: 'Security & Compliance',
+      description: 'Implementing enterprise-grade security measures and compliance protocols. We ensure your applications meet industry standards with robust authentication, encryption, and data protection.'
     }
   ]
 
@@ -114,10 +134,10 @@ function WorkWeDo() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '18px',
-        paddingBottom: '96px',
+        paddingTop: '8px',
+        paddingBottom: '72px',
         overflow: 'hidden',
-        scrollMarginTop: '40px'
+        scrollMarginTop: '32px'
       }}
     >
       {/* Background Star/Glow */}
@@ -186,10 +206,10 @@ function WorkWeDo() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-start px-8 md:px-16 lg:px-12 w-full h-full text-center services-wrapper" style={{ marginTop: '0' }}>
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-start px-6 md:px-12 lg:px-12 w-full h-full text-center services-wrapper" style={{ marginTop: '0' }}>
         {/* Header */}
         <div
-          className="text-center mb-16"
+          className="text-center mb-10"
           style={{
             position: 'relative',
             zIndex: 2,
@@ -199,54 +219,34 @@ function WorkWeDo() {
           }}
         >
           <h2
-            className="mb-3 services-title"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold"
             style={{
-              fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 700,
-              fontSize: '64px',
-              letterSpacing: '-0.005em',
-              lineHeight: '1.08',
-              color: '#FFFFFF',
-              textTransform: 'none'
+              fontFamily: '"Volkhov", "Georgia", serif',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              marginBottom: '12px',
+              color: '#ffffff'
             }}
           >
             Services
           </h2>
           <p
-            className="services-subtitle"
             style={{
-              fontFamily: '"Volkhov", "Georgia", serif',
-              fontWeight: 500,
-              fontSize: '26px',
-              letterSpacing: '-0.01em',
-              lineHeight: '1.35',
-              color: 'rgba(255, 255, 255, 0.88)',
-              marginBottom: '8px'
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              fontSize: '15px',
+              lineHeight: '1.5',
+              marginTop: '8px',
+              color: 'rgba(255, 255, 255, 0.8)'
             }}
           >
-            We Offer Best{' '}
-            <span className="relative inline-block">
-              Services
-              <svg
-                className="absolute"
-                style={{ bottom: '-8px', left: 0, width: '100%', height: '12px' }}
-                viewBox="0 0 350 12"
-                fill="none"
-              >
-                <path
-                  d="M2 7C43.8 3.3 174.5 -1.5 348 7"
-                  stroke="#DF6951"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            We Offer Best Services
           </p>
         </div>
 
         {/* Service Cards */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 md:gap-8 services-grid"
           style={{ position: 'relative', zIndex: 2 }}
         >
           {services.map((service, index) => {
@@ -310,7 +310,7 @@ function WorkWeDo() {
                     style={{
                       fontFamily: '"Poppins", sans-serif',
                       fontWeight: 600,
-                      fontSize: '18px',
+                      fontSize: '15px',
                       lineHeight: '1.4',
                       color: '#FFFFFF'
                     }}
@@ -324,8 +324,8 @@ function WorkWeDo() {
                       fontFamily: '"Poppins", sans-serif',
                       fontWeight: 400,
                       fontSize: '13px',
-                      lineHeight: '1.7',
-                      color: 'rgba(255, 255, 255, 0.6)'
+                      lineHeight: '1.5',
+                      color: 'rgba(255, 255, 255, 0.7)'
                     }}
                   >
                     {service.description}
@@ -337,16 +337,24 @@ function WorkWeDo() {
         </div>
       </div>
       <style jsx="true">{`
+        @keyframes responsiveFontSize {
+          0%, 100% {
+            font-size: 13px;
+          }
+        }
+        .services-grid p {
+          animation: responsiveFontSize 0.1s ease;
+        }
         @media (max-width: 1024px) {
           #work-we-do {
             padding-top: 52px !important;
             padding-bottom: 64px !important;
           }
-          #work-we-do .services-title {
-            font-size: 52px !important;
+          .services-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
-          #work-we-do .services-subtitle {
-            font-size: 24px !important;
+          .services-grid p {
+            font-size: 12px !important;
           }
         }
         @media (max-width: 768px) {
@@ -358,11 +366,11 @@ function WorkWeDo() {
             padding-left: 20px !important;
             padding-right: 20px !important;
           }
-          #work-we-do .services-title {
-            font-size: 42px !important;
+          .services-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
-          #work-we-do .services-subtitle {
-            font-size: 21px !important;
+          .services-grid p {
+            font-size: 12px !important;
           }
           #work-we-do .grid {
             gap: 18px !important;
@@ -380,9 +388,12 @@ function WorkWeDo() {
           }
         }
         @media (max-width: 600px) {
-          #work-we-do .grid {
+          .services-grid {
             grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
             gap: 16px !important;
+          }
+          .services-grid p {
+            font-size: 12px !important;
           }
           #work-we-do .grid > div .relative {
             min-height: 185px !important;
@@ -394,6 +405,11 @@ function WorkWeDo() {
           }
           #work-we-do .grid > div .relative div span {
             font-size: 24px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .services-grid p {
+            font-size: 11px !important;
           }
         }
       `}</style>
