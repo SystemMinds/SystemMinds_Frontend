@@ -19,6 +19,7 @@ function Header() {
     'Services',
     'Technologies',
     'Works',
+    'Our Journey',
     'Contact',
   ]
 
@@ -28,6 +29,7 @@ function Header() {
     'Services': 'work-we-do',
     'Technologies': 'technologies',
     'Works': 'works',
+    'Our Journey': 'our-journey',
     'Contact': 'contact',
   }
 
@@ -93,6 +95,7 @@ function Header() {
       if (sectionId === 'technologies') extraOffset = -12
       else if (sectionId === 'works') extraOffset = 0
       else if (sectionId === 'about') extraOffset = -16
+      else if (sectionId === 'our-journey') extraOffset = 16
       const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset
       window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' })
     }
@@ -235,6 +238,41 @@ function Header() {
                 />
               </a>
             ))}
+            {/* Career Link - Opens in New Tab */}
+            <a
+              href="/career"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link relative transition-all duration-300 ease-out group"
+              style={{ 
+                fontFamily: '"Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                fontWeight: 700,
+                fontSize: '12px',
+                letterSpacing: '0.05em',
+                color: isScrolled ? '#000000' : '#ffffff',
+                textDecoration: 'none',
+                display: 'inline-block',
+                textTransform: 'uppercase',
+                position: 'relative',
+                paddingBottom: '6px',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(-10px)',
+                transition: `all 0.6s ease-out ${menuItems.length * 0.1}s`
+              }}
+            >
+              <span className="transition-all duration-200 ease-out inline-block group-hover:scale-110 group-hover:tracking-wider">
+                Career
+              </span>
+              {/* Animated underline */}
+              <span 
+                className="absolute bottom-0 left-0 h-0.5 transition-all duration-200 ease-out group-hover:w-full"
+                style={{
+                  width: '0%',
+                  transformOrigin: 'left',
+                  backgroundColor: isScrolled ? '#000000' : '#ffffff'
+                }}
+              />
+            </a>
           </div>
 
           {/* Right: Social Media Button and Icons */}
@@ -546,6 +584,24 @@ function Header() {
                   {item}
                 </a>
               ))}
+              {/* Career Link - Opens in New Tab */}
+              <a
+                href="/career"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-all duration-200"
+                style={{ 
+                  fontFamily: '"Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  fontSize: '11px',
+                  opacity: 0,
+                  animation: `fadeIn 0.3s ease-out ${menuItems.length * 0.05}s forwards`
+                }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Career
+              </a>
             </div>
             <style jsx="true">{`
               @keyframes fadeIn {

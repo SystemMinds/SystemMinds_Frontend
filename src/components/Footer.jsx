@@ -65,7 +65,8 @@ function Footer() {
         { label: 'Playbooks' },
         { label: 'Case Stories' },
         { label: 'Newsletter' },
-        { label: 'Careers' },
+        { label: 'Careers', href: '/career', newTab: true },
+        { label: 'Our Journey', href: '/#our-journey' },
         { label: 'Press Room' }
       ]
     }
@@ -182,14 +183,20 @@ function Footer() {
                     {item.href ? (
                       <a
                         href={item.href}
+                        target={item.newTab ? '_blank' : undefined}
+                        rel={item.newTab ? 'noopener noreferrer' : undefined}
                         style={{
                           fontFamily: brandFont,
                           fontSize: '14px',
                           color: 'rgba(255,255,255,0.7)',
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '10px'
+                          gap: '10px',
+                          cursor: 'pointer',
+                          transition: 'color 0.2s ease'
                         }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
                       >
                         <span style={{ width: '6px', height: '6px', borderRadius: '999px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
                         {item.label}
